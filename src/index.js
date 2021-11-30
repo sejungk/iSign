@@ -4,7 +4,7 @@ import App from './app'
 
 ReactDOM.render(
 
-    <App />,
-
+    // <App />,
+    <Lesson />,
   document.getElementById('app')
 )
