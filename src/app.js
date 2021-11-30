@@ -1,16 +1,15 @@
-import React from 'react'
+import React from "react";
+import { getApps } from 'firebase/app';
 
-// import {Navbar} from './components'
-// import Routes from './routes'
-
-const App = () => {
+export default function App() {
+  const firebaseApp = getApps()[0]
   return (
     <div>
-      {/* <Navbar />
-      <Routes /> */}
-      <h2>hellooooooo</h2>
+      <h1>React & Firebase</h1>
+      <h2>By @farazamiruddin</h2>
+      <code>
+        <pre>{JSON.stringify(firebaseApp.options, null, 2)}</pre>
+      </code>
     </div>
-  )
+  );
 }
-
-export default App
