@@ -4,6 +4,8 @@ import { getAnalytics } from "firebase/analytics";
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './app'
+import Lesson from "./components/lesson";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,7 +30,7 @@ const analytics = getAnalytics(app);
 
 ReactDOM.render(
 
-    <App />,
-
+    // <App />,
+    <Lesson />,
   document.getElementById('app')
 )
