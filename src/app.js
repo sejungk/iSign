@@ -1,15 +1,14 @@
 import React from "react";
-import { getApps } from 'firebase/app';
+import { Login } from "./component/Login";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 export default function App() {
-  const firebaseApp = getApps()[0]
+
   return (
-    <div>
-      <h1>React & Firebase</h1>
-      <h2>By @farazamiruddin</h2>
-      <code>
-        <pre>{JSON.stringify(firebaseApp.options, null, 2)}</pre>
-      </code>
-    </div>
+    <Router>
+      <div>
+        <Route path="/" component={Login}/>
+      </div>
+    </Router>
   );
 }
