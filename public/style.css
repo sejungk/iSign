@@ -92,3 +92,28 @@ body {
   flex-wrap: wrap;
 }
 /* Course Page - END */
+
+/* Learning Page - START */
+.learning-page-container {
+  display: flex;
+  justify-content: space-between;
+  height: calc(100vh - 6em);
+  padding: 3em;
+  background-color:#faf5ec;
+  text-align: center;
+}
+
+.learning-page-content-wrapper {
+  flex: 0 0 50%;
+  border: solid blue;
+}
+
+.learning-page-content-wrapper > img{
+  width: 80%;
+}
+
+.video-wrapper {
+  flex: 0 0 50%;
+  border: solid pink;
+}
+/* Learning Page - END */
