@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Landing Page - START */
@@ -10,7 +11,6 @@ body {
   justify-content: space-around;
   height: 100vh;
   padding: 0 5% 0 5%;
-  font-family: 'Poppins', sans-serif;
 }
 
 .landing-page-text-wrapper {
@@ -57,3 +57,38 @@ body {
 }
 
 /* Landing Page - END*/
+
+/* Course Page - START */
+.course-page-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 3%;
+  width: 100%;
+}
+.profile-wrapper {
+  background-color: #ceedff;
+  border-radius: 20px;
+  flex: 0 0 15%;
+  margin: auto;
+  margin-right: 5%;
+  padding: 5vh;
+  height: 75vh;
+}
+.profile-pic {
+  width: 100px;
+  text-align: center;
+  margin:auto;
+}
+.profile-pic > img{
+  width: 100px;
+}
+.course-options {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 80%;
+}
+.course-item {
+  flex: 0 0 30%;
+  flex-wrap: wrap;
+}
+/* Course Page - END */
