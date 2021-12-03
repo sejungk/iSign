@@ -11,20 +11,24 @@ import { CardMedia } from '@mui/material';
 export const CourseHome=()=>{
   return (
     <div>
-        <Box>
-        <CardContent>
-          <Typography>
-            Name
-          </Typography>
-          <CardMedia
+      
+        <Box sx={{display:'flex', flexDirection:"row"}}>
+          <Card>
+           <CardContent>
+            <CardMedia
         component="img"
         height="140"
         image="https://drive.google.com/file/d/10TYnlfuwIZ0bHo-x4co1Ldw74mZIxw5y/view?usp=sharing"
         alt="profile pic"
       />
+          <Typography>
+            Name
+          </Typography>
+        
         </CardContent>
-      </Box>
-      <Box>
+        </Card>
+        </Box>
+        <Box sx={{display:'flex', flexdirection:"column"}}>
         <Card>
           <Typography variant="h3">
             Welcome back,Jenny!
@@ -36,7 +40,7 @@ export const CourseHome=()=>{
         <Card>
           {/* map out the course images  */}
         </Card>
-      </Box>
+        </Box>
     </div>
   );
 }
