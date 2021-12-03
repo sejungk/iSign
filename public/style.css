@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+}
+
+/* Landing Page - START */
+.landing-page-wrapper {
+  background-color: #FFFBF4;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  padding: 0 5% 0 5%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.landing-page-text-wrapper {
+  max-width: 40%;
+  font-size: 20px;
+  margin-bottom: 7%;
+}
+
+.landing-page-text-wrapper > p {
+  color: #3e3e3e;
+  font-weight: 300;
+  width: 80%;
+  margin: 0;
+}
+
+.landing-page-text-wrapper > h1 {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 55px;
+  margin-bottom: 2%;
+}
+.signup-bttn {
+  width: 200px;
+  height: 55px;
+  line-height: 55px;
+  font-weight: 500;
+  color: white;
+  background-color: #ffa755;
+  border-radius: 30px;
+  text-align: center;
+  margin-top: 45px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.signup-bttn:hover {
+  background-color: #ff8717;
+  transition: .5s;
+}
+
+.landing-page-wrapper  img {
+  margin-bottom: 30%;
+  width: 400px;
+}
+
+/* Landing Page - END*/
