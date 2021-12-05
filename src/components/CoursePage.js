@@ -6,16 +6,21 @@ const CoursePage = () => {
       <div className="profile-wrapper">
         <div className="profile-pic">
             <img src="https://drive.google.com/uc?export=view&id=1-QO80c6b1RfU_NHTmV5CJH4x2BTUCXrW" />
+            <h1>Jenny Lin</h1>
           </div>
           <div className="profile-nav">
-            <div className="my-courses">
-              <img src="" />
-              <div className="my-courses-text">My courses</div>
+            <div className="profile-nav-item-wrapper">
+              <div className="profile-nav-item">
+                <img src="https://drive.google.com/uc?export=view&id=1bEB1JyRKg1w6pBsnamyfhHlkwPE2ln8M" />
+                <p>My courses</p>
+              </div>
             </div>
-            <div className="sign-out">
-              <img src="" />
-              <div className="sign-out-text">Sign out</div>
-            </div>
+            {/* <div className="profile-nav-item-wrapper"> */}
+              <div className="profile-nav-item">
+                <img src="https://drive.google.com/uc?export=view&id=1y3A1SeM99ZG5wrNucqv3tibgIDinoSnt" />
+                <p>Sign out</p>
+              </div>
+            {/* </div> */}
           </div>
       </div>
       <div className="course-list-wrapper">
@@ -23,39 +28,62 @@ const CoursePage = () => {
           <h1>Welcome back!</h1>
           <p>What would you like to learn today?</p>
         </div>
+
         <div className="course-options">
-          <div className="alphabet-course course-item">
-            <h1>The alphabet</h1>
-            <p>5 lessons | 2 quizzes</p>
-            <img src=""/>
-          </div>
-          <div className="numbers-course course-item">
-            <h1>Numbers</h1>
-            <p>5 lessons | 2 quizzes</p>
-            <img src=""/>
-          </div>
-          <div className="colors-course course-item">
-            <h1>Colors</h1>
-            <p>5 lessons | 2 quizzes</p>
-            <img src=""/>
-          </div>
-          <div className="alphabet-course course-item">
-            <h1>The alphabet</h1>
-            <p>5 lessons | 2 quizzes</p>
-            <img src=""/>
-          </div>
-          <div className="numbers-course course-item">
-            <h1>Numbers</h1>
-            <p>5 lessons | 2 quizzes</p>
-            <img src=""/>
-          </div>
-          <div className="colors-course course-item">
-            <h1>Colors</h1>
-            <p>5 lessons | 2 quizzes</p>
-            <img src=""/>
+            <div className="course-wrapper">
+              <div className="course-item alphabet-course">
+                <h1>The alphabet</h1>
+                <p>6 lessons | 2 quizzes</p>
+                <img src="https://drive.google.com/uc?export=view&id=1bzlRbUWKXQFP4T39u1n-OGOAz9dajhzx"/>
+              </div>
+            </div>
+            <div className="course-wrapper">
+                <img className="lock-icon" src="https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR" />
+                <h5>Course coming soon</h5>
+                <div className="course-item  numbers-course">
+                  <h1>Numbers</h1>
+                  <p>5 lessons | 2 quizzes</p>
+                  <img src="https://drive.google.com/uc?export=view&id=1vA3K8DbU4gNeaeKwlaOc2b_j2iibFQcl"/>
+                </div>
+            </div>
+            <div className="course-wrapper">
+              <img className="lock-icon" src="https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR" />
+              <h5>Course coming soon</h5>
+              <div className="course-item colors-course">
+                <h1>Colors</h1>
+                <p>5 lessons | 2 quizzes</p>
+                <img src="https://drive.google.com/uc?export=view&id=1HhrvBIyI0fHABfdKZD_KknRD3ZxiA4Kz"/>
+              </div>
+            </div>
+            <div className="course-wrapper">
+                <img className="lock-icon" src="https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR" />
+                <h5>Course coming soon</h5>
+                <div className="course-item greetings-course">
+                  <h1>Greetings</h1>
+                  <p>5 lessons | 2 quizzes</p>
+                  <img src="https://drive.google.com/uc?export=view&id=1M2gbXjg5uuPe0AYgRwto9f6htuoI1uep"/>
+                </div>
+            </div>
+            <div className="course-wrapper">
+                <img className="lock-icon" src="https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR" />
+                <h5>Course coming soon</h5>
+                <div className="course-item questions-course">
+                  <h1>Questions</h1>
+                  <p>5 lessons | 2 quizzes</p>
+                  <img src="https://drive.google.com/uc?export=view&id=1eV5F-tloYQJDmZV8M1BslEne9OVFyQKW"/>
+                </div>
+            </div>
+            <div className="course-wrapper">
+              <img className="lock-icon" src="https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR" />
+              <h5>Course coming soon</h5>
+              <div className="course-item phrases-course">
+                <h1>Phrases</h1>
+                <p>5 lessons | 2 quizzes</p>
+                <img src="https://drive.google.com/uc?export=view&id=1UGBOzgVo0bXOBf1K323b5aXXDtQJCpHk"/>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
     </div>
   )
 }
