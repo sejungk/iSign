@@ -1,4 +1,4 @@
-import React {useRef} from "react";
+import React, {useRef} from "react";
 import { useUserContext } from "../context/userContext";
 
 
@@ -9,7 +9,7 @@ export const Login = () => {
   const logInUser = useUserContext();
 
 
-  const handleSubmit = (event) => {
+  const handleSubmit=(event)=>{
     event.preventDefault()
     const email = emailRef.current.value;
     const password  = passwordRef.current.value;
@@ -21,7 +21,7 @@ export const Login = () => {
       <h2> Login </h2>
       <form onSubmit={handleSubmit}>
         <input placeholder="Email" type="email" ref={emailRef} />
-        <input placeholder="Password" type="password" ref={psdRef} />
+        <input placeholder="Password" type="password" ref={passwordRef} />
         <button type="submit">Log In</button>
       </form>
     </div>
