@@ -50,6 +50,10 @@ body {
   background-color: #ff8717;
   transition: .5s;
 }
+/* the a tag is for react router Link default styling */
+a {     
+  text-decoration: none; 
+}
 
 .landing-page-wrapper  img {
   margin-bottom: 30%;
