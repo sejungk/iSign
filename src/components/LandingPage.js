@@ -10,13 +10,11 @@ const LandingPage = () => {
           <p>
             An interactive learning platform designed to aid you in your ASL learning journey.
           </p>
-         
           <Link to="/courses">
           <div className="signup-bttn">
           Get Started
           </div>
           </Link>
-        
         </div>
         <div>
           <img src="https://drive.google.com/uc?export=view&id=1Qne_O096dVPtBE53wWv41D9ZNT-481wW" />
