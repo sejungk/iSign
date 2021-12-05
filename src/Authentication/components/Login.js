@@ -6,14 +6,16 @@ import { useUserContext } from "../context/userContext";
 export const Login = () => {
   const emailRef=useRef();
   const passwordRef=useRef();
-  const logInUser = useUserContext();
+  const loginUser = useUserContext();
 
 
   const handleSubmit=(event)=>{
     event.preventDefault()
     const email = emailRef.current.value;
     const password  = passwordRef.current.value;
-    if(email && password) logInUser(email, password)
+    if(email && password){
+      return loginUser(email, password);
+    } 
   }
 
   return (
@@ -27,4 +29,3 @@ export const Login = () => {
     </div>
   )
 }
-

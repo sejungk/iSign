@@ -56343,53 +56343,55 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./src/Authentication/components/Auth.js":
-/*!***********************************************!*\
-  !*** ./src/Authentication/components/Auth.js ***!
-  \***********************************************/
-/*! exports provided: Auth */
+/***/ "./src/App.js":
+/*!********************!*\
+  !*** ./src/App.js ***!
+  \********************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Auth", function() { return Auth; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _signup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./signup */ "./src/Authentication/components/signup.js");
-/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Login */ "./src/Authentication/components/Login.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+/* harmony import */ var _components_Routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Routes */ "./src/components/Routes.js");
 
 
 
-
-var Auth = function Auth() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      index = _useState2[0],
-      setIdex = _useState2[1];
-
-  var toggleIndex = function toggleIndex() {
-    setIdex(function (prevState) {
-      return !prevState;
-    });
-  };
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "auth-logic"
-  }, !index ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Login__WEBPACK_IMPORTED_MODULE_2__["Login"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_signup__WEBPACK_IMPORTED_MODULE_1__["SignUp"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    onClick: toggleIndex
-  }, !index ? "New to iSign? Create your account here" : "Login to get access to your lessons"));
+var App = function App() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Routes__WEBPACK_IMPORTED_MODULE_1__["default"], null));
 };
+
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./src/Authentication/components/Auth.js":
+/*!***********************************************!*\
+  !*** ./src/Authentication/components/Auth.js ***!
+  \***********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Signup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Signup */ "./src/Authentication/components/Signup.js");
+/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Login */ "./src/Authentication/components/Login.js");
+
+
+ // export const Auth=()=>{
+// const [index, setIndex] = useState(false);
+//   const toggleIndex = () => {
+//     setIndex((prevState) => !prevState);
+//   };
+//   return (
+//     <div className="auth-logic">
+//        {!index ? <Signin /> : <Signup />}
+//     </div>
+//   )
+// }
 
 /***/ }),
 
@@ -56411,13 +56413,16 @@ __webpack_require__.r(__webpack_exports__);
 var Login = function Login() {
   var emailRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
   var passwordRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-  var logInUser = Object(_context_userContext__WEBPACK_IMPORTED_MODULE_1__["useUserContext"])();
+  var loginUser = Object(_context_userContext__WEBPACK_IMPORTED_MODULE_1__["useUserContext"])();
 
   var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
     var email = emailRef.current.value;
     var password = passwordRef.current.value;
-    if (email && password) logInUser(email, password);
+
+    if (email && password) {
+      return loginUser(email, password);
+    }
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -56439,9 +56444,9 @@ var Login = function Login() {
 
 /***/ }),
 
-/***/ "./src/Authentication/components/signup.js":
+/***/ "./src/Authentication/components/Signup.js":
 /*!*************************************************!*\
-  !*** ./src/Authentication/components/signup.js ***!
+  !*** ./src/Authentication/components/Signup.js ***!
   \*************************************************/
 /*! exports provided: SignUp */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -56465,7 +56470,10 @@ var SignUp = function SignUp() {
     var name = nameRef.current.value;
     var email = emailRef.current.value;
     var password = passwordRef.current.value;
-    if (name && email && password) signupUser(name, email, password);
+
+    if (name && email && password) {
+      return signupUser(name, email, password);
+    }
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -56495,11 +56503,12 @@ var SignUp = function SignUp() {
 /*!***************************************************!*\
   !*** ./src/Authentication/context/userContext.js ***!
   \***************************************************/
-/*! exports provided: useUserContext, UserContextProvider */
+/*! exports provided: UserContext, useUserContext, UserContextProvider, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserContext", function() { return UserContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useUserContext", function() { return useUserContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserContextProvider", function() { return UserContextProvider; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -56533,7 +56542,7 @@ var UserContextProvider = function UserContextProvider(_ref) {
       user = _useState2[0],
       setUser = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState4 = _slicedToArray(_useState3, 2),
       loading = _useState4[0],
       setLoading = _useState4[1];
@@ -56546,17 +56555,22 @@ var UserContextProvider = function UserContextProvider(_ref) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     setLoading(true);
     var unsubscribe = Object(firebase_auth__WEBPACK_IMPORTED_MODULE_1__["onAuthStateChanged"])(_firebase__WEBPACK_IMPORTED_MODULE_2__["auth"], function (res) {
-      res ? setUser(res) : setUser(null);
+      if (res) {
+        setUser(res);
+      } else {
+        setUser(null);
+      }
+
       setError("");
       setLoading(false);
     });
     return unsubscribe;
   }, []);
 
-  var signupUser = function signupUser(email, name, password) {
+  var signupUser = function signupUser(name, email, password) {
     setLoading(true);
     Object(firebase_auth__WEBPACK_IMPORTED_MODULE_1__["createUserWithEmailAndPassword"])(_firebase__WEBPACK_IMPORTED_MODULE_2__["auth"], email, password).then(function () {
-      Object(firebase_auth__WEBPACK_IMPORTED_MODULE_1__["updateProfile"])(_firebase__WEBPACK_IMPORTED_MODULE_2__["auth"].currentUser, {
+      return Object(firebase_auth__WEBPACK_IMPORTED_MODULE_1__["updateProfile"])(_firebase__WEBPACK_IMPORTED_MODULE_2__["auth"].currentUser, {
         displayName: name
       });
     }).then(function (res) {
@@ -56568,9 +56582,9 @@ var UserContextProvider = function UserContextProvider(_ref) {
     });
   };
 
-  var loginUser = function loginUser(email, passowrd) {
+  var loginUser = function loginUser(email, password) {
     setLoading(true);
-    Object(firebase_auth__WEBPACK_IMPORTED_MODULE_1__["signInWithEmailAndPassword"])(_firebase__WEBPACK_IMPORTED_MODULE_2__["auth"], email, passowrd).then(function (res) {
+    Object(firebase_auth__WEBPACK_IMPORTED_MODULE_1__["signInWithEmailAndPassword"])(_firebase__WEBPACK_IMPORTED_MODULE_2__["auth"], email, password).then(function (res) {
       return console.log(res);
     })["catch"](function (error) {
       return setError(error.message);
@@ -56591,10 +56605,11 @@ var UserContextProvider = function UserContextProvider(_ref) {
     loginUser: loginUser,
     logoutUser: logoutUser
   };
-  return /*#__PURE__*/React.createElement(UserContext.Provider, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(UserContext.Provider, {
     value: contextValue
   }, children);
 };
+/* harmony default export */ __webpack_exports__["default"] = (UserContextProvider);
 
 /***/ }),
 
@@ -56924,6 +56939,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _LearningPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./LearningPage */ "./src/components/LearningPage.js");
 /* harmony import */ var _CoursePage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CoursePage */ "./src/components/CoursePage.js");
 /* harmony import */ var _Authentication_components_Auth__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Authentication/components/Auth */ "./src/Authentication/components/Auth.js");
+/* harmony import */ var _Authentication_components_Signup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Authentication/components/Signup */ "./src/Authentication/components/Signup.js");
+/* harmony import */ var _Authentication_components_Login__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Authentication/components/Login */ "./src/Authentication/components/Login.js");
+/* harmony import */ var _Authentication_context_userContext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Authentication/context/userContext */ "./src/Authentication/context/userContext.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -56953,6 +56971,9 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
+
+
 var Routes = /*#__PURE__*/function (_Component) {
   _inherits(Routes, _Component);
 
@@ -56967,10 +56988,25 @@ var Routes = /*#__PURE__*/function (_Component) {
   _createClass(Routes, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+      var _useUserContext = Object(_Authentication_context_userContext__WEBPACK_IMPORTED_MODULE_8__["useUserContext"])(),
+          user = _useUserContext.user,
+          error = _useUserContext.error;
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, error && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "error"
+      }, error), user ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/",
-        component: _Authentication_components_Auth__WEBPACK_IMPORTED_MODULE_5__["Auth"]
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Routes, null)));
+        component: _CoursePage__WEBPACK_IMPORTED_MODULE_4__["default"]
+      })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/",
+        component: _LandingPage__WEBPACK_IMPORTED_MODULE_2__["default"]
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/login",
+        component: _Authentication_components_Login__WEBPACK_IMPORTED_MODULE_7__["Login"]
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/signup",
+        component: _Authentication_components_Signup__WEBPACK_IMPORTED_MODULE_6__["SignUp"]
+      })));
     }
   }]);
 
@@ -57025,12 +57061,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _components_Routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Routes */ "./src/components/Routes.js");
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App */ "./src/App.js");
+/* harmony import */ var _Authentication_context_userContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Authentication/context/userContext */ "./src/Authentication/context/userContext.js");
 
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Routes__WEBPACK_IMPORTED_MODULE_3__["default"], null)), document.getElementById('app'));
+
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Authentication_context_userContext__WEBPACK_IMPORTED_MODULE_4__["UserContextProvider"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App__WEBPACK_IMPORTED_MODULE_3__["default"], null))), document.getElementById('app'));
 
 /***/ }),
 

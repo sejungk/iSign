@@ -13,7 +13,9 @@ export const SignUp = ()=>{
     const name=nameRef.current.value;
     const email = emailRef.current.value;
     const password  = passwordRef.current.value;
-    if(name && email && password) signupUser(name, email, password)
+    if(name && email && password) {
+      return signupUser(name, email, password)
+    }
   }
 
   return (

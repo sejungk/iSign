@@ -1,7 +1,8 @@
 import React from 'react';
 
-
 const LandingPage = () => {
+
+
   return (
     <div className="landing-page-wrapper">
         <div className="landing-page-text-wrapper">

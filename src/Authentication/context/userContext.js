@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, useContext} from "react"
+import React, { createContext, useEffect, useState, useContext} from "react"
 import {
   createUserWithEmailAndPassword, 
   updateProfile, 
@@ -6,51 +6,58 @@ import {
   signInWithEmailAndPassword, 
   signOut,
 }from "firebase/auth";
+
 import { auth } from "../../firebase";
 
-const UserContext=createContext({})
+export const UserContext=createContext({});
 
-export const useUserContext=()=> useContext(UserContext);
+export const useUserContext=()=> {
+  return useContext(UserContext);
+};
 
-export const UserContextProvider=({children})=>{
+export const UserContextProvider =({children})=>{
   
   const [user, setUser]=useState(null)
-  const [loading, setLoading]=useState();
+  const [loading, setLoading]=useState(false);
   const [error, setError]=useState("");
 
   useEffect(()=>{
-    setLoading(true)
-    const unsubscribe = onAuthStateChanged(auth, res=>{
-      res ? setUser(res) : setUser(null)
-      setError("")
-      setLoading(false)
+    setLoading(true);
+    const unsubscribe = onAuthStateChanged(auth, (res)=>{
+      if(res) {
+        setUser(res)
+       }else{
+         setUser(null)
+       }
+      setError("");
+      setLoading(false);
     })
     return unsubscribe;
-  },[])
+  }, []);
 
-  const signupUser=(email, name, password)=>{
-    setLoading(true)
+  const signupUser=(name, email, password)=>{
+    setLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
-    .then(()=>{
-      updateProfile(auth.currentUser, {
-        displayName: name,
-      })
-    })
-    .then((res)=>console.log(res))
-    .catch((error)=>setError(error.message))
-    .finally(()=>setLoading(false))
+      .then(()=>
+        updateProfile(auth.currentUser, {
+          displayName: name,
+       })
+      )
+      .then((res)=>console.log(res))
+      .catch((error)=>setError(error.message))
+      .finally(()=>setLoading(false))
   }
 
-  const loginUser=(email, passowrd)=>{
+  const loginUser=(email, password)=>{
     setLoading(true)
-    signInWithEmailAndPassword(auth, email, passowrd)
+    signInWithEmailAndPassword(auth, email, password)
       .then((res)=>console.log(res))
       .catch((error)=>setError(error.message))
       .finally(()=>setLoading(false))
   }
 
   const logoutUser = () =>{
-    signOut(auth)
+    signOut(auth);
   }
 
   const contextValue = {
@@ -62,9 +69,11 @@ export const UserContextProvider=({children})=>{
     logoutUser,
   }
 
-  return (<UserContext.Provider value={contextValue}>
+  return (
+  <UserContext.Provider value={contextValue}>
     {children}
   </UserContext.Provider>
   )
 }
 
+export default UserContextProvider;
