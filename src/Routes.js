@@ -3,10 +3,9 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import LearningPage from "./components/LearningPage";
 import CoursePage from "./components/CoursePage";
-// import { Login } from "./Authentication/Login";
-// import { Signup } from "./Authentication/Signup";
-import { Auth
- } from "./Authentication/Auth";
+import { Auth} from "./Authentication/Auth";
+
+
 export default class Routes extends Component {
 
   render() {

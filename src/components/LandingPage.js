@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+
+
 const LandingPage = () => {
 
 
@@ -13,7 +15,7 @@ const LandingPage = () => {
             An interactive learning platform designed to aid you in your ASL learning journey.
           </p>
          
-          <Link to="/courses">
+          <Link to="/auth">
           <div className="signup-bttn">
           Get Started
           </div>
