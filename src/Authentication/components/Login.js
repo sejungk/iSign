@@ -1,46 +1,30 @@
-// import * as React from "react";
-// import { useCallback } from 'react'
-// import { signInWithEmailAndPassword } from 'firebase/auth'
-// import { auth } from '../firebase'
-
-// import Card from '@mui/material/Card';
-// import Button from '@mui/material/Button';
-// import Typography from '@mui/material/Typography';
-// import CardContent from '@mui/material/CardContent';
-// <link
-//   rel="stylesheet"
-//   href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-// />
+import React {useRef} from "react";
+import { useUserContext } from "../context/userContext";
 
 
 
-// export const Login = () => {
-//   const handleSubmit = useCallback(async event => {
-//     event.preventDefault()
-//     const { email, password } = event.target.elements
-//     try {
-//       await signInWithEmailAndPassword(auth, email.value, password.value)
-//     } catch (e) {
-//       alert(e.message)
-//     }
-//   }, [])
+export const Login = () => {
+  const emailRef=useRef();
+  const passwordRef=useRef();
+  const logInUser = useUserContext();
 
-//   return (
-//     <Card sx={{ width: 325, padding: 5, margin: 5, height: 300 }}>
-//       <CardContent>
-//       <form onSubmit={handleSubmit}>
-//               <label htmlFor="email">
-//                 <Typography>Email</Typography>
-//               </label>
-//               <input name="email" type="text" />
-//               <label htmlFor="password">
-//                 <Typography>Password</Typography>
-//               </label>
-//               <input name="password" type="password" />
-//       </form>
-//       <Button type="submit">Login</Button>
-//       </CardContent>
-//     </Card>
-//   )
-// }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const email = emailRef.current.value;
+    const password  = passwordRef.current.value;
+    if(email && password) logInUser(email, password)
+  }
+
+  return (
+   <div className="form">
+      <h2> Login </h2>
+      <form onSubmit={handleSubmit}>
+        <input placeholder="Email" type="email" ref={emailRef} />
+        <input placeholder="Password" type="password" ref={psdRef} />
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+  )
+}
 

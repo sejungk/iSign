@@ -10,7 +10,7 @@ import { auth } from "../../firebase";
 
 const UserContext=createContext({})
 
-export const userContextProvider=()=> useContext(UserContext);
+export const useUserContext=()=> useContext(UserContext);
 
 export const UserContextProvider=({children})=>{
   
@@ -28,12 +28,12 @@ export const UserContextProvider=({children})=>{
     return unsubscribe;
   },[])
 
-  const signUpUser=(email, firstName, lastName, password)=>{
+  const signUpUser=(email, name, password)=>{
     setLoading(true)
     createUserWithEmailAndPassword(auth, email, password)
     .then(()=>{
-      return updateProfile(auth.currentUser, {
-        displayName: firstName,
+      updateProfile(auth.currentUser, {
+        displayName: name,
       })
     })
     .then((res)=>console.log(res))
@@ -59,12 +59,12 @@ export const UserContextProvider=({children})=>{
     error,
     signUpUser,
     loginUser,
-    logoutUser
+    logoutUser,
   }
 
-  return (<UserContext.provider value={contextValue}>
+  return (<UserContext.Provider value={contextValue}>
     {children}
-  </UserContext.provider>
+  </UserContext.Provider>
   )
 }
 
