@@ -6,14 +6,14 @@ export const SignUp = ()=>{
   const nameRef=useRef();
   const emailRef=useRef();
   const passwordRef=useRef();
-  const signUpUser = useUserContext();
+  const signupUser = useUserContext();
 
   const handleSubmit=(event)=>{
     event.preventDefault();
     const name=nameRef.current.value;
     const email = emailRef.current.value;
     const password  = passwordRef.current.value;
-    if(name && email && password) signUpUser(name, email, password)
+    if(name && email && password) signupUser(name, email, password)
   }
 
   return (
@@ -28,3 +28,4 @@ export const SignUp = ()=>{
     </div>
   )
 }
+

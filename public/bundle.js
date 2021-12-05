@@ -56458,14 +56458,14 @@ var SignUp = function SignUp() {
   var nameRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
   var emailRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
   var passwordRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-  var signUpUser = Object(_context_userContext__WEBPACK_IMPORTED_MODULE_1__["useUserContext"])();
+  var signupUser = Object(_context_userContext__WEBPACK_IMPORTED_MODULE_1__["useUserContext"])();
 
   var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
     var name = nameRef.current.value;
     var email = emailRef.current.value;
     var password = passwordRef.current.value;
-    if (name && email && password) signUpUser(name, email, password);
+    if (name && email && password) signupUser(name, email, password);
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -56553,7 +56553,7 @@ var UserContextProvider = function UserContextProvider(_ref) {
     return unsubscribe;
   }, []);
 
-  var signUpUser = function signUpUser(email, name, password) {
+  var signupUser = function signupUser(email, name, password) {
     setLoading(true);
     Object(firebase_auth__WEBPACK_IMPORTED_MODULE_1__["createUserWithEmailAndPassword"])(_firebase__WEBPACK_IMPORTED_MODULE_2__["auth"], email, password).then(function () {
       Object(firebase_auth__WEBPACK_IMPORTED_MODULE_1__["updateProfile"])(_firebase__WEBPACK_IMPORTED_MODULE_2__["auth"].currentUser, {
@@ -56587,7 +56587,7 @@ var UserContextProvider = function UserContextProvider(_ref) {
     user: user,
     loading: loading,
     error: error,
-    signUpUser: signUpUser,
+    signupUser: signupUser,
     loginUser: loginUser,
     logoutUser: logoutUser
   };

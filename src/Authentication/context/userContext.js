@@ -28,7 +28,7 @@ export const UserContextProvider=({children})=>{
     return unsubscribe;
   },[])
 
-  const signUpUser=(email, name, password)=>{
+  const signupUser=(email, name, password)=>{
     setLoading(true)
     createUserWithEmailAndPassword(auth, email, password)
     .then(()=>{
@@ -57,7 +57,7 @@ export const UserContextProvider=({children})=>{
     user,
     loading,
     error,
-    signUpUser,
+    signupUser,
     loginUser,
     logoutUser,
   }
