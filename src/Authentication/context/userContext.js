@@ -1,11 +1,18 @@
-import { createContext, useEffect, useState } from "react"
-import {createUserWithEmailAndPassword, updateProfile, onAuthStateChanged}from "firebase/auth";
+import { createContext, useEffect, useState, useContext} from "react"
+import {
+  createUserWithEmailAndPassword, 
+  updateProfile, 
+  onAuthStateChanged, 
+  signInWithEmailAndPassword, 
+  signOut,
+}from "firebase/auth";
 import { auth } from "../../firebase";
-
 
 const UserContext=createContext({})
 
-const UserContextProvider=({children})=>{
+export const userContextProvider=()=> useContext(UserContext);
+
+export const UserContextProvider=({children})=>{
   
   const [user, setUser]=useState(null)
   const [loading, setLoading]=useState();
@@ -21,7 +28,6 @@ const UserContextProvider=({children})=>{
     return unsubscribe;
   },[])
 
-
   const signUpUser=(email, firstName, lastName, password)=>{
     setLoading(true)
     createUserWithEmailAndPassword(auth, email, password)
@@ -35,15 +41,27 @@ const UserContextProvider=({children})=>{
     .finally(()=>setLoading(false))
   }
 
-  const signInUser=(email, passowrd)=>{
-
+  const loginUser=(email, passowrd)=>{
+    setLoading(true)
+    signInWithEmailAndPassword(auth, email, passowrd)
+      .then((res)=>console.log(res))
+      .catch((error)=>setError(error.message))
+      .finally(()=>setLoading(false))
   }
 
   const logoutUser = () =>{
-
+    signOut(auth)
   }
 
-  
+  const contextValue = {
+    user,
+    loading,
+    error,
+    signUpUser,
+    loginUser,
+    logoutUser
+  }
+
   return (<UserContext.provider value={contextValue}>
     {children}
   </UserContext.provider>
