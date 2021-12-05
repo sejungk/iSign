@@ -1,6 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
-const CoursePage = () => {
+
+const CoursePage = (props) => {
   return (
     <div className="course-page-container">
       <div className="profile-wrapper">
