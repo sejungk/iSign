@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState, useContext} from "react"
+import React, { useEffect, useState, useContext} from "react";
 import {
   createUserWithEmailAndPassword, 
   updateProfile, 
@@ -9,7 +9,7 @@ import {
 
 import { auth } from "../../firebase";
 
-export const UserContext=createContext({});
+export const UserContext = React.createContext({});
 
 export const useUserContext=()=> {
   return useContext(UserContext);
@@ -18,7 +18,7 @@ export const useUserContext=()=> {
 export const UserContextProvider =({children})=>{
   
   const [user, setUser]=useState(null)
-  const [loading, setLoading]=useState(false);
+  const [loading, setLoading]=useState(true);
   const [error, setError]=useState("");
 
   useEffect(()=>{
@@ -76,4 +76,3 @@ export const UserContextProvider =({children})=>{
   )
 }
 
-export default UserContextProvider;

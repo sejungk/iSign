@@ -1,14 +1,14 @@
 import React from "react";
 import Routes from "./components/Routes";
 
-const App=()=> {
+// const App=()=> {
 
-  return (
-      <div>
-      <Routes/>
-      </div>
-  );
-}
+//   return (
+//       <div>
+//       <Routes/>
+//       </div>
+//   );
+// }
 
-export default App;
+// export default App;
 

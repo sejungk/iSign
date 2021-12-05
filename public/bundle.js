@@ -56347,7 +56347,7 @@ module.exports = g;
 /*!********************!*\
   !*** ./src/App.js ***!
   \********************/
-/*! exports provided: default */
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56356,13 +56356,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Routes */ "./src/components/Routes.js");
 
-
-
-var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Routes__WEBPACK_IMPORTED_MODULE_1__["default"], null));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (App);
+ // const App=()=> {
+//   return (
+//       <div>
+//       <Routes/>
+//       </div>
+//   );
+// }
+// export default App;
 
 /***/ }),
 
@@ -56503,7 +56504,7 @@ var SignUp = function SignUp() {
 /*!***************************************************!*\
   !*** ./src/Authentication/context/userContext.js ***!
   \***************************************************/
-/*! exports provided: UserContext, useUserContext, UserContextProvider, default */
+/*! exports provided: UserContext, useUserContext, UserContextProvider */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56530,7 +56531,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var UserContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({});
+var UserContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({});
 var useUserContext = function useUserContext() {
   return Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(UserContext);
 };
@@ -56542,7 +56543,7 @@ var UserContextProvider = function UserContextProvider(_ref) {
       user = _useState2[0],
       setUser = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
       _useState4 = _slicedToArray(_useState3, 2),
       loading = _useState4[0],
       setLoading = _useState4[1];
@@ -56609,7 +56610,6 @@ var UserContextProvider = function UserContextProvider(_ref) {
     value: contextValue
   }, children);
 };
-/* harmony default export */ __webpack_exports__["default"] = (UserContextProvider);
 
 /***/ }),
 
@@ -56941,7 +56941,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Authentication_components_Auth__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Authentication/components/Auth */ "./src/Authentication/components/Auth.js");
 /* harmony import */ var _Authentication_components_Signup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Authentication/components/Signup */ "./src/Authentication/components/Signup.js");
 /* harmony import */ var _Authentication_components_Login__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Authentication/components/Login */ "./src/Authentication/components/Login.js");
-/* harmony import */ var _Authentication_context_userContext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Authentication/context/userContext */ "./src/Authentication/context/userContext.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -56973,7 +56972,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var Routes = /*#__PURE__*/function (_Component) {
   _inherits(Routes, _Component);
 
@@ -56988,25 +56986,10 @@ var Routes = /*#__PURE__*/function (_Component) {
   _createClass(Routes, [{
     key: "render",
     value: function render() {
-      var _useUserContext = Object(_Authentication_context_userContext__WEBPACK_IMPORTED_MODULE_8__["useUserContext"])(),
-          user = _useUserContext.user,
-          error = _useUserContext.error;
-
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, error && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "error"
-      }, error), user ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/",
-        component: _CoursePage__WEBPACK_IMPORTED_MODULE_4__["default"]
-      })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-        path: "/",
-        component: _LandingPage__WEBPACK_IMPORTED_MODULE_2__["default"]
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-        path: "/login",
         component: _Authentication_components_Login__WEBPACK_IMPORTED_MODULE_7__["Login"]
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-        path: "/signup",
-        component: _Authentication_components_Signup__WEBPACK_IMPORTED_MODULE_6__["SignUp"]
-      })));
+      }));
     }
   }]);
 
@@ -57062,13 +57045,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App */ "./src/App.js");
-/* harmony import */ var _Authentication_context_userContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Authentication/context/userContext */ "./src/Authentication/context/userContext.js");
+/* harmony import */ var _components_Routes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Routes */ "./src/components/Routes.js");
 
 
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Authentication_context_userContext__WEBPACK_IMPORTED_MODULE_4__["UserContextProvider"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App__WEBPACK_IMPORTED_MODULE_3__["default"], null))), document.getElementById('app'));
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Routes__WEBPACK_IMPORTED_MODULE_4__["default"], null))), document.getElementById('app'));
 
 /***/ }),
 
