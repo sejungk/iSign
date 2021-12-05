@@ -12,8 +12,8 @@ export default class Routes extends Component {
       <div>
         <Switch>
           {/* <Route path="/" component={LandingPage} /> */}
-          {/* <Route exact path="/" component={CoursePage} /> */}
-          <Route exact path="/" component={LearningPage} />
+          <Route exact path="/" component={CoursePage} />
+          {/* <Route exact path="/" component={LearningPage} /> */}
           <Routes/>
         </Switch>
       </div>
