@@ -1,6 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
-const CoursePage = () => {
+
+const CoursePage = (props) => {
   return (
     <div className="course-page-container">
       <div className="profile-wrapper">
@@ -30,13 +32,15 @@ const CoursePage = () => {
         </div>
 
         <div className="course-options">
-            <div className="course-wrapper">
-              <div className="course-item alphabet-course">
-                <h1>The alphabet</h1>
-                <p>6 lessons | 2 quizzes</p>
-                <img src="https://drive.google.com/uc?export=view&id=1bzlRbUWKXQFP4T39u1n-OGOAz9dajhzx"/>
+              <div className="course-wrapper">
+              <Link to="/alphabet-lesson">
+                  <div className="course-item alphabet-course">
+                    <h1>The alphabet</h1>
+                    <p>6 lessons | 2 quizzes</p>
+                    <img src="https://drive.google.com/uc?export=view&id=1bzlRbUWKXQFP4T39u1n-OGOAz9dajhzx"/>
+                  </div>
+                </Link>
               </div>
-            </div>
             <div className="course-wrapper">
                 <img className="lock-icon" src="https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR" />
                 <h5>Course coming soon</h5>
