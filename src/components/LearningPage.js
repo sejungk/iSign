@@ -2,12 +2,18 @@ import React, { useRef, useEffect } from "react";
 import { Hands } from "@mediapipe/hands";
 import * as Camera from "@mediapipe/camera_utils";
 // import Webcam from "react-webcam";
+import * as tf from "@tensorflow/tfjs"
 
 function LearningPage() {
 
+  // async function getModel(){
+  //   https://isign-43075.web.app/learning
+  //   const model = await tf.loadLayersModel('../public/model.json');
+  //   console.log("Model Here")
+  //   console.log(model)
+  // }
 
-
- 
+//  getModel()
 
   return (
    <div className="learning-page-container">
