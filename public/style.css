@@ -345,3 +345,65 @@ a {
   border: solid pink;
 }
 /* Learning Page - END */
+
+/* Authtication forms- START */
+.auth-logic{
+  box-shadow: 0 1px 6px #ccc;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+  padding: 22px;
+}
+
+input {
+  padding: 12px;
+  margin: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 4px #ccc;
+  border-radius: 6px;
+  font-size: 18px;
+  width: 93%;
+}
+.form {
+  width: 50%;
+}
+
+.form > h2 {
+  text-align: center;
+}
+
+.form > form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form > form > p {
+  cursor: pointer;
+}
+
+button {
+  width: 200px;
+  height: 55px;
+  line-height: 55px;
+  font-weight: 500;
+  color: white;
+  background-color: #ffa755;
+  border-radius: 30px;
+  text-align: center;
+  margin-top: 45px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff8717;
+  transition: .5s;
+}
+/* Authtication forms - END */
