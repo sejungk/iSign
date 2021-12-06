@@ -30,13 +30,14 @@ async function loadModel() {
     '0.5422443748', '0.7269453406', '-0.01042824239']
  
     let numArr = arr.map(Number)
-    let tensorValue = await  tf.tensor2d(numArr, [1, 63])
+    let tensorValue = await tf.tensor2d(numArr, [1, 63])
     // tensorValue.print()
-    model.summary()
+    // model.summary()
   
 
     let prediction = await model.predict(tensorValue)
     prediction.print()
+    return model
   }
   
-  loadModel()
+loadModel()

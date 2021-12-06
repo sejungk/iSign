@@ -4,16 +4,19 @@ import * as Camera from "@mediapipe/camera_utils";
 // import Webcam from "react-webcam";
 import * as tf from "@tensorflow/tfjs"
 
+
 function LearningPage() {
 
-  // async function getModel(){
-  //   https://isign-43075.web.app/learning
-  //   const model = await tf.loadLayersModel('../public/model.json');
-  //   console.log("Model Here")
-  //   console.log(model)
-  // }
+  async function getModel(){
+    
+    let m = await loadModel()
+    console.log(m)
+    // const model = await tf.loadLayersModel('./public/isign_model.json');
+    console.log("Model Here")
+   m.summary()
+  }
 
-//  getModel()
+
 
   return (
    <div className="learning-page-container">
@@ -24,7 +27,7 @@ function LearningPage() {
      </div>
      <div className="video-wrapper">
        <video id="web_cam_"></video>
-       {/* <button id="train_button">Start Training</button> */}
+     <button onClick={() =>getModel()}id="train_button">Start Training</button> 
      </div>
    </div>
   )
