@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AlphabetPage = () => {
   return (
@@ -6,9 +7,11 @@ const AlphabetPage = () => {
        <div className="alphabet-header">The alphabet</div>
        <div className="alphabet-lessons-wrapper">
          <div className="lesson-wrapper">
-           <div className="lesson-item">
-             <h3>A to E</h3>
-           </div>
+          <Link to="/learning">
+            <div className="lesson-item">
+              <h3>A to E</h3>
+            </div>
+          </Link>
          </div>
          <div className="lesson-wrapper">
             <img className="lesson-lock-icon" src="https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR" />

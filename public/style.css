@@ -3,6 +3,19 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+a {
+  color: inherit;
+  display: inline-block;
+  position: absolute;
+  border: solid black;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  text-decoration: none;
+}
+
 /* Landing Page - START */
 .landing-page-wrapper {
   background-color: #FFFBF4;
@@ -32,27 +45,35 @@ body {
   line-height: 55px;
   margin-bottom: 2%;
 }
+
 .signup-bttn {
   width: 200px;
   height: 55px;
-  line-height: 55px;
-  font-weight: 500;
-  color: white;
   background-color: #ffa755;
   border-radius: 30px;
-  text-align: center;
   margin-top: 45px;
-  font-size: 18px;
-  letter-spacing: 1px;
   cursor: pointer;
 }
+
+.signup-bttn p {
+  color: white;
+  line-height: 55px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+}
+
+.get-started-bttn {
+  position: relative;
+  width: inherit;
+  height: inherit;
+}
+
 .signup-bttn:hover {
   background-color: #ff8717;
   transition: .5s;
-}
-/* the a tag is for react router Link default styling */
-a {     
-  text-decoration: none; 
 }
 
 .landing-page-wrapper  img {

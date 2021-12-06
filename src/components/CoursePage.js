@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 const CoursePage = (props) => {
@@ -33,7 +33,7 @@ const CoursePage = (props) => {
 
         <div className="course-options">
               <div className="course-wrapper">
-              <Link to="/alphabet-lesson">
+                <Link to="/alphabet-lesson">
                   <div className="course-item alphabet-course">
                     <h1>The alphabet</h1>
                     <p>6 lessons | 2 quizzes</p>
