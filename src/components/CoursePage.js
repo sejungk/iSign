@@ -24,7 +24,7 @@ const CoursePage = () => {
             </div>
             {/* <div className="profile-nav-item-wrapper"> */}
               <div className="profile-nav-item">
-                
+
                 <img src="https://drive.google.com/uc?export=view&id=1y3A1SeM99ZG5wrNucqv3tibgIDinoSnt" />
                 <Link to="/">
                 <p onClick={logout}>Sign out</p>
@@ -41,7 +41,7 @@ const CoursePage = () => {
 
         <div className="course-options">
               <div className="course-wrapper">
-              <Link to="/alphabet-lesson">
+                <Link to="/alphabet-lesson">
                   <div className="course-item alphabet-course">
                     <h1>The alphabet</h1>
                     <p>6 lessons | 2 quizzes</p>
