@@ -56663,6 +56663,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_LearningPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/LearningPage */ "./src/components/LearningPage.js");
 /* harmony import */ var _components_CoursePage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/CoursePage */ "./src/components/CoursePage.js");
 /* harmony import */ var _Authentication_Auth__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Authentication/Auth */ "./src/Authentication/Auth.js");
+/* harmony import */ var _components_AlphabetPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/AlphabetPage */ "./src/components/AlphabetPage.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -56684,6 +56685,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -56720,8 +56722,20 @@ var Routes = /*#__PURE__*/function (_Component) {
         component: _components_CoursePage__WEBPACK_IMPORTED_MODULE_4__["default"]
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         exact: true,
+        path: "/",
+        component: _components_LandingPage__WEBPACK_IMPORTED_MODULE_2__["default"]
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        exact: true,
+        path: "/courses",
+        component: _components_CoursePage__WEBPACK_IMPORTED_MODULE_4__["default"]
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        exact: true,
         path: "/learning",
         component: _components_LearningPage__WEBPACK_IMPORTED_MODULE_3__["default"]
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        exact: true,
+        path: "/alphabet",
+        component: _components_AlphabetPage__WEBPACK_IMPORTED_MODULE_6__["default"]
       })));
     }
   }]);
@@ -56730,6 +56744,72 @@ var Routes = /*#__PURE__*/function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 
+
+/***/ }),
+
+/***/ "./src/components/AlphabetPage.js":
+/*!****************************************!*\
+  !*** ./src/components/AlphabetPage.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var AlphabetPage = function AlphabetPage() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "alphabet-page-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "alphabet-header"
+  }, "The alphabet"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "alphabet-lessons-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lesson-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lesson-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "A to E"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lesson-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "lesson-lock-icon",
+    src: "https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lesson-item locked-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "F to J"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lesson-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "lesson-lock-icon",
+    src: "https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lesson-item locked-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "H to L"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lesson-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "lesson-lock-icon",
+    src: "https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lesson-item locked-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "M to Q"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lesson-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "lesson-lock-icon",
+    src: "https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lesson-item locked-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "R to V"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lesson-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "lesson-lock-icon",
+    src: "https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "lesson-item locked-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "W to Z")))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (AlphabetPage);
 
 /***/ }),
 
@@ -56785,11 +56865,13 @@ var CoursePage = function CoursePage() {
     className: "course-options"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "course-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/alphabet-lesson"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "course-item alphabet-course"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "The alphabet"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "6 lessons | 2 quizzes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://drive.google.com/uc?export=view&id=1bzlRbUWKXQFP4T39u1n-OGOAz9dajhzx"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "course-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "lock-icon",
@@ -56862,7 +56944,7 @@ var LandingPage = function LandingPage() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "landing-page-text-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "A new way to learn American Sign Language"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "An interactive learning platform designed to aid you in your ASL learning journey."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/auth"
+    to: "/courses"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "signup-bttn"
   }, "Get Started"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -56894,109 +56976,6 @@ __webpack_require__.r(__webpack_exports__);
  // import Webcam from "react-webcam";
 
 function LearningPage() {
-  var body = document.body;
-  var webcamRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null); // let camera = null;
-
-  var videoRef = document.querySelector("video"); // let startButton = document.getElementById("train_button");
-  // startButton.addEventListener("click", start);
-  // const DataClass = new CaptureData([], {});
-  // let stopVidTimeOut;
-  // let currentClass;
-  // const hands = new Hands()
-  // // const hands = new Hands({
-  // //   locateFile: (file) => {
-  // //     return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
-  // //   },
-  // // });
-  // hands.setOptions({
-  //   maxNumHands: 2,
-  //   modelComplexity: 1,
-  //   minDetectionConfidence: 0.5,
-  //   minTrackingConfidence: 0.5,
-  // });
-  // function start(event) {
-  //   startButton.remove();
-  //   getMedia(videoRef);
-  //   let labels = prompt("Enter Labels:");
-  //   DataClass.makeLabels(labels);
-  //   createLabelButtons(DataClass.labels);
-  //   console.log(DataClass);
-  // }
-  // function createLabelButtons(labels) {
-  //   for (let key in labels) {
-  //     let captureButton = document.createElement("button");
-  //     captureButton.innerHTML = `Train Label ${key}`;
-  //     captureButton.setAttribute("id", key);
-  //     captureButton.classList.add("training_buttons");
-  //     captureButton.onclick = function (e) {
-  //     setClass(this.id);
-  //     collectData()
-  //     };
-  //     body.append(captureButton);
-  //   }
-  //   let stopButton = document.createElement("button");
-  //   stopButton.innerHTML="stop"
-  //   stopButton.addEventListener('click', stopCollection)
-  //   body.append(stopButton)
-  // }
-  // function stopCollection(){
-  //     console.log("stopped")
-  //     console.log("Length of DataSet:",DataClass.dataSet.length)
-  //     console.log(DataClass.dataSet)
-  //     console.log("labels", DataClass.labels)
-  //     let df = new dfd.DataFrame(DataClass.dataSet)
-  //     df.print()
-  //     dfd.to_csv(df, { fileName: "A_D_Lauren.csv", download: true});
-  // }
-  // async function getMedia(video) {
-  //   let constraints = { audio: false, video: { width: 640, height: 400 } };
-  //   navigator.mediaDevices
-  //     .getUserMedia(constraints)
-  //     .then(function (mediaStream) {
-  //       video.srcObject = mediaStream;
-  //       video.onloadedmetadata = function (e) {
-  //         video.play();
-  //       };
-  //     })
-  //     .catch(function (err) {
-  //       console.log(err.name + ": " + err.message);
-  //     });
-  // }
-  // //mediaPipe
-  // function onResults(results) {
-  //     let landMarks = results.multiHandLandmarks
-  //     if (landMarks.length > 0 ) {
-  //             DataClass.addFramesToData(landMarks[0], currentClass);
-  //             console.log(landMarks[0])
-  //       }
-  //     //   console.log(DataClass.dataSet)
-  // }
-  // const camera = new Camera(videoRef, {
-  //   onFrame: async () => {
-  //     await hands.send({ image: videoRef });
-  //   },
-  //   width: 640,
-  //   height: 400,
-  // });
-  // function runCamera() {
-  //   camera.start();
-  // }
-  // function stopStreamedVideo(videoElem) {
-  //   const stream = videoElem.srcObject;
-  //   const tracks = stream.getTracks() || null;
-  //   tracks.forEach(function (track) {
-  //     track.stop();
-  //   });
-  //   videoElem.srcObject = null;
-  // }
-  // function setClass(buttonId){
-  //     currentClass = buttonId
-  // }
-  // function collectData() {
-  //   hands.onResults(onResults);
-  // }
-  // runCamera();
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "learning-page-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
