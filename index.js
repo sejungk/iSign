@@ -5,6 +5,9 @@ module.exports = app
 const port = 3000
 
 
+
+app.use(express.static('files'))
+
 app.use(express.static(path.join(__dirname, '.', 'public')));
 
 app.use('*', (req, res) => {
