@@ -5,13 +5,14 @@ import Webcam from "react-webcam";
 import * as tf from "@tensorflow/tfjs"
 
 
-function LearningPage() {
+function LearningPage(props) {
   let letters= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
   let letterKey = new Map()
-
+  
   const canvasRef = useRef(null)
   const videoRef = useRef(null)
-  let [loaded, setloaded] = useState(false)
+  let [letterArr, setLetterArr] = useState([])
+  let [indexCounter, incrementCounter] = useState(0)
   let model;
   const hands = new mp.Hands({
     locateFile: file => {
@@ -19,7 +20,10 @@ function LearningPage() {
     }
   })
 
-
+ function setLettersArr(){
+  let arr = props.location.letters.letterArr
+  console.log(arr)
+ }
 
  function convertLandMarks(landmark){
 
@@ -36,17 +40,15 @@ async function makePrediction(values){
   const p = preds.dataSync();
   let predictionArr = Array.from(p);
   getLetters(predictionArr)
-  // tf.max(preds).print()
 }
 
  function getLetters(arr) {
   const max = Math.max(...arr);
   const index =arr.indexOf(max);
   let answer = letterKey.get(index)
-  
+  console.log(answer)
   if(max > 0.90){
-    
-    console.log(answer)
+    alert(answer)
   }
  
   }
@@ -62,20 +64,20 @@ async function makePrediction(values){
     const videoHeight = videoRef.current.video.videoHeight
     if (results.multiHandLandmarks.length > 0) {
       let landMark = results.multiHandLandmarks[0]
+      console.log(landMark)
       convertLandMarks(landMark)
   }
 }
 
   let camera = null
   useEffect(() => {   
-
+   
     hands.setOptions({
       maxNumHands: 2,
       modelComplexity: 1,
       minDetectionConfidence: 0.7,
       minTrackingConfidence: 0.7
     })
-  
 
     if (typeof videoRef.current !== 'undefined' && videoRef.current !== null) {
       camera = new cam.Camera(videoRef.current.video, {
@@ -87,21 +89,17 @@ async function makePrediction(values){
       })
       camera.start()
     }
+ 
   }, [])
 
 
   async function getModel(){
     model = await loadModel()
-    
-      // let numArr = arr.map(Number)
-      // let tensorValue = await tf.tensor2d(numArr, [1, 63])
-      // // tensorValue.print()
-      // // model.summary()
-      // let prediction = await model.predict(tensorValue)
-      // prediction.print()
       return model
   }
  function startLesson(){
+  //  console.log("props", props.location.letters)
+  setLettersArr()
    getModel()
    setMapValues()
   hands.onResults(onResults)
@@ -109,20 +107,20 @@ async function makePrediction(values){
  }
 
 
-  return (
-   <div className="learning-page-container">
-     <div className="learning-page-content-wrapper">
-       <h1>Lets get started</h1>
-       <p>Make sure your hand is in the frame and copy the handshape below.</p>
-       <img src="https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK" />
-       <button onClick={() =>startLesson()}id="train_button">Start Training</button> 
-     </div>
-    
-     <div className="video-wrapper">
-       <Webcam autoPlay  id="web_cam_" ref={videoRef} className="app__videoFeed" />
-     </div>
-   </div>
-  )
+ return (
+  <div className="learning-page-container">
+    <div className="learning-page-content-wrapper">
+      <h1>Lets get started</h1>
+      <p>Make sure your hand is in the frame and copy the handshape below.</p>
+      <img src="https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK" />
+      <button onClick={() =>startLesson()}id="train_button">Start Training</button> 
+    </div>
+   
+    <div className="video-wrapper">
+      <Webcam autoPlay  id="web_cam_" ref={videoRef} className="app__videoFeed" />
+    </div>
+  </div>
+ )
 }
 
 export default LearningPage;
