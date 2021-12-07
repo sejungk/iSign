@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
-import { useAuth, logout } from '../Authentication/context';
+import { useAuth, logout } from '../Authentication/authfuncs';
 
 
 const CoursePage = () => {
