@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import { signup, useAuth } from "./context";
-import { Link } from "react-router-dom";
+import { signup, useAuth } from "./authfuncs";
+
 
 
   export const Signup=()=>{

@@ -1,13 +1,15 @@
 import React, { useRef, useState } from "react";
-import { login, useAuth, logout } from "./context"; 
+import { login, useAuth, logout } from "./authfuncs"; 
 import { Link } from "react-router-dom";
 import CoursePage from "../components/CoursePage";
 import Signup from "./Signup"
 
 export const Login=()=>{
+
   const [ loading, setLoading ] = useState(false);
   const currentUser = useAuth();
 
+  //useRef hook to keep track on current input (does not cause re-render when value updated)
   const emailRef = useRef();
   const passwordRef = useRef();
 
