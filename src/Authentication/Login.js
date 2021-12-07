@@ -5,14 +5,16 @@ import CoursePage from "../components/CoursePage";
 import Signup from "./Signup"
 
 export const Login=()=>{
-
+  //added loader
   const [ loading, setLoading ] = useState(false);
+  //currentUser info
   const currentUser = useAuth();
 
   //useRef hook to keep track on current input (does not cause re-render when value updated)
   const emailRef = useRef();
   const passwordRef = useRef();
 
+  //api call to firebase login
   async function handleLogin() {
     setLoading(true);
     try {
@@ -23,7 +25,6 @@ export const Login=()=>{
     setLoading(false);
   }
 
-
   async function handleLogout() {
     try {
       await logout(currentUser);
@@ -31,13 +32,11 @@ export const Login=()=>{
       alert(e);
     }
   }
-33
+
    return (
 
     currentUser ? ( 
-      <CoursePage/> 
-
-           
+      <CoursePage/>  
     ) : (   <div className="form">
       <h2> Login </h2>
       <form>
