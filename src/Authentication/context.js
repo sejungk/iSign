@@ -18,10 +18,10 @@ export function logout() {
 // Custom Hook
 export function useAuth() {
   const [ currentUser, setCurrentUser ] = useState();
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, user => setCurrentUser(user));
     return unsubscribe;
+    
   }, [])
 
   return currentUser;

@@ -1,7 +1,9 @@
 import React, { useRef, useState } from "react";
 import { signup, useAuth } from "./context";
 import { Link } from "react-router-dom";
-export const Signup=()=>{
+
+
+  export const Signup=()=>{
   const [ loading, setLoading ] = useState(false);
   const currentUser = useAuth();
 
@@ -22,11 +24,9 @@ export const Signup=()=>{
         <input placeholder="Name" type="name" ref={nameRef} />
         <input placeholder="Email" type="email" ref={emailRef} />
         <input placeholder="Password" type="password" ref={passwordRef} />
-        <Link to="/courses">
         <button onClick={handleSignup} type="submit">
           Create Account
           </button>
-          </Link>
       </form>
     </div>
   )
