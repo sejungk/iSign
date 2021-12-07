@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import mp from "@mediapipe/hands";
 import * as cam from "@mediapipe/camera_utils";
 import Webcam from "react-webcam";
-import * as tf from "@tensorflow/tfjs"
+// import * as tf from "@tensorflow/tfjs"
 
 
 function LearningPage(props) {

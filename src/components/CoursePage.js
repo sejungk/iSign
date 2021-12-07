@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom'
 import { useAuth, logout } from '../Authentication/authfuncs';
 
@@ -10,22 +10,29 @@ const CoursePage = () => {
   const [loading, setLoading] = useState(false);
 
   async function handleLogout() {
-    setLoading(true);
+    // setLoading(true);
     try {
-      await logout(currentUser);
+      await logout();
     } catch(e){
       alert(e);
     }
-    setLoading(false);
+    // setLoading(false);
   }
 
+  function name(str){
+
+    const name=str.slice(0, str.indexOf('@'));
+  	const newName =name.charAt(0).toUpperCase()+name.slice(1);
+
+    return newName;
+  }
 
   return (
     <div className="course-page-container">
       <div className="profile-wrapper">
         <div className="profile-pic">
             <img src="https://drive.google.com/uc?export=view&id=1-QO80c6b1RfU_NHTmV5CJH4x2BTUCXrW" />
-            <h1>{currentUser?.email}</h1>
+            <h1>{name(`${currentUser?.email}`)}</h1>
           </div>
           <div className="profile-nav">
             <div className="profile-nav-item-wrapper">
@@ -47,7 +54,7 @@ const CoursePage = () => {
       </div>
       <div className="course-list-wrapper">
         <div className="course-page-main-header">
-          <h1>Welcome back!{currentUser?.email}</h1>
+          <h1>Welcome back! {name(`${currentUser?.email}`)}</h1>
           <p>What would you like to learn today?</p>
         </div>
 
