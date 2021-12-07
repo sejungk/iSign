@@ -6,6 +6,9 @@ import * as tf from "@tensorflow/tfjs"
 
 
 function LearningPage() {
+  let letters= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+  let letterKey = new Map()
+
   const canvasRef = useRef(null)
   const videoRef = useRef(null)
   let [loaded, setloaded] = useState(false)
@@ -28,9 +31,31 @@ function LearningPage() {
  }  
 async function makePrediction(values){
   let tensorValue = tf.tensor2d(values, [1, 63])
+
   let preds = await model.predict(tensorValue)
-  preds.print()
+  const p = preds.dataSync();
+  let predictionArr = Array.from(p);
+  getLetters(predictionArr)
+  // tf.max(preds).print()
 }
+
+ function getLetters(arr) {
+  const max = Math.max(...arr);
+  const index =arr.indexOf(max);
+  let answer = letterKey.get(index)
+  
+  if(max > 0.90){
+    
+    console.log(answer)
+  }
+ 
+  }
+  function setMapValues(){
+    for(let i = 0; i < letters.length; i++){
+      letterKey.set(i,letters[i])
+    }
+    console.log(letterKey)
+  }
 
   function onResults(results) {
     const videoWidth = videoRef.current.video.videoWidth
@@ -47,8 +72,8 @@ async function makePrediction(values){
     hands.setOptions({
       maxNumHands: 2,
       modelComplexity: 1,
-      minDetectionConfidence: 0.5,
-      minTrackingConfidence: 0.5
+      minDetectionConfidence: 0.7,
+      minTrackingConfidence: 0.7
     })
   
 
@@ -78,6 +103,7 @@ async function makePrediction(values){
   }
  function startLesson(){
    getModel()
+   setMapValues()
   hands.onResults(onResults)
  
  }
