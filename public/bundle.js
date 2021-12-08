@@ -57396,7 +57396,9 @@ var CoursePage = function CoursePage() {
     className: "profile-pic"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://drive.google.com/uc?export=view&id=1-QO80c6b1RfU_NHTmV5CJH4x2BTUCXrW"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, currentUser === null || currentUser === void 0 ? void 0 : currentUser.email)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "email_tagline"
+  }, currentUser === null || currentUser === void 0 ? void 0 : currentUser.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "profile-nav"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "profile-nav-item-wrapper"

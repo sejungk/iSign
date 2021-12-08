@@ -25,8 +25,8 @@ const CoursePage = () => {
       <div className="profile-wrapper">
         <div className="profile-pic">
             <img src="https://drive.google.com/uc?export=view&id=1-QO80c6b1RfU_NHTmV5CJH4x2BTUCXrW" />
-            <h1>{currentUser?.email}</h1>
           </div>
+          <h1 className="email_tagline">{currentUser?.email}</h1>
           <div className="profile-nav">
             <div className="profile-nav-item-wrapper">
               <div className="profile-nav-item">
