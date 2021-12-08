@@ -57749,12 +57749,8 @@ function LearningPage(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
       _useState2 = _slicedToArray(_useState, 2),
       letterArr = _useState2[0],
-      setLetterArr = _useState2[1];
+      setLetterArr = _useState2[1]; // let [indexCounter, incrementCounter] = useState(0)
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
-      _useState4 = _slicedToArray(_useState3, 2),
-      indexCounter = _useState4[0],
-      incrementCounter = _useState4[1];
 
   var model;
   var hands = new _mediapipe_hands__WEBPACK_IMPORTED_MODULE_1___default.a.Hands({
@@ -57762,6 +57758,25 @@ function LearningPage(props) {
       return "https://cdn.jsdelivr.net/npm/@mediapipe/hands/".concat(file);
     }
   });
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      letterIdx = _useState4[0],
+      setLetterIdx = _useState4[1];
+
+  var images_arr = ["https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK", "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl", "https://drive.google.com/uc?export=view&id=1DArGFqFNzgE4TH8UUJAfYyYtpmB455Je", "https://drive.google.com/uc?export=view&id=1Z-5PGdiYloH9lqTB8RjihVEEeorRr4Ee", "https://drive.google.com/uc?export=view&id=1VnRmsymQmK3hzefGh3pD-C4Ha4m5kC8W"];
+
+  function nextLetter() {
+    if (letterIdx < images_arr.length) {
+      setLetterIdx(letterIdx + 1);
+    } else {
+      alert("Congratulations! You finished this lesson!");
+    }
+  }
+
+  function getImageUrl() {
+    return images_arr[letterIdx];
+  }
 
   function setLettersArr() {
     var arr = props.location.letters.letterArr;
@@ -57814,7 +57829,8 @@ function LearningPage(props) {
     console.log(answer);
 
     if (max > 0.90) {
-      alert(answer);
+      // alert(answer)
+      alert("correct!");
     }
   }
 
@@ -57915,20 +57931,31 @@ function LearningPage(props) {
     hands.onResults(onResults);
   }
 
+  var camSet = true;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "learning-page-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "learning-page-content-wrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Lets get started"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Make sure your hand is in the frame and copy the handshape below."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Lets get started"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Make sure your right hand is in the frame and copy the handshape below."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Click start lesson to begin "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    style: {
+      margin: 0,
+      marginBottom: '20px'
+    },
+    onClick: function onClick() {
+      return nextLetter();
+    },
+    id: "train_button"
+  }, "Next Letter"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: getImageUrl()
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
       return startLesson();
     },
     id: "train_button"
-  }, "Start Training")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Start Lesson")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "video-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_webcam__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    mirrored: true,
     autoPlay: true,
     id: "web_cam_",
     ref: videoRef,
