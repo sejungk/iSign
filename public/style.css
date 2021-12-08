@@ -359,6 +359,8 @@ a {
 
 .learning-page-content-wrapper > img{
   width: 80%;
+  /* transform: scaleX(-1); */
+  
 }
 
 .video-wrapper {

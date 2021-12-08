@@ -4,24 +4,25 @@ import * as cam from "@mediapipe/camera_utils";
 import Webcam from "react-webcam";
 import * as tf from "@tensorflow/tfjs"
 
-
 function LearningPage(props) {
   let letters= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
   let letterKey = new Map()
-  
-  const canvasRef = useRef(null)
+  let canvasRef = useRef(null)
   const videoRef = useRef(null)
-  let [letterArr, setLetterArr] = useState([])
-  // let [indexCounter, incrementCounter] = useState(0)
   let model;
+
+  //initialize new media pipe hands object.
   const hands = new mp.Hands({
     locateFile: file => {
       return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
     }
   })
 
+  //set an initial letterIndex corresponding to which letter the user
+  //is on in the lesson
 
   const [ letterIdx, setLetterIdx ] = useState(0);
+ 
   const images_arr = [
     "https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK",
     "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl",
@@ -30,7 +31,9 @@ function LearningPage(props) {
     "https://drive.google.com/uc?export=view&id=1VnRmsymQmK3hzefGh3pD-C4Ha4m5kC8W"
   ];
 
+ // increment the letter index until it has reached the length of the array.
   function nextLetter() {
+
     if (letterIdx < images_arr.length) {
       setLetterIdx(letterIdx + 1)
     } else {
@@ -42,37 +45,35 @@ function LearningPage(props) {
     return images_arr[letterIdx]
   }
 
-
-
-
-
-
-
-
-
-
  function setLettersArr(){
   let arr = props.location.letters.letterArr
   console.log(arr)
  }
 
+ /* takes the handpoints captured from mediapipe and flattens the array of objects
+ [{x:0.3, y:0.5, z: -0.1}, {x:0.8, y:0.2, z: 0.7}] to [0.3,0.5,-0.1, 0.8, 0.2, 0.7] 
+ then converts those values into a 2dtensor 
+ */
  function convertLandMarks(landmark){
-
     let values = landmark.reduce(function (previousValue, currentValue) {
       previousValue.push(currentValue.x, currentValue.y, currentValue.z);
       return previousValue;
     }, []);
-    makePrediction(values)
- }  
-async function makePrediction(values){
-  let tensorValue = tf.tensor2d(values, [1, 63])
+    let tensorValues = tf.tensor2d(values, [1, 63])
+    makePrediction(tensorValues)
+ } 
 
-  let preds = await model.predict(tensorValue)
+/* Our model makes a prediction based on the handlandmark tensor values and outputs a tenseor of probabilities.
+that tensor is converted back into an array and passed to the getLetters func
+*/
+async function makePrediction(values){
+  let preds = await model.predict(values)
   const p = preds.dataSync();
   let predictionArr = Array.from(p);
   getLetters(predictionArr)
 }
 
+/* gets the maximum probability from array + its index then finds the corresponding letter */
  function getLetters(arr) {
   const max = Math.max(...arr);
   const index =arr.indexOf(max);
@@ -82,7 +83,6 @@ async function makePrediction(values){
     // alert(answer)
     alert("correct!")
   }
- 
   }
   function setMapValues(){
     for(let i = 0; i < letters.length; i++){
@@ -91,16 +91,18 @@ async function makePrediction(values){
     console.log(letterKey)
   }
 
+  /*
+  checks if the hand is in the screen and outputs the landmark points for a visible hand
+  */
   function onResults(results) {
     const videoWidth = videoRef.current.video.videoWidth
     const videoHeight = videoRef.current.video.videoHeight
     if (results.multiHandLandmarks.length > 0) {
       let landMark = results.multiHandLandmarks[0]
-      console.log(landMark)
       convertLandMarks(landMark)
   }
 }
-
+/* passes in the react webcam reference on mount and continuously sends the stream to mediapipe */
   let camera = null
   useEffect(() => {   
    
@@ -124,21 +126,20 @@ async function makePrediction(values){
  
   }, [])
 
-
+  /* loads our tensor flow model and assigns it to a model variable defined above */
   async function getModel(){
     model = await loadModel()
       return model
   }
+
  function startLesson(){
-  //  console.log("props", props.location.letters)
   setLettersArr()
    getModel()
    setMapValues()
   hands.onResults(onResults)
- 
  }
 
-let camSet = true
+
  return (
   <div className="learning-page-container">
     <div className="learning-page-content-wrapper">
@@ -152,7 +153,7 @@ let camSet = true
     </div>
    
     <div className="video-wrapper">
-      <Webcam mirrored={true} autoPlay  id="web_cam_" ref={videoRef} className="app__videoFeed" />
+      <Webcam mirrored={false} autoPlay  id="web_cam_" ref={videoRef} className="app__videoFeed" />
     </div>
   </div>
  )
