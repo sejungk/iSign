@@ -10,8 +10,8 @@ export const Auth=()=>{
   return (
     <div className="auth">
       {!index ? <Login /> : <Signup />}
-      <p onClick={toggleIndex}>
-        {!index ? "New to iSign? Click here " : "Already have an acount?"}
+      <p className="signIn_orUp" onClick={toggleIndex}>
+        {!index? `New to iSign? Click here` : "Already have an acount?"}
       </p>
     </div>
   );

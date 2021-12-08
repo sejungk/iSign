@@ -56825,8 +56825,9 @@ var Auth = function Auth() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "auth"
   }, !index ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Login__WEBPACK_IMPORTED_MODULE_2__["Login"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Signup__WEBPACK_IMPORTED_MODULE_1__["Signup"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "signIn_orUp",
     onClick: toggleIndex
-  }, !index ? "New to iSign? Click here " : "Already have an acount?"));
+  }, !index ? "New to iSign? Click here" : "Already have an acount?"));
 };
 
 /***/ }),
@@ -56961,12 +56962,14 @@ var Login = function Login() {
     placeholder: "Password",
     type: "password",
     ref: passwordRef
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "log_button",
     disabled: loading || currentUser,
     onClick: handleLogin
   }, "Log In"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "log_button",
     onClick: handleLogout
-  }, "logout")));
+  }, "Logout"))));
 };
 
 /***/ }),
@@ -57393,7 +57396,9 @@ var CoursePage = function CoursePage() {
     className: "profile-pic"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://drive.google.com/uc?export=view&id=1-QO80c6b1RfU_NHTmV5CJH4x2BTUCXrW"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, currentUser === null || currentUser === void 0 ? void 0 : currentUser.email)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "email_tagline"
+  }, currentUser === null || currentUser === void 0 ? void 0 : currentUser.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "profile-nav"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "profile-nav-item-wrapper"
@@ -57406,6 +57411,7 @@ var CoursePage = function CoursePage() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://drive.google.com/uc?export=view&id=1y3A1SeM99ZG5wrNucqv3tibgIDinoSnt"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "signIn_orUp",
     onClick: handleLogout
   }, "Sign out")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "course-list-wrapper"
@@ -57560,26 +57566,21 @@ function LearningPage(props) {
   var letterKey = new Map();
   var canvasRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
   var videoRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  var model; //initialize new media pipe hands object.
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
-      _useState2 = _slicedToArray(_useState, 2),
-      letterArr = _useState2[0],
-      setLetterArr = _useState2[1]; // let [indexCounter, incrementCounter] = useState(0)
-
-
-  var model;
   var hands = new _mediapipe_hands__WEBPACK_IMPORTED_MODULE_1___default.a.Hands({
     locateFile: function locateFile(file) {
       return "https://cdn.jsdelivr.net/npm/@mediapipe/hands/".concat(file);
     }
-  });
+  }); //set an initial letterIndex corresponding to which letter the user
+  //is on in the lesson
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
-      _useState4 = _slicedToArray(_useState3, 2),
-      letterIdx = _useState4[0],
-      setLetterIdx = _useState4[1];
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      letterIdx = _useState2[0],
+      setLetterIdx = _useState2[1];
 
-  var images_arr = ["https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK", "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl", "https://drive.google.com/uc?export=view&id=1DArGFqFNzgE4TH8UUJAfYyYtpmB455Je", "https://drive.google.com/uc?export=view&id=1Z-5PGdiYloH9lqTB8RjihVEEeorRr4Ee", "https://drive.google.com/uc?export=view&id=1VnRmsymQmK3hzefGh3pD-C4Ha4m5kC8W"];
+  var images_arr = ["https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK", "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl", "https://drive.google.com/uc?export=view&id=1DArGFqFNzgE4TH8UUJAfYyYtpmB455Je", "https://drive.google.com/uc?export=view&id=1Z-5PGdiYloH9lqTB8RjihVEEeorRr4Ee", "https://drive.google.com/uc?export=view&id=1VnRmsymQmK3hzefGh3pD-C4Ha4m5kC8W"]; // increment the letter index until it has reached the length of the array.
 
   function nextLetter() {
     if (letterIdx < images_arr.length) {
@@ -57597,37 +57598,48 @@ function LearningPage(props) {
     var arr = props.location.letters.letterArr;
     console.log(arr);
   }
+  /* takes the handpoints captured from mediapipe and flattens the array of objects
+  [{x:0.3, y:0.5, z: -0.1}, {x:0.8, y:0.2, z: 0.7}] to [0.3,0.5,-0.1, 0.8, 0.2, 0.7] 
+  then converts those values into a 2dtensor 
+  */
+
 
   function convertLandMarks(landmark) {
     var values = landmark.reduce(function (previousValue, currentValue) {
       previousValue.push(currentValue.x, currentValue.y, currentValue.z);
       return previousValue;
     }, []);
-    makePrediction(values);
+    var tensorValues = tf.tensor2d(values, [1, 63]);
+    makePrediction(tensorValues);
   }
+  /* Our model makes a prediction based on the handlandmark tensor values and outputs a tenseor of probabilities.
+  that tensor is converted back into an array and passed to the getLetters func
+  */
+
 
   function makePrediction(_x) {
     return _makePrediction.apply(this, arguments);
   }
+  /* gets the maximum probability from array + its index then finds the corresponding letter */
+
 
   function _makePrediction() {
     _makePrediction = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(values) {
-      var tensorValue, preds, p, predictionArr;
+      var preds, p, predictionArr;
       return regeneratorRuntime.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              tensorValue = tf.tensor2d(values, [1, 63]);
-              _context2.next = 3;
-              return model.predict(tensorValue);
+              _context2.next = 2;
+              return model.predict(values);
 
-            case 3:
+            case 2:
               preds = _context2.sent;
               p = preds.dataSync();
               predictionArr = Array.from(p);
               getLetters(predictionArr);
 
-            case 7:
+            case 6:
             case "end":
               return _context2.stop();
           }
@@ -57656,6 +57668,10 @@ function LearningPage(props) {
 
     console.log(letterKey);
   }
+  /*
+  checks if the hand is in the screen and outputs the landmark points for a visible hand
+  */
+
 
   function onResults(results) {
     var videoWidth = videoRef.current.video.videoWidth;
@@ -57663,10 +57679,11 @@ function LearningPage(props) {
 
     if (results.multiHandLandmarks.length > 0) {
       var landMark = results.multiHandLandmarks[0];
-      console.log(landMark);
       convertLandMarks(landMark);
     }
   }
+  /* passes in the react webcam reference on mount and continuously sends the stream to mediapipe */
+
 
   var camera = null;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -57710,6 +57727,7 @@ function LearningPage(props) {
       camera.start();
     }
   }, []);
+  /* loads our tensor flow model and assigns it to a model variable defined above */
 
   function getModel() {
     return _getModel.apply(this, arguments);
@@ -57739,14 +57757,12 @@ function LearningPage(props) {
   }
 
   function startLesson() {
-    //  console.log("props", props.location.letters)
     setLettersArr();
     getModel();
     setMapValues();
     hands.onResults(onResults);
   }
 
-  var camSet = true;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "learning-page-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
