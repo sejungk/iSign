@@ -216,6 +216,10 @@ a {
   margin: auto;
   margin-top: 50px;
 }
+/* .course-wrapper:hover{
+  box-shadow: 2px 2px 4px white;
+  cursor: pointer;
+} */
 
 .course-item {
   display: inline-block;
@@ -385,13 +389,7 @@ a {
 
 
 .learning-page-content-wrapper > img{
-<<<<<<< HEAD
-  width: 80%;
-  /* transform: scaleX(-1); */
-  
-=======
   width: 70%;
->>>>>>> main
 }
 
 .video-wrapper {
