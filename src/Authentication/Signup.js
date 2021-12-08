@@ -6,7 +6,7 @@ import { signup, useAuth} from "./authfuncs";
   export const Signup=()=>{
   const [ loading, setLoading ] = useState(false);
   
-  const currentUser = useAuth();
+  // const currentUser = useAuth();
 
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -23,12 +23,10 @@ import { signup, useAuth} from "./authfuncs";
     setLoading(false);
   }
   
-
   return (
     <div className="form">
       <h2> New User</h2>
       <form >
-        {/* <input placeholder="Name" type="name" ref={nameRef} /> */}
         <input placeholder="Email" type="email" ref={emailRef} />
         <input placeholder="Password" type="password" ref={passwordRef} />
         <button onClick={handleSignup} type="submit">

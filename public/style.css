@@ -402,6 +402,7 @@ input {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 50%;
 }
 
 .form > form > p {

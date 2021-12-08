@@ -46,15 +46,16 @@ const CoursePage = () => {
 
                 <img src="https://drive.google.com/uc?export=view&id=1y3A1SeM99ZG5wrNucqv3tibgIDinoSnt" />
                 
-                <p onClick={handleLogout}>Sign out</p>
-                
+                <p onClick={handleLogout}>
+                  <Link to="/"> Sign out</Link>
+                  </p>
               </div>
             {/* </div> */}
           </div>
       </div>
       <div className="course-list-wrapper">
         <div className="course-page-main-header">
-          <h1>Welcome back! {name(`${currentUser?.email}`)}</h1>
+          <h1>Welcome back {name(`${currentUser?.email}`)}!</h1>
           <p>What would you like to learn today?</p>
         </div>
 

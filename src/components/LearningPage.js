@@ -35,7 +35,6 @@ function LearningPage(props) {
  }  
 async function makePrediction(values){
   let tensorValue = tf.tensor2d(values, [1, 63])
-
   let preds = await model.predict(tensorValue)
   const p = preds.dataSync();
   let predictionArr = Array.from(p);
@@ -97,11 +96,11 @@ async function makePrediction(values){
     model = await loadModel()
       return model
   }
- function startLesson(){
+  function startLesson(){
   //  console.log("props", props.location.letters)
   setLettersArr()
-   getModel()
-   setMapValues()
+  getModel()
+  setMapValues()
   hands.onResults(onResults)
  
  }

@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
-import { login, useAuth, logout } from "./authfuncs"; 
+import { login, useAuth, logout, signup } from "./authfuncs"; 
 import { Link } from "react-router-dom";
 import CoursePage from "../components/CoursePage";
-import Signup from "./Signup"
 
-export const Login=()=>{
+
+const Auth=()=>{
   //added loader
   const [ loading, setLoading ] = useState(false);
   //currentUser info
@@ -25,6 +25,16 @@ export const Login=()=>{
     setLoading(false);
   }
 
+  async function handleSignup() {
+    setLoading(true);
+    try {
+    await signup(emailRef.current.value, passwordRef.current.value);
+    }catch(e){
+      alert(e);
+    }
+    setLoading(false);
+  }
+
   async function handleLogout() {
     try {
       await logout(currentUser);
@@ -36,14 +46,18 @@ export const Login=()=>{
   return (
 
     currentUser ? ( 
-      <CoursePage/>  
+      <div>
+        <button onClick={handleLogout}>Logout</button>
+        <CoursePage/>  
+      </div>
+      
     ) : (   <div className="form">
-      <h2> Login </h2>
+      <h2> Login or Signup </h2>
       <form>
         <input placeholder="Email" type="email" ref={emailRef} />
-        <input placeholder="Password" type="password" ref={passwordRef} />
+        <input placeholder="Password: must be longer than 6 characters" type="password" ref={passwordRef} />
         <button disabled={ loading || currentUser } onClick={handleLogin}>Log In</button>
-        {<button onClick={handleLogout}>Logout</button>}
+        <button disabled={ loading || currentUser } onClick={handleSignup}>Signup</button>
       </form>
     </div>)
   )
@@ -51,3 +65,4 @@ export const Login=()=>{
 
 
 
+export default Auth
