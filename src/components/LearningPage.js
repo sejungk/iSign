@@ -12,13 +12,44 @@ function LearningPage(props) {
   const canvasRef = useRef(null)
   const videoRef = useRef(null)
   let [letterArr, setLetterArr] = useState([])
-  let [indexCounter, incrementCounter] = useState(0)
+  // let [indexCounter, incrementCounter] = useState(0)
   let model;
   const hands = new mp.Hands({
     locateFile: file => {
       return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
     }
   })
+
+
+  const [ letterIdx, setLetterIdx ] = useState(0);
+  const images_arr = [
+    "https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK",
+    "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl",
+    "https://drive.google.com/uc?export=view&id=1DArGFqFNzgE4TH8UUJAfYyYtpmB455Je",
+    "https://drive.google.com/uc?export=view&id=1Z-5PGdiYloH9lqTB8RjihVEEeorRr4Ee",
+    "https://drive.google.com/uc?export=view&id=1VnRmsymQmK3hzefGh3pD-C4Ha4m5kC8W"
+  ];
+
+  function nextLetter() {
+    if (letterIdx < images_arr.length) {
+      setLetterIdx(letterIdx + 1)
+    } else {
+      alert("Congratulations! You finished this lesson!")
+    }
+  }
+
+  function getImageUrl() {
+    return images_arr[letterIdx]
+  }
+
+
+
+
+
+
+
+
+
 
  function setLettersArr(){
   let arr = props.location.letters.letterArr
@@ -48,7 +79,8 @@ async function makePrediction(values){
   let answer = letterKey.get(index)
   console.log(answer)
   if(max > 0.90){
-    alert(answer)
+    // alert(answer)
+    alert("correct!")
   }
  
   }
@@ -106,18 +138,21 @@ async function makePrediction(values){
  
  }
 
-
+let camSet = true
  return (
   <div className="learning-page-container">
     <div className="learning-page-content-wrapper">
       <h1>Lets get started</h1>
-      <p>Make sure your hand is in the frame and copy the handshape below.</p>
-      <img src="https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK" />
-      <button onClick={() =>startLesson()}id="train_button">Start Training</button> 
+      <p>Make sure your right hand is in the frame and copy the handshape below.</p>
+      <p>Click start lesson to begin </p>
+      <button style={{margin:0, marginBottom:'20px'}}onClick={() => nextLetter()}id="train_button">Next Letter</button>
+      <img src={ getImageUrl() } />
+      <button onClick={() =>startLesson()}id="train_button">Start Lesson</button> 
+     
     </div>
    
     <div className="video-wrapper">
-      <Webcam autoPlay  id="web_cam_" ref={videoRef} className="app__videoFeed" />
+      <Webcam mirrored={true} autoPlay  id="web_cam_" ref={videoRef} className="app__videoFeed" />
     </div>
   </div>
  )
