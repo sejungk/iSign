@@ -39,7 +39,7 @@ const CoursePage = () => {
 
                 <img src="https://drive.google.com/uc?export=view&id=1y3A1SeM99ZG5wrNucqv3tibgIDinoSnt" />
                 
-                <p onClick={handleLogout}>Sign out</p>
+                <p className="signIn_orUp" onClick={handleLogout}>Sign out</p>
                 
               </div>
             {/* </div> */}

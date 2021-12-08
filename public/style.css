@@ -115,7 +115,9 @@ a {
 }
 
 .profile-wrapper {
-  background-color: #ceedff;
+  /* #00cccc  */
+  /* background-color: #ceedff; */
+  background-color: #00cccc;
   border-radius: 20px;
   width: 15vw;
   padding: 5vh;
@@ -436,7 +438,7 @@ button:hover {
   text-align: center;
 }
 .signIn_orUp:hover {
- color:#ff8717;
+ color:#ffb853;
  transition: .1s;
 }
 
