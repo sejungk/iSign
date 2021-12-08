@@ -2,12 +2,14 @@ import React, { useRef, useEffect, useState } from "react";
 import mp from "@mediapipe/hands";
 import * as cam from "@mediapipe/camera_utils";
 import Webcam from "react-webcam";
-import * as tf from "@tensorflow/tfjs"
+import { Link } from 'react-router-dom';
+// import * as tf from "@tensorflow/tfjs"
 
 function LearningPage(props) {
   let letters= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
   let letterKey = new Map()
-  let canvasRef = useRef(null)
+
+  const canvasRef = useRef(null)
   const videoRef = useRef(null)
   let model;
 
@@ -104,8 +106,8 @@ async function makePrediction(values){
 }
 /* passes in the react webcam reference on mount and continuously sends the stream to mediapipe */
   let camera = null
-  useEffect(() => {   
-   
+  useEffect(() => {
+
     hands.setOptions({
       maxNumHands: 2,
       modelComplexity: 1,
@@ -123,7 +125,7 @@ async function makePrediction(values){
       })
       camera.start()
     }
- 
+
   }, [])
 
   /* loads our tensor flow model and assigns it to a model variable defined above */
@@ -142,18 +144,23 @@ async function makePrediction(values){
 
  return (
   <div className="learning-page-container">
+    <div className="back-bttn">
+        <Link to="/alphabet-lesson">
+          <img src="https://drive.google.com/uc?export=view&id=16ORv_43yS04SQLquK8vike9O0rTlJMWW" />
+        </Link>
+      </div>
     <div className="learning-page-content-wrapper">
       <h1>Lets get started</h1>
       <p>Make sure your right hand is in the frame and copy the handshape below.</p>
-      <p>Click start lesson to begin </p>
-      <button style={{margin:0, marginBottom:'20px'}}onClick={() => nextLetter()}id="train_button">Next Letter</button>
+      {/* <p>Click start lesson to begin </p> */}
+      {/* <button style={{margin:0, marginBottom:'20px'}}onClick={() => nextLetter()}id="train_button">Next Letter</button> */}
       <img src={ getImageUrl() } />
-      <button onClick={() =>startLesson()}id="train_button">Start Lesson</button> 
-     
+      <button onClick={() =>startLesson()}id="train_button">Start Lesson</button>
+
     </div>
-   
+
     <div className="video-wrapper">
-      <Webcam mirrored={false} autoPlay  id="web_cam_" ref={videoRef} className="app__videoFeed" />
+      <Webcam mirrored={true} height={"inherit"} width={"inherit"} style={{ height: "90%", width: "95%" }} autoPlay id="web_cam_" ref={videoRef} className="app__videoFeed" />
     </div>
   </div>
  )
