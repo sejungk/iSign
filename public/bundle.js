@@ -57422,19 +57422,25 @@ function LearningPage(props) {
   }); //set an initial letterIndex corresponding to which letter the user
   //is on in the lesson
 
-  var letterIdx = 0; // increment the letter index until it has reached the length of the array.
+  var letterIdx = 24; // increment the letter index until it has reached the length of the array.
+
+  console.log(_data_images__WEBPACK_IMPORTED_MODULE_5__["images_arr"].length); //lastlet index is 25
 
   function nextLetter() {
-    if (letterIdx < _data_images__WEBPACK_IMPORTED_MODULE_5__["images_arr"].length) {
-      letterIdx++;
-      getImageUrl();
+    letterIdx++;
 
-      if (letterIdx % 5 === 0 && letterIdx > 0 && letterIdx < 25) {
-        console.log("NEW LESSON");
-        document.querySelector(".completed-modal-wrapper").style.display = "block";
-      }
-    } else if (letterIdx >= 25) {
+    if (letterIdx >= 26) {
       alert("Congratulations! You finished this course!");
+      return;
+    }
+
+    if (letterIdx % 5 === 0 && letterIdx > 0 && letterIdx < 25) {
+      console.log("NEW LESSON");
+      document.querySelector(".completed-modal-wrapper").style.display = "block";
+    }
+
+    if (letterIdx <= _data_images__WEBPACK_IMPORTED_MODULE_5__["images_arr"].length) {
+      getImageUrl();
     }
   }
 
@@ -57511,7 +57517,7 @@ function LearningPage(props) {
     console.log("max", max);
     console.log("pred & currLetter ", index, letterIdx);
 
-    if (max > 0.90 && letterIdx === index) {
+    if (max > 0.10 && letterIdx === index) {
       borderColorChange(); //move to next letter here
 
       nextLetter();
