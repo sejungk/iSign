@@ -22,23 +22,18 @@ function LearningPage(props) {
 
   //set an initial letterIndex corresponding to which letter the user
   //is on in the lesson
-
-  // let [ letterIdx, setLetterIdx ] = useState(0);
-  // let letterIdx = useRef(0)
   let letterIdx = 0
  // increment the letter index until it has reached the length of the array.
   function nextLetter() {
 
     if (letterIdx < images_arr.length) {
-      
-        // setLetterIdx(letterIdx++)
-        letterIdx++
-     
+      letterIdx++
       getImageUrl()
         if (letterIdx % 5 === 0 && letterIdx > 0 && letterIdx < 25) {
           console.log("NEW LESSON")
           document.querySelector(".completed-modal-wrapper").style.display = "block";
         }
+    
     }
     else if (letterIdx > 25){
       alert("Congratulations! You finished this course!")
@@ -81,7 +76,7 @@ async function makePrediction(values){
   console.log("max", max)
   console.log("pred & currLetter ",index, letterIdx)
 
-    if(max > 0.65 && letterIdx === index){
+    if(max > 0.80 && letterIdx === index){
       document.getElementById('web_cam_').style.border = 'solid #17ca35'
       //move to next letter here
       nextLetter();

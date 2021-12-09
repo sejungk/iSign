@@ -57421,14 +57421,11 @@ function LearningPage(props) {
     }
   }); //set an initial letterIndex corresponding to which letter the user
   //is on in the lesson
-  // let [ letterIdx, setLetterIdx ] = useState(0);
-  // let letterIdx = useRef(0)
 
   var letterIdx = 0; // increment the letter index until it has reached the length of the array.
 
   function nextLetter() {
     if (letterIdx < _data_images__WEBPACK_IMPORTED_MODULE_5__["images_arr"].length) {
-      // setLetterIdx(letterIdx++)
       letterIdx++;
       getImageUrl();
 
