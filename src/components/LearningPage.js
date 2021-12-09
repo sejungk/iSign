@@ -55,7 +55,6 @@ function LearningPage(props) {
   ];
 
   function nextLetter() {
-    console.log("in next letter func: ", letterIdx, images_arr.length)
     if (letterIdx < images_arr.length) {
       setLetterIdx(letterIdx++)
       getImageUrl()
@@ -71,7 +70,11 @@ function LearningPage(props) {
   }
 
   function getImageUrl() {
-    return images_arr[letterIdx]
+    document.getElementById('letter-img').src = images_arr[letterIdx]
+    console.log(document.getElementById('letter-img').src)
+
+    // console.log("imageurl func", letterIdx)
+    // return images_arr[letterIdx]
   }
 
  function setLettersArr(){
@@ -208,7 +211,7 @@ let camSet = true
       {/* <p>Click start lesson to begin </p> */}
       {/* <button style={{margin:0, marginBottom:'20px'}}onClick={() => nextLetter()}id="train_button">Next Letter</button> */}
       <p>Copy the handshape below</p>
-      <img src={ getImageUrl() } />
+      <img id="letter-img" src="https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK" />
     </div>
 
     <div className="video-wrapper">

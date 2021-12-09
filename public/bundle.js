@@ -57586,8 +57586,6 @@ function LearningPage(props) {
   "https://drive.google.com/uc?export=view&id=1KuibwOfSW788ZwdWop8BS-5p9PP1VMCq", "https://drive.google.com/uc?export=view&id=1Nx2hdCCIMICCx3LcTSuIWu_3TmlAKHs0", "https://drive.google.com/uc?export=view&id=1No8RKHkb1t327PSauQETJueT7OzIDJam", "https://drive.google.com/uc?export=view&id=1wiJB0k7h0Yj0PST3V7Wm_aALt-PBIsks", "https://drive.google.com/uc?export=view&id=1R_memLrdPgNgliRLc1iaiCbHtezX3cGa", "https://drive.google.com/uc?export=view&id=1Uss-sPF5hylo4wEF46x6p9juD3PIm29O"];
 
   function nextLetter() {
-    console.log("in next letter func: ", letterIdx, images_arr.length);
-
     if (letterIdx < images_arr.length) {
       setLetterIdx(letterIdx++);
       getImageUrl();
@@ -57602,7 +57600,9 @@ function LearningPage(props) {
   }
 
   function getImageUrl() {
-    return images_arr[letterIdx];
+    document.getElementById('letter-img').src = images_arr[letterIdx];
+    console.log(document.getElementById('letter-img').src); // console.log("imageurl func", letterIdx)
+    // return images_arr[letterIdx]
   }
 
   function setLettersArr() {
@@ -57809,7 +57809,8 @@ function LearningPage(props) {
       return hideModal();
     }
   }, "Start next lesson")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Copy the handshape below"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: getImageUrl()
+    id: "letter-img",
+    src: "https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "video-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_webcam__WEBPACK_IMPORTED_MODULE_3___default.a, {
