@@ -3,11 +3,15 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+button {
+  border-radius: 15px;
+}
+
 a {
   color: inherit;
   display: inline-block;
   position: absolute;
-  border: solid black;
+  /* border: solid black; */
   height: 100%;
   width: 100%;
   top: 0;
@@ -48,20 +52,12 @@ a {
 
 .signup-bttn {
   width: 200px;
-  height: 55px;
-  background-color: #ffa755;
-  border-radius: 30px;
+  height: 50px;
   margin-top: 45px;
   cursor: pointer;
 }
 
 .signup-bttn p {
-  color: white;
-  line-height: 55px;
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 1px;
-  text-align: center;
   margin: 0;
 }
 
@@ -69,11 +65,7 @@ a {
   position: relative;
   width: inherit;
   height: inherit;
-}
-
-.signup-bttn:hover {
-  background-color: #ff8717;
-  transition: .5s;
+  border: none;
 }
 
 .landing-page-wrapper  img {
@@ -133,7 +125,6 @@ a {
 }
 
 .profile-pic {
-  width: 100px;
   text-align: center;
   margin: auto;
 }
@@ -142,6 +133,12 @@ a {
   width: 100px;
 }
 
+.profile-pic > h1 {
+  font-weight: 500;
+  color: black;
+  font-size: 16px;
+  margin-top: 5%;
+}
 
 .profile-nav {
   height: 80%;
@@ -251,6 +248,11 @@ a {
   margin-bottom: 0;
 }
 
+.course-wrapper:hover {
+  filter: saturate(120%) brightness(105%);
+  transition: .7s;
+}
+
 .alphabet-course {
   background-color: #FFAE64;
 }
@@ -341,7 +343,7 @@ a {
   cursor: pointer;
   box-shadow: 2px 2px 4px white;
   transition: .1s;
-} 
+}
 .lesson-item {
   z-index: 1;
   text-align: center;
@@ -355,6 +357,10 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.lesson-item:hover {
+  filter: saturate(120%) brightness(105%);
+  transition: .7s;
 }
 
 .locked-item {
@@ -380,22 +386,127 @@ a {
   flex: 0 0 45%;
 }
 
-.learning-page-content-wrapper > h1{
-  margin: 60px 0 10px 0;
+.training-modal-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.training-modal {
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  width: 40%;
+  padding: 50px 20px 50px 20px;
+  top: 30%;
+}
+
+.training-modal > h1{
+  margin: 0;
+  margin-bottom: 10px;
   font-size: 24px;
   font-weight: 600;
 }
 
-.learning-page-content-wrapper > p{
+.training-modal > p{
   margin: auto;
   margin-bottom: 5%;
-  width: 60%;
+  padding-left: 50px;
+  padding-right: 50px;
   font-size: 16px;
 }
 
+.training-modal > button {
+  margin: 20px 0 0 0;
+}
+
+.completed-modal-wrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+}
+
+.completed-modal {
+  display: block;
+  margin-left: calc(50vw - 225px);
+  margin-top: calc(50vh - 150px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: lightblue;
+  text-align: center;
+  height: 350px;
+  width: 450px;
+  border-radius: 20px;
+}
+
+.x-bttn > img{
+  position: absolute;
+  height: 18px;
+  right: 3%;
+  top: 5%;
+}
+
+.completed-modal-img {
+  height: 100%;
+  margin-left: 3%;
+}
+
+.completed-modal-img > img {
+  height: 35%;
+  margin: 6% 0 2% 0;
+}
+
+.completed-modal-text {
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+}
+
+.completed-modal-text > h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+}
+
+.completed-modal-text > p {
+  margin: 4px 0 20px 0;
+  font-size: 16px;
+}
+
+.completed-modal-text > button {
+  margin: 3% 0 0 0;
+}
+
+.signup-bttn p {
+  color: white;
+  line-height: 55px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+}
+
+.learning-page-content-wrapper > p{
+  margin: 30px 0 60px 0;
+  font-size: 20px;
+  font-weight: 400;
+}
 
 .learning-page-content-wrapper > img{
-  width: 70%;
+  width: 90%;
 }
 
 .video-wrapper {
@@ -457,18 +568,18 @@ input {
 
 button {
   width: 200px;
-  height: 55px;
-  line-height: 55px;
-  font-weight: 500;
+  height: 50px;
+  line-height: 50px;
+  font-weight: 600;
   color: white;
   background-color: #ffa755;
-  border-radius: 30px;
+  border-radius: 15px;
   text-align: center;
   margin-top: 20px;
   font-size: 18px;
   letter-spacing: 1px;
   cursor: pointer;
-  margin-right: 6px;
+  border: none;
 }
 
 button:hover {

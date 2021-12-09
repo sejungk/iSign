@@ -38,16 +38,16 @@ const CoursePage = () => {
               <div className="profile-nav-item">
 
                 <img src="https://drive.google.com/uc?export=view&id=1y3A1SeM99ZG5wrNucqv3tibgIDinoSnt" />
-                
+
                 <p className="signIn_orUp" onClick={handleLogout}>Sign out</p>
-                
+
               </div>
             {/* </div> */}
           </div>
       </div>
       <div className="course-list-wrapper">
         <div className="course-page-main-header">
-          <h1>Welcome back!{currentUser?.email}</h1>
+          <h1>Welcome back! {currentUser?.email}</h1>
           <p>What would you like to learn today?</p>
         </div>
 
