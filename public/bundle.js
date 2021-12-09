@@ -57672,8 +57672,10 @@ function LearningPage(props) {
     console.log("pred & currLetter ", index, letterIdx);
 
     if (max > 0.90 && letterIdx === index) {
-      //move to next letter here
+      document.getElementById('web_cam_').style.border = 'solid #17ca35'; //move to next letter here
+
       nextLetter();
+      document.getElementById('web_cam_').style.border = 'solid #ffffff';
     }
   }
 
@@ -57774,7 +57776,9 @@ function LearningPage(props) {
   }
 
   function startLesson() {
-    //  console.log("props", props.location.letters)
+    document.getElementById('web_cam_').style.border = 'solid #f4ba19';
+    setLettersArr(); //  console.log("props", props.location.letters)
+
     document.querySelector(".training-modal-wrapper").style.display = "none";
     setLettersArr();
     getModel();

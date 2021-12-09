@@ -505,6 +505,7 @@ a {
   font-weight: 400;
 }
 
+
 .learning-page-content-wrapper > img{
   width: 90%;
 }
@@ -517,7 +518,7 @@ a {
 video {
   margin: 25px;
   margin-left:0;
-  border: solid #7ef419;
+  border: solid #ffffff;
   border-width: 8px;
   object-fit: cover;
   object-position: center;

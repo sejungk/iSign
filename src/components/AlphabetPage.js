@@ -12,7 +12,7 @@ const AlphabetPage = () => {
        <div className="alphabet-header">The alphabet</div>
        <div className="alphabet-lessons-wrapper">
          <div className="lesson-wrapper">
-          <Link to={{pathname: "/learning",
+          <Link to={{pathname: "/learning"
           // startingLetterIdx={0}
           // idx: { startingLetterIdx: 0 }
           // letters:{ letterArr:['a','b','c','d','e']}
