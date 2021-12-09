@@ -57511,7 +57511,7 @@ function LearningPage(props) {
     console.log("max", max);
     console.log("pred & currLetter ", index, letterIdx);
 
-    if (max > 0.90 && letterIdx === index) {
+    if (max > 0.85 && letterIdx === index) {
       borderColorChange(); //move to next letter here
 
       nextLetter();
