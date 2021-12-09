@@ -3,7 +3,6 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import LearningPage from "./components/LearningPage";
 import CoursePage from "./components/CoursePage";
-import { Auth} from "./Authentication/Auth";
 import AlphabetPage from  "./components/AlphabetPage";
 import Authform from "./Authentication/Authform";
 

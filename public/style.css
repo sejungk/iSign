@@ -3,11 +3,15 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+button {
+  border-radius: 15px;
+}
+
 a {
   color: inherit;
   display: inline-block;
   position: absolute;
-  border: solid black;
+  /* border: solid black; */
   height: 100%;
   width: 100%;
   top: 0;
@@ -48,20 +52,12 @@ a {
 
 .signup-bttn {
   width: 200px;
-  height: 55px;
-  background-color: #ffa755;
-  border-radius: 30px;
+  height: 50px;
   margin-top: 45px;
   cursor: pointer;
 }
 
 .signup-bttn p {
-  color: white;
-  line-height: 55px;
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 1px;
-  text-align: center;
   margin: 0;
 }
 
@@ -69,11 +65,7 @@ a {
   position: relative;
   width: inherit;
   height: inherit;
-}
-
-.signup-bttn:hover {
-  background-color: #ff8717;
-  transition: .5s;
+  border: none;
 }
 
 .landing-page-wrapper  img {
@@ -113,20 +105,26 @@ a {
   color: #7D7D7D;
   font-size: 18px;
 }
-
+.email_tagline {
+  text-align: center;
+  font-weight: 500;
+  color: white;
+  font-size: 18px;
+  margin-top: 2%;
+}
 .profile-wrapper {
-  background-color: #ceedff;
+  background-color: #00cccc;
   border-radius: 20px;
   width: 15vw;
   padding: 5vh;
   height: 78vh;
   margin: 5vh 0 7vh 1vw;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-  color: #6c6c6c
+  color: #6c6c6c;
+
 }
 
 .profile-pic {
-  width: 100px;
   text-align: center;
   margin: auto;
 }
@@ -138,7 +136,7 @@ a {
 .profile-pic > h1 {
   font-weight: 500;
   color: black;
-  font-size: 20px;
+  font-size: 16px;
   margin-top: 5%;
 }
 
@@ -214,6 +212,10 @@ a {
   margin: auto;
   margin-top: 50px;
 }
+.course-wrapper:hover{
+  box-shadow: 2px 2px 4px white;
+  cursor: pointer;
+}
 
 .course-item {
   display: inline-block;
@@ -244,6 +246,11 @@ a {
   margin: auto;
   margin-top: 15%;
   margin-bottom: 0;
+}
+
+.course-wrapper:hover {
+  filter: saturate(120%) brightness(105%);
+  transition: .7s;
 }
 
 .alphabet-course {
@@ -284,6 +291,21 @@ a {
   height: calc(100vh - 8em);
   background-color: #ffecab;
 }
+.back-bttn:hover{
+  background-color:#ffb853;
+  transition: .1s;
+}
+.back-bttn {
+  position: absolute;
+  top: 5%;
+  left: 4%;
+  height: 35px;
+  width: 25px;
+}
+
+.back-bttn img {
+  height: inherit;
+}
 
 .alphabet-header {
   width: 100%;
@@ -317,7 +339,11 @@ a {
   margin: auto;
   margin-top: 20px;
 }
-
+.lesson-item:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 4px white;
+  transition: .1s;
+}
 .lesson-item {
   z-index: 1;
   text-align: center;
@@ -331,6 +357,10 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.lesson-item:hover {
+  filter: saturate(120%) brightness(105%);
+  transition: .7s;
 }
 
 .locked-item {
@@ -346,36 +376,165 @@ a {
 /* Learning Page - START */
 .learning-page-container {
   display: flex;
-  justify-content: space-between;
-  height: calc(100vh - 6em);
-  padding: 3em;
+  justify-content: space-around;
   background-color:#faf5ec;
   text-align: center;
 }
 
 .learning-page-content-wrapper {
-  flex: 0 0 50%;
+  margin: 1%;
+  flex: 0 0 45%;
 }
 
+.training-modal-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.training-modal {
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  width: 40%;
+  padding: 50px 20px 50px 20px;
+  top: 30%;
+}
+
+.training-modal > h1{
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.training-modal > p{
+  margin: auto;
+  margin-bottom: 5%;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 16px;
+}
+
+.training-modal > button {
+  margin: 20px 0 0 0;
+}
+
+.completed-modal-wrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+}
+
+.completed-modal {
+  display: block;
+  margin-left: calc(50vw - 225px);
+  margin-top: calc(50vh - 150px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: lightblue;
+  text-align: center;
+  height: 350px;
+  width: 450px;
+  border-radius: 20px;
+}
+
+.x-bttn > img{
+  position: absolute;
+  height: 18px;
+  right: 3%;
+  top: 5%;
+}
+
+.completed-modal-img {
+  height: 100%;
+  margin-left: 3%;
+}
+
+.completed-modal-img > img {
+  height: 35%;
+  margin: 6% 0 2% 0;
+}
+
+.completed-modal-text {
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+}
+
+.completed-modal-text > h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+}
+
+.completed-modal-text > p {
+  margin: 4px 0 20px 0;
+  font-size: 16px;
+}
+
+.completed-modal-text > button {
+  margin: 3% 0 0 0;
+}
+
+.signup-bttn p {
+  color: white;
+  line-height: 55px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+}
+
+.learning-page-content-wrapper > p{
+  margin: 30px 0 60px 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+
 .learning-page-content-wrapper > img{
-  width: 80%;
+  width: 90%;
 }
 
 .video-wrapper {
   flex: 0 0 50%;
-  border: solid pink;
+  height: 100vh;
 }
+
+video {
+  margin: 25px;
+  margin-left:0;
+  border: solid #ffffff;
+  border-width: 8px;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Learning Page - END */
 
 /* Authtication forms- START */
-.auth{
+.form{
   box-shadow: 0 1px 6px #ccc;
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   padding: 22px;
 }
 
@@ -387,10 +546,11 @@ input {
   box-shadow: 0 1px 4px #ccc;
   border-radius: 6px;
   font-size: 18px;
-  width: 93%;
+  width: 100%;
 }
+
 /* .form {
-  width: 50%;
+  width:50%;
 } */
 
 .form > h2 {
@@ -411,21 +571,32 @@ input {
 
 button {
   width: 200px;
-  height: 55px;
-  line-height: 55px;
-  font-weight: 500;
+  height: 50px;
+  line-height: 50px;
+  font-weight: 600;
   color: white;
   background-color: #ffa755;
-  border-radius: 30px;
+  border-radius: 15px;
   text-align: center;
-  margin-top: 45px;
+  margin-top: 20px;
   font-size: 18px;
   letter-spacing: 1px;
   cursor: pointer;
+  border: none;
 }
 
 button:hover {
   background-color: #ff8717;
   transition: .5s;
 }
+.signIn_orUp {
+  padding: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+.signIn_orUp:hover {
+ color:#ffb853;
+ transition: .1s;
+}
+
 /* Authtication forms - END */
