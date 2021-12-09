@@ -11,16 +11,20 @@ function LearningPage(props) {
 
   const canvasRef = useRef(null)
   const videoRef = useRef(null)
-  let [letterArr, setLetterArr] = useState([])
-  // let [indexCounter, incrementCounter] = useState(0)
   let model;
+
+  //initialize new media pipe hands object.
   const hands = new mp.Hands({
     locateFile: file => {
       return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
     }
   })
 
-  let [ letterIdx, setLetterIdx ] = useState(0);
+  //set an initial letterIndex corresponding to which letter the user
+  //is on in the lesson
+
+  const [ letterIdx, setLetterIdx ] = useState(0);
+
   const images_arr = [
     "https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK",
     "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl",
@@ -54,7 +58,9 @@ function LearningPage(props) {
     "https://drive.google.com/uc?export=view&id=1Uss-sPF5hylo4wEF46x6p9juD3PIm29O"
   ];
 
+ // increment the letter index until it has reached the length of the array.
   function nextLetter() {
+
     if (letterIdx < images_arr.length) {
       setLetterIdx(letterIdx++)
       getImageUrl()
@@ -83,23 +89,30 @@ function LearningPage(props) {
   console.log(props)
  }
 
+ /* takes the handpoints captured from mediapipe and flattens the array of objects
+ [{x:0.3, y:0.5, z: -0.1}, {x:0.8, y:0.2, z: 0.7}] to [0.3,0.5,-0.1, 0.8, 0.2, 0.7]
+ then converts those values into a 2dtensor
+ */
  function convertLandMarks(landmark){
-
     let values = landmark.reduce(function (previousValue, currentValue) {
       previousValue.push(currentValue.x, currentValue.y, currentValue.z);
       return previousValue;
     }, []);
-    makePrediction(values)
+    let tensorValues = tf.tensor2d(values, [1, 63])
+    makePrediction(tensorValues)
  }
-async function makePrediction(values){
-  let tensorValue = tf.tensor2d(values, [1, 63])
 
-  let preds = await model.predict(tensorValue)
+/* Our model makes a prediction based on the handlandmark tensor values and outputs a tenseor of probabilities.
+that tensor is converted back into an array and passed to the getLetters func
+*/
+async function makePrediction(values){
+  let preds = await model.predict(values)
   const p = preds.dataSync();
   let predictionArr = Array.from(p);
   getLetters(predictionArr)
 }
 
+/* gets the maximum probability from array + its index then finds the corresponding letter */
  function getLetters(arr) {
   const max = Math.max(...arr);
   const index = arr.indexOf(max);
@@ -121,6 +134,9 @@ async function makePrediction(values){
     console.log(letterKey)
   }
 
+  /*
+  checks if the hand is in the screen and outputs the landmark points for a visible hand
+  */
   function onResults(results) {
     const videoWidth = videoRef.current.video.videoWidth
     const videoHeight = videoRef.current.video.videoHeight
@@ -130,7 +146,7 @@ async function makePrediction(values){
       convertLandMarks(landMark)
   }
 }
-
+/* passes in the react webcam reference on mount and continuously sends the stream to mediapipe */
   let camera = null
   useEffect(() => {
 
@@ -154,7 +170,7 @@ async function makePrediction(values){
 
   }, [])
 
-
+  /* loads our tensor flow model and assigns it to a model variable defined above */
   async function getModel(){
     model = await loadModel()
       return model
@@ -173,7 +189,7 @@ async function makePrediction(values){
   document.querySelector(".completed-modal-wrapper").style.display = "none";
  }
 
-let camSet = true
+
  return (
   <div className="learning-page-container">
     <div className="back-bttn">

@@ -42,8 +42,10 @@ export const Login=()=>{
       <form>
         <input placeholder="Email" type="email" ref={emailRef} />
         <input placeholder="Password" type="password" ref={passwordRef} />
-        <button disabled={ loading || currentUser } onClick={handleLogin}>Log In</button>
-        {<button onClick={handleLogout}>logout</button>}
+        <div>
+        <button className="log_button" disabled={ loading || currentUser } onClick={handleLogin}>Log In</button>
+        {<button className="log_button" onClick={handleLogout}>Logout</button>}
+        </div>
       </form>
     </div>)
     

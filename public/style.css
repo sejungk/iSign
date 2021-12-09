@@ -105,16 +105,23 @@ a {
   color: #7D7D7D;
   font-size: 18px;
 }
-
+.email_tagline {
+  text-align: center;
+  font-weight: 500;
+  color: white;
+  font-size: 18px;
+  margin-top: 2%;
+}
 .profile-wrapper {
-  background-color: #ceedff;
+  background-color: #00cccc;
   border-radius: 20px;
   width: 15vw;
   padding: 5vh;
   height: 78vh;
   margin: 5vh 0 7vh 1vw;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-  color: #6c6c6c
+  color: #6c6c6c;
+
 }
 
 .profile-pic {
@@ -205,6 +212,10 @@ a {
   margin: auto;
   margin-top: 50px;
 }
+.course-wrapper:hover{
+  box-shadow: 2px 2px 4px white;
+  cursor: pointer;
+}
 
 .course-item {
   display: inline-block;
@@ -280,7 +291,10 @@ a {
   height: calc(100vh - 8em);
   background-color: #ffecab;
 }
-
+.back-bttn:hover{
+  background-color:#ffb853;
+  transition: .1s;
+}
 .back-bttn {
   position: absolute;
   top: 5%;
@@ -325,7 +339,11 @@ a {
   margin: auto;
   margin-top: 20px;
 }
-
+.lesson-item:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 4px white;
+  transition: .1s;
+}
 .lesson-item {
   z-index: 1;
   text-align: center;
@@ -557,7 +575,7 @@ button {
   background-color: #ffa755;
   border-radius: 15px;
   text-align: center;
-  margin-top: 45px;
+  margin-top: 20px;
   font-size: 18px;
   letter-spacing: 1px;
   cursor: pointer;
@@ -568,4 +586,14 @@ button:hover {
   background-color: #ff8717;
   transition: .5s;
 }
+.signIn_orUp {
+  padding: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+.signIn_orUp:hover {
+ color:#ffb853;
+ transition: .1s;
+}
+
 /* Authtication forms - END */
