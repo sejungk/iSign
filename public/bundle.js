@@ -57433,7 +57433,7 @@ function LearningPage(props) {
         console.log("NEW LESSON");
         document.querySelector(".completed-modal-wrapper").style.display = "block";
       }
-    } else if (letterIdx > 25) {
+    } else if (letterIdx >= 25) {
       alert("Congratulations! You finished this course!");
     }
   }
@@ -57464,8 +57464,6 @@ function LearningPage(props) {
   function makePrediction(_x) {
     return _makePrediction.apply(this, arguments);
   }
-  /* gets the maximum probability from array + its index then finds the corresponding letter */
-
 
   function _makePrediction() {
     _makePrediction = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(values) {
@@ -57493,6 +57491,19 @@ function LearningPage(props) {
     return _makePrediction.apply(this, arguments);
   }
 
+  function borderColorChange() {
+    var webcamDiv = document.getElementById('web_cam_'); //original color is orange
+
+    var orig = 'solid #ff8717'; //change to green
+
+    webcamDiv.style.border = 'solid #17ca35';
+    window.setTimeout(function () {
+      webcamDiv.style.border = orig;
+    }, 1000);
+  }
+  /* gets the maximum probability from array + its index then finds the corresponding letter */
+
+
   function getLetters(arr) {
     var max = Math.max.apply(Math, _toConsumableArray(arr));
     var index = arr.indexOf(max);
@@ -57500,11 +57511,10 @@ function LearningPage(props) {
     console.log("max", max);
     console.log("pred & currLetter ", index, letterIdx);
 
-    if (max > 0.65 && letterIdx === index) {
-      document.getElementById('web_cam_').style.border = 'solid #17ca35'; //move to next letter here
+    if (max > 0.90 && letterIdx === index) {
+      borderColorChange(); //move to next letter here
 
       nextLetter();
-      document.getElementById('web_cam_').style.border = 'solid #ffffff';
     }
   }
 
