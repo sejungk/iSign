@@ -61,7 +61,7 @@ function LearningPage(props) {
  // increment the letter index until it has reached the length of the array.
   function nextLetter() {
 
-    if (letterIdx < images_arr.length) {
+    if (letterIdx < images_arr.length - 1) {
       setLetterIdx(letterIdx++)
       getImageUrl()
 
@@ -70,7 +70,7 @@ function LearningPage(props) {
           document.querySelector(".completed-modal-wrapper").style.display = "block";
         }
     }
-    else if (letterIdx > 25){
+    else if (letterIdx >= 25){
       alert("Congratulations! You finished this course!")
     }
   }
@@ -112,6 +112,18 @@ async function makePrediction(values){
   getLetters(predictionArr)
 }
 
+
+function borderColorChange() {
+  const webcamDiv = document.getElementById('web_cam_')
+  //original color is orange
+  const orig = 'solid #ff8717'
+  //change to green
+  webcamDiv.style.border = 'solid #17ca35'
+  window.setTimeout(function() {
+    webcamDiv.style.border = orig;
+  }, 1000)
+}
+
 /* gets the maximum probability from array + its index then finds the corresponding letter */
  function getLetters(arr) {
   const max = Math.max(...arr);
@@ -122,10 +134,10 @@ async function makePrediction(values){
 
 
     if(max > 0.90 && letterIdx === index){
-      document.getElementById('web_cam_').style.border = 'solid #17ca35'
+      borderColorChange();
       //move to next letter here
       nextLetter();
-      document.getElementById('web_cam_').style.border = 'solid #ffffff'
+
     }
   }
 

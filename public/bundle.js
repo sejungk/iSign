@@ -57509,7 +57509,7 @@ function LearningPage(props) {
   "https://drive.google.com/uc?export=view&id=1KuibwOfSW788ZwdWop8BS-5p9PP1VMCq", "https://drive.google.com/uc?export=view&id=1Nx2hdCCIMICCx3LcTSuIWu_3TmlAKHs0", "https://drive.google.com/uc?export=view&id=1No8RKHkb1t327PSauQETJueT7OzIDJam", "https://drive.google.com/uc?export=view&id=1wiJB0k7h0Yj0PST3V7Wm_aALt-PBIsks", "https://drive.google.com/uc?export=view&id=1R_memLrdPgNgliRLc1iaiCbHtezX3cGa", "https://drive.google.com/uc?export=view&id=1Uss-sPF5hylo4wEF46x6p9juD3PIm29O"]; // increment the letter index until it has reached the length of the array.
 
   function nextLetter() {
-    if (letterIdx < images_arr.length) {
+    if (letterIdx < images_arr.length - 1) {
       setLetterIdx(letterIdx++);
       getImageUrl();
 
@@ -57517,7 +57517,7 @@ function LearningPage(props) {
         console.log("NEW LESSON");
         document.querySelector(".completed-modal-wrapper").style.display = "block";
       }
-    } else if (letterIdx > 25) {
+    } else if (letterIdx >= 25) {
       alert("Congratulations! You finished this course!");
     }
   }
@@ -57555,8 +57555,6 @@ function LearningPage(props) {
   function makePrediction(_x) {
     return _makePrediction.apply(this, arguments);
   }
-  /* gets the maximum probability from array + its index then finds the corresponding letter */
-
 
   function _makePrediction() {
     _makePrediction = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(values) {
@@ -57584,6 +57582,19 @@ function LearningPage(props) {
     return _makePrediction.apply(this, arguments);
   }
 
+  function borderColorChange() {
+    var webcamDiv = document.getElementById('web_cam_'); //original color is orange
+
+    var orig = 'solid #ff8717'; //change to green
+
+    webcamDiv.style.border = 'solid #17ca35';
+    window.setTimeout(function () {
+      webcamDiv.style.border = orig;
+    }, 1000);
+  }
+  /* gets the maximum probability from array + its index then finds the corresponding letter */
+
+
   function getLetters(arr) {
     var max = Math.max.apply(Math, _toConsumableArray(arr));
     var index = arr.indexOf(max);
@@ -57592,10 +57603,9 @@ function LearningPage(props) {
     console.log("pred & currLetter ", index, letterIdx);
 
     if (max > 0.90 && letterIdx === index) {
-      document.getElementById('web_cam_').style.border = 'solid #17ca35'; //move to next letter here
+      borderColorChange(); //move to next letter here
 
       nextLetter();
-      document.getElementById('web_cam_').style.border = 'solid #ffffff';
     }
   }
 
