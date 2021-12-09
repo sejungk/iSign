@@ -62,7 +62,7 @@ const CoursePage = () => {
 
         <div className="course-options">
               <div className="course-wrapper">
-                <Link to="/alphabet-lesson">
+                <Link to="/learning">
                   <div className="course-item alphabet-course">
                     <h1>The alphabet</h1>
                     <p>6 lessons | 2 quizzes</p>
