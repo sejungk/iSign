@@ -28,7 +28,32 @@ function LearningPage(props) {
     "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl",
     "https://drive.google.com/uc?export=view&id=1DArGFqFNzgE4TH8UUJAfYyYtpmB455Je",
     "https://drive.google.com/uc?export=view&id=1Z-5PGdiYloH9lqTB8RjihVEEeorRr4Ee",
-    "https://drive.google.com/uc?export=view&id=1VnRmsymQmK3hzefGh3pD-C4Ha4m5kC8W"
+    "https://drive.google.com/uc?export=view&id=1VnRmsymQmK3hzefGh3pD-C4Ha4m5kC8W",
+    // ----------  f-j  ---------- //
+    "https://drive.google.com/uc?export=view&id=1txS34gCt-zhOpwCp3k63xk-evOz9hlIZ",
+    "https://drive.google.com/uc?export=view&id=1c6DkW1_qjyhLpU5H8TaJI1MCpXscJ0Nd",
+    "https://drive.google.com/uc?export=view&id=1APMO-TSHaIdCJtAqnwlPJH4JdR93TK51",
+    "https://drive.google.com/uc?export=view&id=1MmRYVXe1tKM-hn64TnH-dOPmGnEu0u-d",
+    "https://drive.google.com/uc?export=view&id=1QYVYUURyssbcMfgANZjaKKvbUZSrb9yM",
+    // ----------  k-o  ---------- //
+    "https://drive.google.com/uc?export=view&id=1dKSKwjnQxw84_F2AxabUzqcoS9gohW_M",
+    "https://drive.google.com/uc?export=view&id=1dcQ612e83F7YEhOQXNZwDNTr7YwF6VNd",
+    "https://drive.google.com/uc?export=view&id=1KH-rX6bfoWmLlWFRgSCIIsnZ2gKn6tew",
+    "https://drive.google.com/uc?export=view&id=1ROr7d-2-snjCOSrm5-RZ9ZGJphJBvlOu",
+    "https://drive.google.com/uc?export=view&id=1fy_LyAPg4pjUKPAskhHzxFS4god5iPLq",
+    // ----------  p-t  ---------- //
+    "https://drive.google.com/uc?export=view&id=1CFAP426Nqaa_wk65X0bFId1rIVgFdDRI",
+    "https://drive.google.com/uc?export=view&id=1kMa3N88K08gIYSe2OQOpt0x7M2jj-lFN",
+    "https://drive.google.com/uc?export=view&id=1_Yb_e9HSj4aTHRiFZRl3Jm6vCUOPjbtl",
+    "https://drive.google.com/uc?export=view&id=1cviHJCTMSUPL_StLja4p6ZNG2UgIh378",
+    "https://drive.google.com/uc?export=view&id=1hnPrG9er_lAw-pnYDFy4BlCffD0ILISh",
+    // ----------  u-z  ---------- //
+    "https://drive.google.com/uc?export=view&id=1KuibwOfSW788ZwdWop8BS-5p9PP1VMCq",
+    "https://drive.google.com/uc?export=view&id=1Nx2hdCCIMICCx3LcTSuIWu_3TmlAKHs0",
+    "https://drive.google.com/uc?export=view&id=1No8RKHkb1t327PSauQETJueT7OzIDJam",
+    "https://drive.google.com/uc?export=view&id=1wiJB0k7h0Yj0PST3V7Wm_aALt-PBIsks",
+    "https://drive.google.com/uc?export=view&id=1R_memLrdPgNgliRLc1iaiCbHtezX3cGa",
+    "https://drive.google.com/uc?export=view&id=1Uss-sPF5hylo4wEF46x6p9juD3PIm29O"
   ];
 
   function nextLetter() {
@@ -42,15 +67,6 @@ function LearningPage(props) {
   function getImageUrl() {
     return images_arr[letterIdx]
   }
-
-
-
-
-
-
-
-
-
 
  function setLettersArr(){
   let arr = props.location.letters.letterArr
@@ -76,15 +92,14 @@ async function makePrediction(values){
 
  function getLetters(arr) {
   const max = Math.max(...arr);
-  const index =arr.indexOf(max);
+  const index = arr.indexOf(max);
   let answer = letterKey.get(index)
   console.log(answer)
-  if(max > 0.90){
-    // alert(answer)
-    alert("correct!")
+    if(max > 0.90 && answer === index){
+      alert("correct!")
+    }
   }
 
-  }
   function setMapValues(){
     for(let i = 0; i < letters.length; i++){
       letterKey.set(i,letters[i])
@@ -132,7 +147,8 @@ async function makePrediction(values){
   }
  function startLesson(){
   //  console.log("props", props.location.letters)
-  setLettersArr()
+  document.querySelector(".training-modal-wrapper").style.display = "none";
+   setLettersArr()
    getModel()
    setMapValues()
   hands.onResults(onResults)
@@ -148,13 +164,18 @@ let camSet = true
         </Link>
       </div>
     <div className="learning-page-content-wrapper">
-      <h1>Lets get started</h1>
-      <p>Make sure your right hand is in the frame and copy the handshape below.</p>
-      {/* <p>Click start lesson to begin </p> */}
-      {/* <button style={{margin:0, marginBottom:'20px'}}onClick={() => nextLetter()}id="train_button">Next Letter</button> */}
-      <img src={ getImageUrl() } />
-      <button onClick={() =>startLesson()}id="train_button">Start Lesson</button>
+      <div className="training-modal-wrapper">
+        <div className="training-modal" >
+          <h1>Tips to get started</h1>
+          <p>Place your right hand in the frame and try to copy the handshape</p>
+          <button onClick={() =>startLesson()}id="train_button">Start learning</button>
+        </div>
+      </div>
 
+      {/* <p>Click start lesson to begin </p> */}
+      <button style={{margin:0, marginBottom:'20px'}}onClick={() => nextLetter()}id="train_button">Next Letter</button>
+      <p>Copy the handshape below</p>
+      <img src={ getImageUrl() } />
     </div>
 
     <div className="video-wrapper">

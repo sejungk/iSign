@@ -57411,7 +57411,7 @@ var CoursePage = function CoursePage() {
     className: "course-list-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "course-page-main-header"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome back!", currentUser === null || currentUser === void 0 ? void 0 : currentUser.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "What would you like to learn today?")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome back! ", currentUser === null || currentUser === void 0 ? void 0 : currentUser.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "What would you like to learn today?")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "course-options"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "course-wrapper"
@@ -57579,7 +57579,11 @@ function LearningPage(props) {
       letterIdx = _useState4[0],
       setLetterIdx = _useState4[1];
 
-  var images_arr = ["https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK", "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl", "https://drive.google.com/uc?export=view&id=1DArGFqFNzgE4TH8UUJAfYyYtpmB455Je", "https://drive.google.com/uc?export=view&id=1Z-5PGdiYloH9lqTB8RjihVEEeorRr4Ee", "https://drive.google.com/uc?export=view&id=1VnRmsymQmK3hzefGh3pD-C4Ha4m5kC8W"];
+  var images_arr = ["https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK", "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl", "https://drive.google.com/uc?export=view&id=1DArGFqFNzgE4TH8UUJAfYyYtpmB455Je", "https://drive.google.com/uc?export=view&id=1Z-5PGdiYloH9lqTB8RjihVEEeorRr4Ee", "https://drive.google.com/uc?export=view&id=1VnRmsymQmK3hzefGh3pD-C4Ha4m5kC8W", // ----------  f-j  ---------- //
+  "https://drive.google.com/uc?export=view&id=1txS34gCt-zhOpwCp3k63xk-evOz9hlIZ", "https://drive.google.com/uc?export=view&id=1c6DkW1_qjyhLpU5H8TaJI1MCpXscJ0Nd", "https://drive.google.com/uc?export=view&id=1APMO-TSHaIdCJtAqnwlPJH4JdR93TK51", "https://drive.google.com/uc?export=view&id=1MmRYVXe1tKM-hn64TnH-dOPmGnEu0u-d", "https://drive.google.com/uc?export=view&id=1QYVYUURyssbcMfgANZjaKKvbUZSrb9yM", // ----------  k-o  ---------- //
+  "https://drive.google.com/uc?export=view&id=1dKSKwjnQxw84_F2AxabUzqcoS9gohW_M", "https://drive.google.com/uc?export=view&id=1dcQ612e83F7YEhOQXNZwDNTr7YwF6VNd", "https://drive.google.com/uc?export=view&id=1KH-rX6bfoWmLlWFRgSCIIsnZ2gKn6tew", "https://drive.google.com/uc?export=view&id=1ROr7d-2-snjCOSrm5-RZ9ZGJphJBvlOu", "https://drive.google.com/uc?export=view&id=1fy_LyAPg4pjUKPAskhHzxFS4god5iPLq", // ----------  p-t  ---------- //
+  "https://drive.google.com/uc?export=view&id=1CFAP426Nqaa_wk65X0bFId1rIVgFdDRI", "https://drive.google.com/uc?export=view&id=1kMa3N88K08gIYSe2OQOpt0x7M2jj-lFN", "https://drive.google.com/uc?export=view&id=1_Yb_e9HSj4aTHRiFZRl3Jm6vCUOPjbtl", "https://drive.google.com/uc?export=view&id=1cviHJCTMSUPL_StLja4p6ZNG2UgIh378", "https://drive.google.com/uc?export=view&id=1hnPrG9er_lAw-pnYDFy4BlCffD0ILISh", // ----------  u-z  ---------- //
+  "https://drive.google.com/uc?export=view&id=1KuibwOfSW788ZwdWop8BS-5p9PP1VMCq", "https://drive.google.com/uc?export=view&id=1Nx2hdCCIMICCx3LcTSuIWu_3TmlAKHs0", "https://drive.google.com/uc?export=view&id=1No8RKHkb1t327PSauQETJueT7OzIDJam", "https://drive.google.com/uc?export=view&id=1wiJB0k7h0Yj0PST3V7Wm_aALt-PBIsks", "https://drive.google.com/uc?export=view&id=1R_memLrdPgNgliRLc1iaiCbHtezX3cGa", "https://drive.google.com/uc?export=view&id=1Uss-sPF5hylo4wEF46x6p9juD3PIm29O"];
 
   function nextLetter() {
     if (letterIdx < images_arr.length) {
@@ -57643,8 +57647,7 @@ function LearningPage(props) {
     var answer = letterKey.get(index);
     console.log(answer);
 
-    if (max > 0.90) {
-      // alert(answer)
+    if (max > 0.90 && answer === index) {
       alert("correct!");
     }
   }
@@ -57740,6 +57743,7 @@ function LearningPage(props) {
 
   function startLesson() {
     //  console.log("props", props.location.letters)
+    document.querySelector(".training-modal-wrapper").style.display = "none";
     setLettersArr();
     getModel();
     setMapValues();
@@ -57757,14 +57761,27 @@ function LearningPage(props) {
     src: "https://drive.google.com/uc?export=view&id=16ORv_43yS04SQLquK8vike9O0rTlJMWW"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "learning-page-content-wrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Lets get started"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Make sure your right hand is in the frame and copy the handshape below."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: getImageUrl()
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "training-modal-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "training-modal"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Tips to get started"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Place your right hand in the frame and try to copy the handshape"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
       return startLesson();
     },
     id: "train_button"
-  }, "Start Lesson")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Start learning"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    style: {
+      margin: 0,
+      marginBottom: '20px'
+    },
+    onClick: function onClick() {
+      return nextLetter();
+    },
+    id: "train_button"
+  }, "Next Letter"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Copy the handshape below"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: getImageUrl()
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "video-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_webcam__WEBPACK_IMPORTED_MODULE_3___default.a, {
     mirrored: true,
