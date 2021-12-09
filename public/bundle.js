@@ -57555,8 +57555,6 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
-
 
 
 
@@ -57590,7 +57588,7 @@ function LearningPage(props) {
 
   function nextLetter() {
     if (letterIdx < images_arr.length) {
-      setLetterIdx((+letterIdx, _readOnlyError("letterIdx")));
+      setLetterIdx(letterIdx++);
       getImageUrl();
 
       if (letterIdx % 5 === 0 && letterIdx > 0 && letterIdx < 25) {
@@ -57672,7 +57670,8 @@ function LearningPage(props) {
     console.log("pred & currLetter ", index, letterIdx);
 
     if (max > 0.90 && letterIdx === index) {
-      document.getElementById('web_cam_').style.border = 'solid #17ca35'; //move to next letter here
+      document.getElementById('web_cam_').style.border = 'solid #17ca35';
+      setTimeout(nextLetter(), 1000); //move to next letter here
 
       nextLetter();
       document.getElementById('web_cam_').style.border = 'solid #ffffff';

@@ -23,7 +23,7 @@ function LearningPage(props) {
   //set an initial letterIndex corresponding to which letter the user
   //is on in the lesson
 
-  const [ letterIdx, setLetterIdx ] = useState(0);
+  let [ letterIdx, setLetterIdx ] = useState(0);
 
   const images_arr = [
     "https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK",
@@ -123,6 +123,7 @@ async function makePrediction(values){
 
     if(max > 0.90 && letterIdx === index){
       document.getElementById('web_cam_').style.border = 'solid #17ca35'
+      setTimeout(nextLetter(), 1000)
       //move to next letter here
       nextLetter();
       document.getElementById('web_cam_').style.border = 'solid #ffffff'
