@@ -86,6 +86,24 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./data/images.js":
+/*!************************!*\
+  !*** ./data/images.js ***!
+  \************************/
+/*! exports provided: images_arr */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "images_arr", function() { return images_arr; });
+var images_arr = ["https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK", "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl", "https://drive.google.com/uc?export=view&id=1DArGFqFNzgE4TH8UUJAfYyYtpmB455Je", "https://drive.google.com/uc?export=view&id=1Z-5PGdiYloH9lqTB8RjihVEEeorRr4Ee", "https://drive.google.com/uc?export=view&id=1VnRmsymQmK3hzefGh3pD-C4Ha4m5kC8W", // ----------  f-j  ---------- //
+"https://drive.google.com/uc?export=view&id=1txS34gCt-zhOpwCp3k63xk-evOz9hlIZ", "https://drive.google.com/uc?export=view&id=1c6DkW1_qjyhLpU5H8TaJI1MCpXscJ0Nd", "https://drive.google.com/uc?export=view&id=1APMO-TSHaIdCJtAqnwlPJH4JdR93TK51", "https://drive.google.com/uc?export=view&id=1MmRYVXe1tKM-hn64TnH-dOPmGnEu0u-d", "https://drive.google.com/uc?export=view&id=1QYVYUURyssbcMfgANZjaKKvbUZSrb9yM", // ----------  k-o  ---------- //
+"https://drive.google.com/uc?export=view&id=1dKSKwjnQxw84_F2AxabUzqcoS9gohW_M", "https://drive.google.com/uc?export=view&id=1dcQ612e83F7YEhOQXNZwDNTr7YwF6VNd", "https://drive.google.com/uc?export=view&id=1KH-rX6bfoWmLlWFRgSCIIsnZ2gKn6tew", "https://drive.google.com/uc?export=view&id=1ROr7d-2-snjCOSrm5-RZ9ZGJphJBvlOu", "https://drive.google.com/uc?export=view&id=1fy_LyAPg4pjUKPAskhHzxFS4god5iPLq", // ----------  p-t  ---------- //
+"https://drive.google.com/uc?export=view&id=1CFAP426Nqaa_wk65X0bFId1rIVgFdDRI", "https://drive.google.com/uc?export=view&id=1kMa3N88K08gIYSe2OQOpt0x7M2jj-lFN", "https://drive.google.com/uc?export=view&id=1_Yb_e9HSj4aTHRiFZRl3Jm6vCUOPjbtl", "https://drive.google.com/uc?export=view&id=1cviHJCTMSUPL_StLja4p6ZNG2UgIh378", "https://drive.google.com/uc?export=view&id=1hnPrG9er_lAw-pnYDFy4BlCffD0ILISh", // ----------  u-z  ---------- //
+"https://drive.google.com/uc?export=view&id=1KuibwOfSW788ZwdWop8BS-5p9PP1VMCq", "https://drive.google.com/uc?export=view&id=1Nx2hdCCIMICCx3LcTSuIWu_3TmlAKHs0", "https://drive.google.com/uc?export=view&id=1No8RKHkb1t327PSauQETJueT7OzIDJam", "https://drive.google.com/uc?export=view&id=1wiJB0k7h0Yj0PST3V7Wm_aALt-PBIsks", "https://drive.google.com/uc?export=view&id=1R_memLrdPgNgliRLc1iaiCbHtezX3cGa", "https://drive.google.com/uc?export=view&id=1Uss-sPF5hylo4wEF46x6p9juD3PIm29O"];
+
+/***/ }),
+
 /***/ "./node_modules/@babel/polyfill/lib/index.js":
 /*!***************************************************!*\
   !*** ./node_modules/@babel/polyfill/lib/index.js ***!
@@ -57366,35 +57384,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_webcam__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-webcam */ "./node_modules/react-webcam/dist/react-webcam.js");
 /* harmony import */ var react_webcam__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_webcam__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _data_images__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../data/images */ "./data/images.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
 
- // import * as tf from "@tensorflow/tfjs"
+
 
 function LearningPage(props) {
   var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -57409,21 +57421,15 @@ function LearningPage(props) {
     }
   }); //set an initial letterIndex corresponding to which letter the user
   //is on in the lesson
+  // let [ letterIdx, setLetterIdx ] = useState(0);
+  // let letterIdx = useRef(0)
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
-      _useState2 = _slicedToArray(_useState, 2),
-      letterIdx = _useState2[0],
-      setLetterIdx = _useState2[1];
-
-  var images_arr = ["https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK", "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl", "https://drive.google.com/uc?export=view&id=1DArGFqFNzgE4TH8UUJAfYyYtpmB455Je", "https://drive.google.com/uc?export=view&id=1Z-5PGdiYloH9lqTB8RjihVEEeorRr4Ee", "https://drive.google.com/uc?export=view&id=1VnRmsymQmK3hzefGh3pD-C4Ha4m5kC8W", // ----------  f-j  ---------- //
-  "https://drive.google.com/uc?export=view&id=1txS34gCt-zhOpwCp3k63xk-evOz9hlIZ", "https://drive.google.com/uc?export=view&id=1c6DkW1_qjyhLpU5H8TaJI1MCpXscJ0Nd", "https://drive.google.com/uc?export=view&id=1APMO-TSHaIdCJtAqnwlPJH4JdR93TK51", "https://drive.google.com/uc?export=view&id=1MmRYVXe1tKM-hn64TnH-dOPmGnEu0u-d", "https://drive.google.com/uc?export=view&id=1QYVYUURyssbcMfgANZjaKKvbUZSrb9yM", // ----------  k-o  ---------- //
-  "https://drive.google.com/uc?export=view&id=1dKSKwjnQxw84_F2AxabUzqcoS9gohW_M", "https://drive.google.com/uc?export=view&id=1dcQ612e83F7YEhOQXNZwDNTr7YwF6VNd", "https://drive.google.com/uc?export=view&id=1KH-rX6bfoWmLlWFRgSCIIsnZ2gKn6tew", "https://drive.google.com/uc?export=view&id=1ROr7d-2-snjCOSrm5-RZ9ZGJphJBvlOu", "https://drive.google.com/uc?export=view&id=1fy_LyAPg4pjUKPAskhHzxFS4god5iPLq", // ----------  p-t  ---------- //
-  "https://drive.google.com/uc?export=view&id=1CFAP426Nqaa_wk65X0bFId1rIVgFdDRI", "https://drive.google.com/uc?export=view&id=1kMa3N88K08gIYSe2OQOpt0x7M2jj-lFN", "https://drive.google.com/uc?export=view&id=1_Yb_e9HSj4aTHRiFZRl3Jm6vCUOPjbtl", "https://drive.google.com/uc?export=view&id=1cviHJCTMSUPL_StLja4p6ZNG2UgIh378", "https://drive.google.com/uc?export=view&id=1hnPrG9er_lAw-pnYDFy4BlCffD0ILISh", // ----------  u-z  ---------- //
-  "https://drive.google.com/uc?export=view&id=1KuibwOfSW788ZwdWop8BS-5p9PP1VMCq", "https://drive.google.com/uc?export=view&id=1Nx2hdCCIMICCx3LcTSuIWu_3TmlAKHs0", "https://drive.google.com/uc?export=view&id=1No8RKHkb1t327PSauQETJueT7OzIDJam", "https://drive.google.com/uc?export=view&id=1wiJB0k7h0Yj0PST3V7Wm_aALt-PBIsks", "https://drive.google.com/uc?export=view&id=1R_memLrdPgNgliRLc1iaiCbHtezX3cGa", "https://drive.google.com/uc?export=view&id=1Uss-sPF5hylo4wEF46x6p9juD3PIm29O"]; // increment the letter index until it has reached the length of the array.
+  var letterIdx = 0; // increment the letter index until it has reached the length of the array.
 
   function nextLetter() {
-    if (letterIdx < images_arr.length) {
-      setLetterIdx(letterIdx++);
+    if (letterIdx < _data_images__WEBPACK_IMPORTED_MODULE_5__["images_arr"].length) {
+      // setLetterIdx(letterIdx++)
+      letterIdx++;
       getImageUrl();
 
       if (letterIdx % 5 === 0 && letterIdx > 0 && letterIdx < 25) {
@@ -57436,7 +57442,7 @@ function LearningPage(props) {
   }
 
   function getImageUrl() {
-    document.getElementById('letter-img').src = images_arr[letterIdx];
+    document.getElementById('letter-img').src = _data_images__WEBPACK_IMPORTED_MODULE_5__["images_arr"][letterIdx];
     console.log(document.getElementById('letter-img').src);
   }
   /* takes the handpoints captured from mediapipe and flattens the array of objects
@@ -57494,10 +57500,10 @@ function LearningPage(props) {
     var max = Math.max.apply(Math, _toConsumableArray(arr));
     var index = arr.indexOf(max);
     var answer = letterKey.get(index);
-    console.log("prediction: ", answer);
+    console.log("max", max);
     console.log("pred & currLetter ", index, letterIdx);
 
-    if (max > 0.90 && letterIdx === index) {
+    if (max > 0.65 && letterIdx === index) {
       document.getElementById('web_cam_').style.border = 'solid #17ca35'; //move to next letter here
 
       nextLetter();
@@ -57522,8 +57528,7 @@ function LearningPage(props) {
     var videoHeight = videoRef.current.video.videoHeight;
 
     if (results.multiHandLandmarks.length > 0) {
-      var landMark = results.multiHandLandmarks[0]; // console.log(landMark)
-
+      var landMark = results.multiHandLandmarks[0];
       convertLandMarks(landMark);
     }
   }
@@ -57602,8 +57607,7 @@ function LearningPage(props) {
   }
 
   function startLesson() {
-    document.getElementById('web_cam_').style.border = 'solid #f4ba19'; //  console.log("props", props.location.letters)
-
+    document.getElementById('web_cam_').style.border = 'solid #f4ba19';
     document.querySelector(".training-modal-wrapper").style.display = "none";
     getModel();
     setMapValues();
