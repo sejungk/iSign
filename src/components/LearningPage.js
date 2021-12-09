@@ -78,16 +78,7 @@ function LearningPage(props) {
   function getImageUrl() {
     document.getElementById('letter-img').src = images_arr[letterIdx]
     console.log(document.getElementById('letter-img').src)
-
-    // console.log("imageurl func", letterIdx)
-    // return images_arr[letterIdx]
   }
-
- function setLettersArr(){
-  // let arr = props.location.letters.letterArr
-  // console.log(arr)
-  console.log(props)
- }
 
  /* takes the handpoints captured from mediapipe and flattens the array of objects
  [{x:0.3, y:0.5, z: -0.1}, {x:0.8, y:0.2, z: 0.7}] to [0.3,0.5,-0.1, 0.8, 0.2, 0.7]
@@ -117,7 +108,7 @@ async function makePrediction(values){
   const max = Math.max(...arr);
   const index = arr.indexOf(max);
   let answer = letterKey.get(index);
-  // console.log("prediction: ", answer);
+  console.log("prediction: ", answer);
   console.log("pred & currLetter ",index, letterIdx)
 
 
@@ -180,10 +171,8 @@ async function makePrediction(values){
 
  function startLesson(){
    document.getElementById('web_cam_').style.border = 'solid #f4ba19'
-  setLettersArr()
   //  console.log("props", props.location.letters)
   document.querySelector(".training-modal-wrapper").style.display = "none";
-   setLettersArr()
    getModel()
    setMapValues()
   hands.onResults(onResults)
@@ -197,7 +186,7 @@ async function makePrediction(values){
  return (
   <div className="learning-page-container">
     <div className="back-bttn">
-        <Link to="/alphabet-lesson">
+        <Link to="/courses">
           <img src="https://drive.google.com/uc?export=view&id=16ORv_43yS04SQLquK8vike9O0rTlJMWW" />
         </Link>
       </div>

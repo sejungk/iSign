@@ -3,7 +3,6 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import LearningPage from "./components/LearningPage";
 import CoursePage from "./components/CoursePage";
-import AlphabetPage from  "./components/AlphabetPage";
 import Authform from "./Authentication/Authform";
 
 export default class Routes extends Component {
@@ -17,7 +16,6 @@ export default class Routes extends Component {
         <Route exact path="/courses" component={CoursePage} />
         <Route exact path="/courses" component={CoursePage} />
         <Route exact path="/learning" component={LearningPage} />
-        <Route exact path="/alphabet-lesson" component={AlphabetPage}/>
         </Switch>
       </div>
     );
