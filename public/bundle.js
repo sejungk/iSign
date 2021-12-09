@@ -57257,10 +57257,10 @@ var AlphabetPage = function AlphabetPage() {
     className: "lesson-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: {
-      pathname: "/learning",
-      letters: {
-        letterArr: ['a', 'b', 'c', 'd', 'e']
-      }
+      pathname: "/learning" // startingLetterIdx={0}
+      // idx: { startingLetterIdx: 0 }
+      // letters:{ letterArr:['a','b','c','d','e']}
+
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "lesson-item"
@@ -57586,11 +57586,18 @@ function LearningPage(props) {
   "https://drive.google.com/uc?export=view&id=1KuibwOfSW788ZwdWop8BS-5p9PP1VMCq", "https://drive.google.com/uc?export=view&id=1Nx2hdCCIMICCx3LcTSuIWu_3TmlAKHs0", "https://drive.google.com/uc?export=view&id=1No8RKHkb1t327PSauQETJueT7OzIDJam", "https://drive.google.com/uc?export=view&id=1wiJB0k7h0Yj0PST3V7Wm_aALt-PBIsks", "https://drive.google.com/uc?export=view&id=1R_memLrdPgNgliRLc1iaiCbHtezX3cGa", "https://drive.google.com/uc?export=view&id=1Uss-sPF5hylo4wEF46x6p9juD3PIm29O"];
 
   function nextLetter() {
+    console.log("in next letter func: ", letterIdx, images_arr.length);
+
     if (letterIdx < images_arr.length) {
-      setLetterIdx(letterIdx + 1);
-    } else {
-      document.getElementById("completed-modal-wrapper").style.display = "block";
-      alert("Congratulations! You finished this lesson!");
+      setLetterIdx(letterIdx++);
+      getImageUrl();
+
+      if (letterIdx % 5 === 0 && letterIdx > 0 && letterIdx < 25) {
+        console.log("NEW LESSON");
+        document.querySelector(".completed-modal-wrapper").style.display = "block";
+      }
+    } else if (letterIdx > 25) {
+      alert("Congratulations! You finished this course!");
     }
   }
 
@@ -57599,8 +57606,9 @@ function LearningPage(props) {
   }
 
   function setLettersArr() {
-    var arr = props.location.letters.letterArr;
-    console.log(arr);
+    // let arr = props.location.letters.letterArr
+    // console.log(arr)
+    console.log(props);
   }
 
   function convertLandMarks(landmark) {
@@ -57645,11 +57653,13 @@ function LearningPage(props) {
   function getLetters(arr) {
     var max = Math.max.apply(Math, _toConsumableArray(arr));
     var index = arr.indexOf(max);
-    var answer = letterKey.get(index);
-    console.log(answer);
+    var answer = letterKey.get(index); // console.log("prediction: ", answer);
 
-    if (max > 0.90 && answer === index) {
-      alert("correct!");
+    console.log("pred & currLetter ", index, letterIdx);
+
+    if (max > 0.90 && letterIdx === index) {
+      //move to next letter here
+      nextLetter();
     }
   }
 
@@ -57666,8 +57676,8 @@ function LearningPage(props) {
     var videoHeight = videoRef.current.video.videoHeight;
 
     if (results.multiHandLandmarks.length > 0) {
-      var landMark = results.multiHandLandmarks[0];
-      console.log(landMark);
+      var landMark = results.multiHandLandmarks[0]; // console.log(landMark)
+
       convertLandMarks(landMark);
     }
   }
@@ -57780,6 +57790,9 @@ function LearningPage(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "completed-modal"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    onClick: function onClick() {
+      return hideModal();
+    },
     className: "x-bttn"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://drive.google.com/uc?export=view&id=1chHZvH7I4XgrWqao0w2CxkN9TrFd6ukL"
@@ -57795,16 +57808,7 @@ function LearningPage(props) {
     onClick: function onClick() {
       return hideModal();
     }
-  }, "Start next lesson")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    style: {
-      margin: 0,
-      marginBottom: '20px'
-    },
-    onClick: function onClick() {
-      return nextLetter();
-    },
-    id: "train_button"
-  }, "Next Letter"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Copy the handshape below"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, "Start next lesson")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Copy the handshape below"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: getImageUrl()
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "video-wrapper"

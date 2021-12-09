@@ -5,7 +5,6 @@ import Webcam from "react-webcam";
 import { Link } from 'react-router-dom';
 // import * as tf from "@tensorflow/tfjs"
 
-
 function LearningPage(props) {
   let letters= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
   let letterKey = new Map()
@@ -21,8 +20,7 @@ function LearningPage(props) {
     }
   })
 
-
-  const [ letterIdx, setLetterIdx ] = useState(0);
+  let [ letterIdx, setLetterIdx ] = useState(0);
   const images_arr = [
     "https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK",
     "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl",
@@ -57,11 +55,18 @@ function LearningPage(props) {
   ];
 
   function nextLetter() {
+    console.log("in next letter func: ", letterIdx, images_arr.length)
     if (letterIdx < images_arr.length) {
-      setLetterIdx(letterIdx + 1)
-    } else {
-      document.getElementById("completed-modal-wrapper").style.display = "block"
-      alert("Congratulations! You finished this lesson!")
+      setLetterIdx(letterIdx++)
+      getImageUrl()
+
+        if (letterIdx % 5 === 0 && letterIdx > 0 && letterIdx < 25) {
+          console.log("NEW LESSON")
+          document.querySelector(".completed-modal-wrapper").style.display = "block";
+        }
+    }
+    else if (letterIdx > 25){
+      alert("Congratulations! You finished this course!")
     }
   }
 
@@ -70,8 +75,9 @@ function LearningPage(props) {
   }
 
  function setLettersArr(){
-  let arr = props.location.letters.letterArr
-  console.log(arr)
+  // let arr = props.location.letters.letterArr
+  // console.log(arr)
+  console.log(props)
  }
 
  function convertLandMarks(landmark){
@@ -94,10 +100,14 @@ async function makePrediction(values){
  function getLetters(arr) {
   const max = Math.max(...arr);
   const index = arr.indexOf(max);
-  let answer = letterKey.get(index)
-  console.log(answer)
-    if(max > 0.90 && answer === index){
-      alert("correct!")
+  let answer = letterKey.get(index);
+  // console.log("prediction: ", answer);
+  console.log("pred & currLetter ",index, letterIdx)
+
+
+    if(max > 0.90 && letterIdx === index){
+      //move to next letter here
+      nextLetter();
     }
   }
 
@@ -113,7 +123,7 @@ async function makePrediction(values){
     const videoHeight = videoRef.current.video.videoHeight
     if (results.multiHandLandmarks.length > 0) {
       let landMark = results.multiHandLandmarks[0]
-      console.log(landMark)
+      // console.log(landMark)
       convertLandMarks(landMark)
   }
 }
@@ -181,7 +191,7 @@ let camSet = true
 
       <div className="completed-modal-wrapper">
         <div className="completed-modal">
-          <div className="x-bttn">
+          <div onClick={() => hideModal()} className="x-bttn">
             <img src = "https://drive.google.com/uc?export=view&id=1chHZvH7I4XgrWqao0w2CxkN9TrFd6ukL" />
           </div>
           <div className="completed-modal-img">
@@ -196,7 +206,7 @@ let camSet = true
       </div>
 
       {/* <p>Click start lesson to begin </p> */}
-      <button style={{margin:0, marginBottom:'20px'}}onClick={() => nextLetter()}id="train_button">Next Letter</button>
+      {/* <button style={{margin:0, marginBottom:'20px'}}onClick={() => nextLetter()}id="train_button">Next Letter</button> */}
       <p>Copy the handshape below</p>
       <img src={ getImageUrl() } />
     </div>
