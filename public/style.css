@@ -363,6 +363,11 @@ a {
   text-align: center;
 }
 
+.learning-page-content-wrapper {
+  margin: 1%;
+  flex: 0 0 45%;
+}
+
 .training-modal-wrapper {
   display: flex;
   justify-content: center;
@@ -384,11 +389,6 @@ a {
   top: 30%;
 }
 
-.learning-page-content-wrapper {
-  margin: 1%;
-  flex: 0 0 45%;
-}
-
 .training-modal > h1{
   margin: 0;
   margin-bottom: 10px;
@@ -406,6 +406,79 @@ a {
 
 .training-modal > button {
   margin: 20px 0 0 0;
+}
+
+.completed-modal-wrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+}
+
+.completed-modal {
+  display: block;
+  margin-left: calc(50vw - 225px);
+  margin-top: calc(50vh - 150px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: lightblue;
+  text-align: center;
+  height: 350px;
+  width: 450px;
+  border-radius: 20px;
+}
+
+.x-bttn > img{
+  position: absolute;
+  height: 18px;
+  right: 3%;
+  top: 5%;
+}
+
+.completed-modal-img {
+  height: 100%;
+  margin-left: 3%;
+}
+
+.completed-modal-img > img {
+  height: 35%;
+  margin: 6% 0 2% 0;
+}
+
+.completed-modal-text {
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+}
+
+.completed-modal-text > h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+}
+
+.completed-modal-text > p {
+  margin: 4px 0 20px 0;
+  font-size: 16px;
+}
+
+.completed-modal-text > button {
+  margin: 3% 0 0 0;
+}
+
+.signup-bttn p {
+  color: white;
+  line-height: 55px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
 }
 
 .learning-page-content-wrapper > p{

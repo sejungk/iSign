@@ -60,6 +60,7 @@ function LearningPage(props) {
     if (letterIdx < images_arr.length) {
       setLetterIdx(letterIdx + 1)
     } else {
+      document.getElementById("completed-modal-wrapper").style.display = "block"
       alert("Congratulations! You finished this lesson!")
     }
   }
@@ -145,6 +146,7 @@ async function makePrediction(values){
     model = await loadModel()
       return model
   }
+
  function startLesson(){
   //  console.log("props", props.location.letters)
   document.querySelector(".training-modal-wrapper").style.display = "none";
@@ -152,7 +154,10 @@ async function makePrediction(values){
    getModel()
    setMapValues()
   hands.onResults(onResults)
+ }
 
+ function hideModal() {
+  document.querySelector(".completed-modal-wrapper").style.display = "none";
  }
 
 let camSet = true
@@ -163,12 +168,30 @@ let camSet = true
           <img src="https://drive.google.com/uc?export=view&id=16ORv_43yS04SQLquK8vike9O0rTlJMWW" />
         </Link>
       </div>
+
     <div className="learning-page-content-wrapper">
+
       <div className="training-modal-wrapper">
         <div className="training-modal" >
           <h1>Tips to get started</h1>
           <p>Place your right hand in the frame and try to copy the handshape</p>
           <button onClick={() =>startLesson()}id="train_button">Start learning</button>
+        </div>
+      </div>
+
+      <div className="completed-modal-wrapper">
+        <div className="completed-modal">
+          <div className="x-bttn">
+            <img src = "https://drive.google.com/uc?export=view&id=1chHZvH7I4XgrWqao0w2CxkN9TrFd6ukL" />
+          </div>
+          <div className="completed-modal-img">
+            <img className="completed-modal-img" src="https://drive.google.com/uc?export=view&id=1glNM8wzs2mDoYB8H0VqImPWfLKwfxjkp" />
+          </div>
+          <div className="completed-modal-text">
+            <h2>Congratulations!</h2>
+            <p>You've unlocked lesson 2</p>
+            <button id="completed-lesson-bttn" onClick={() => hideModal()}>Start next lesson</button>
+          </div>
         </div>
       </div>
 

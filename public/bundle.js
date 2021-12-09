@@ -57589,6 +57589,7 @@ function LearningPage(props) {
     if (letterIdx < images_arr.length) {
       setLetterIdx(letterIdx + 1);
     } else {
+      document.getElementById("completed-modal-wrapper").style.display = "block";
       alert("Congratulations! You finished this lesson!");
     }
   }
@@ -57750,6 +57751,10 @@ function LearningPage(props) {
     hands.onResults(onResults);
   }
 
+  function hideModal() {
+    document.querySelector(".completed-modal-wrapper").style.display = "none";
+  }
+
   var camSet = true;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "learning-page-container"
@@ -57770,7 +57775,27 @@ function LearningPage(props) {
       return startLesson();
     },
     id: "train_button"
-  }, "Start learning"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, "Start learning"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "completed-modal-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "completed-modal"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "x-bttn"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://drive.google.com/uc?export=view&id=1chHZvH7I4XgrWqao0w2CxkN9TrFd6ukL"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "completed-modal-img"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "completed-modal-img",
+    src: "https://drive.google.com/uc?export=view&id=1glNM8wzs2mDoYB8H0VqImPWfLKwfxjkp"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "completed-modal-text"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Congratulations!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You've unlocked lesson 2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    id: "completed-lesson-bttn",
+    onClick: function onClick() {
+      return hideModal();
+    }
+  }, "Start next lesson")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     style: {
       margin: 0,
       marginBottom: '20px'
