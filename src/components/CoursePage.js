@@ -1,20 +1,32 @@
-import React from 'react';
-
-
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
-import { useAuth, logout } from '../Authentication/context';
+import { useAuth, logout } from '../Authentication/authfuncs';
+
 
 const CoursePage = () => {
+
   const currentUser = useAuth();
   console.log(currentUser);
+  const [loading, setLoading] = useState(false);
+
+  async function handleLogout() {
+    setLoading(true);
+    try {
+      await logout(currentUser);
+    } catch(e){
+      alert(e);
+    }
+    setLoading(false);
+  }
+
 
   return (
     <div className="course-page-container">
       <div className="profile-wrapper">
         <div className="profile-pic">
             <img src="https://drive.google.com/uc?export=view&id=1-QO80c6b1RfU_NHTmV5CJH4x2BTUCXrW" />
-            <h1>{currentUser?.name}</h1>
           </div>
+          <h1 className="email_tagline">{currentUser?.email}</h1>
           <div className="profile-nav">
             <div className="profile-nav-item-wrapper">
               <div className="profile-nav-item">
@@ -26,16 +38,16 @@ const CoursePage = () => {
               <div className="profile-nav-item">
 
                 <img src="https://drive.google.com/uc?export=view&id=1y3A1SeM99ZG5wrNucqv3tibgIDinoSnt" />
-                <Link to="/">
-                <p onClick={logout}>Sign out</p>
-                </Link>
+                
+                <p className="signIn_orUp" onClick={handleLogout}>Sign out</p>
+                
               </div>
             {/* </div> */}
           </div>
       </div>
       <div className="course-list-wrapper">
         <div className="course-page-main-header">
-          <h1>Welcome back!{currentUser?.name}</h1>
+          <h1>Welcome back!{currentUser?.email}</h1>
           <p>What would you like to learn today?</p>
         </div>
 

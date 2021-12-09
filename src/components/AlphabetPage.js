@@ -4,10 +4,17 @@ import { Link } from 'react-router-dom';
 const AlphabetPage = () => {
   return (
     <div className="alphabet-page-wrapper">
+      <div className="back-bttn">
+        <Link to="/courses">
+          <img src="https://drive.google.com/uc?export=view&id=16ORv_43yS04SQLquK8vike9O0rTlJMWW" />
+        </Link>
+      </div>
        <div className="alphabet-header">The alphabet</div>
        <div className="alphabet-lessons-wrapper">
          <div className="lesson-wrapper">
-          <Link to="/learning">
+          <Link to={{pathname:"/learning", letters:{
+            letterArr:['a','b','c','d','e']
+          }}} >
             <div className="lesson-item">
               <h3>A to E</h3>
             </div>

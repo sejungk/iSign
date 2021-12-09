@@ -51866,6 +51866,444 @@ function pathToRegexp (path, keys, options) {
 
 /***/ }),
 
+/***/ "./node_modules/react-webcam/dist/react-webcam.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-webcam/dist/react-webcam.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+	else {}
+})(this, function(__WEBPACK_EXTERNAL_MODULE_react__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/react-webcam.tsx");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/react-webcam.tsx":
+/*!******************************!*\
+  !*** ./src/react-webcam.tsx ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (undefined && undefined.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+
+// polyfill based on https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+(function polyfillGetUserMedia() {
+    if (typeof window === 'undefined') {
+        return;
+    }
+    // Older browsers might not implement mediaDevices at all, so we set an empty object first
+    if (navigator.mediaDevices === undefined) {
+        navigator.mediaDevices = {};
+    }
+    // Some browsers partially implement mediaDevices. We can't just assign an object
+    // with getUserMedia as it would overwrite existing properties.
+    // Here, we will just add the getUserMedia property if it's missing.
+    if (navigator.mediaDevices.getUserMedia === undefined) {
+        navigator.mediaDevices.getUserMedia = function (constraints) {
+            // First get ahold of the legacy getUserMedia, if present
+            var getUserMedia = navigator.getUserMedia ||
+                navigator.webkitGetUserMedia ||
+                navigator.mozGetUserMedia ||
+                navigator.msGetUserMedia;
+            // Some browsers just don't implement it - return a rejected promise with an error
+            // to keep a consistent interface
+            if (!getUserMedia) {
+                return Promise.reject(new Error("getUserMedia is not implemented in this browser"));
+            }
+            // Otherwise, wrap the call to the old navigator.getUserMedia with a Promise
+            return new Promise(function (resolve, reject) {
+                getUserMedia.call(navigator, constraints, resolve, reject);
+            });
+        };
+    }
+})();
+function hasGetUserMedia() {
+    return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+}
+var Webcam = /** @class */ (function (_super) {
+    __extends(Webcam, _super);
+    function Webcam(props) {
+        var _this = _super.call(this, props) || this;
+        _this.canvas = null;
+        _this.ctx = null;
+        _this.unmounted = false;
+        _this.state = {
+            hasUserMedia: false
+        };
+        return _this;
+    }
+    Webcam.prototype.componentDidMount = function () {
+        var _a = this, state = _a.state, props = _a.props;
+        if (!hasGetUserMedia()) {
+            props.onUserMediaError("getUserMedia not supported");
+            return;
+        }
+        if (!state.hasUserMedia) {
+            this.requestUserMedia();
+        }
+    };
+    Webcam.prototype.componentDidUpdate = function (nextProps) {
+        var props = this.props;
+        if (!hasGetUserMedia()) {
+            props.onUserMediaError("getUserMedia not supported");
+            return;
+        }
+        var audioConstraintsChanged = JSON.stringify(nextProps.audioConstraints) !==
+            JSON.stringify(props.audioConstraints);
+        var videoConstraintsChanged = JSON.stringify(nextProps.videoConstraints) !==
+            JSON.stringify(props.videoConstraints);
+        var minScreenshotWidthChanged = nextProps.minScreenshotWidth !== props.minScreenshotWidth;
+        var minScreenshotHeightChanged = nextProps.minScreenshotHeight !== props.minScreenshotHeight;
+        if (videoConstraintsChanged ||
+            minScreenshotWidthChanged ||
+            minScreenshotHeightChanged) {
+            this.canvas = null;
+            this.ctx = null;
+        }
+        if (audioConstraintsChanged || videoConstraintsChanged) {
+            this.stopAndCleanup();
+            this.requestUserMedia();
+        }
+    };
+    Webcam.prototype.componentWillUnmount = function () {
+        this.unmounted = true;
+        this.stopAndCleanup();
+    };
+    Webcam.stopMediaStream = function (stream) {
+        if (stream) {
+            if (stream.getVideoTracks && stream.getAudioTracks) {
+                stream.getVideoTracks().map(function (track) {
+                    stream.removeTrack(track);
+                    track.stop();
+                });
+                stream.getAudioTracks().map(function (track) {
+                    stream.removeTrack(track);
+                    track.stop();
+                });
+            }
+            else {
+                stream.stop();
+            }
+        }
+    };
+    Webcam.prototype.stopAndCleanup = function () {
+        var state = this.state;
+        if (state.hasUserMedia) {
+            Webcam.stopMediaStream(this.stream);
+            if (state.src) {
+                window.URL.revokeObjectURL(state.src);
+            }
+        }
+    };
+    Webcam.prototype.getScreenshot = function (screenshotDimensions) {
+        var _a = this, state = _a.state, props = _a.props;
+        if (!state.hasUserMedia)
+            return null;
+        var canvas = this.getCanvas(screenshotDimensions);
+        return (canvas &&
+            canvas.toDataURL(props.screenshotFormat, props.screenshotQuality));
+    };
+    Webcam.prototype.getCanvas = function (screenshotDimensions) {
+        var _a = this, state = _a.state, props = _a.props;
+        if (!this.video) {
+            return null;
+        }
+        if (!state.hasUserMedia || !this.video.videoHeight)
+            return null;
+        if (!this.ctx) {
+            var canvasWidth = this.video.videoWidth;
+            var canvasHeight = this.video.videoHeight;
+            if (!this.props.forceScreenshotSourceSize) {
+                var aspectRatio = canvasWidth / canvasHeight;
+                canvasWidth = props.minScreenshotWidth || this.video.clientWidth;
+                canvasHeight = canvasWidth / aspectRatio;
+                if (props.minScreenshotHeight &&
+                    canvasHeight < props.minScreenshotHeight) {
+                    canvasHeight = props.minScreenshotHeight;
+                    canvasWidth = canvasHeight * aspectRatio;
+                }
+            }
+            this.canvas = document.createElement("canvas");
+            this.canvas.width = (screenshotDimensions === null || screenshotDimensions === void 0 ? void 0 : screenshotDimensions.width) || canvasWidth;
+            this.canvas.height = (screenshotDimensions === null || screenshotDimensions === void 0 ? void 0 : screenshotDimensions.height) || canvasHeight;
+            this.ctx = this.canvas.getContext("2d");
+        }
+        var _b = this, ctx = _b.ctx, canvas = _b.canvas;
+        if (ctx && canvas) {
+            // mirror the screenshot
+            if (props.mirrored) {
+                ctx.translate(canvas.width, 0);
+                ctx.scale(-1, 1);
+            }
+            ctx.imageSmoothingEnabled = props.imageSmoothing;
+            ctx.drawImage(this.video, 0, 0, (screenshotDimensions === null || screenshotDimensions === void 0 ? void 0 : screenshotDimensions.width) || canvas.width, (screenshotDimensions === null || screenshotDimensions === void 0 ? void 0 : screenshotDimensions.height) || canvas.height);
+            // invert mirroring
+            if (props.mirrored) {
+                ctx.scale(-1, 1);
+                ctx.translate(-canvas.width, 0);
+            }
+        }
+        return canvas;
+    };
+    Webcam.prototype.requestUserMedia = function () {
+        var _this = this;
+        var props = this.props;
+        var sourceSelected = function (audioConstraints, videoConstraints) {
+            var constraints = {
+                video: typeof videoConstraints !== "undefined" ? videoConstraints : true
+            };
+            if (props.audio) {
+                constraints.audio =
+                    typeof audioConstraints !== "undefined" ? audioConstraints : true;
+            }
+            navigator.mediaDevices
+                .getUserMedia(constraints)
+                .then(function (stream) {
+                if (_this.unmounted) {
+                    Webcam.stopMediaStream(stream);
+                }
+                else {
+                    _this.handleUserMedia(null, stream);
+                }
+            })
+                .catch(function (e) {
+                _this.handleUserMedia(e);
+            });
+        };
+        if ("mediaDevices" in navigator) {
+            sourceSelected(props.audioConstraints, props.videoConstraints);
+        }
+        else {
+            var optionalSource_1 = function (id) { return ({ optional: [{ sourceId: id }] }); };
+            var constraintToSourceId_1 = function (constraint) {
+                var deviceId = constraint.deviceId;
+                if (typeof deviceId === "string") {
+                    return deviceId;
+                }
+                if (Array.isArray(deviceId) && deviceId.length > 0) {
+                    return deviceId[0];
+                }
+                if (typeof deviceId === "object" && deviceId.ideal) {
+                    return deviceId.ideal;
+                }
+                return null;
+            };
+            // @ts-ignore: deprecated api
+            MediaStreamTrack.getSources(function (sources) {
+                var audioSource = null;
+                var videoSource = null;
+                sources.forEach(function (source) {
+                    if (source.kind === "audio") {
+                        audioSource = source.id;
+                    }
+                    else if (source.kind === "video") {
+                        videoSource = source.id;
+                    }
+                });
+                var audioSourceId = constraintToSourceId_1(props.audioConstraints);
+                if (audioSourceId) {
+                    audioSource = audioSourceId;
+                }
+                var videoSourceId = constraintToSourceId_1(props.videoConstraints);
+                if (videoSourceId) {
+                    videoSource = videoSourceId;
+                }
+                sourceSelected(optionalSource_1(audioSource), optionalSource_1(videoSource));
+            });
+        }
+    };
+    Webcam.prototype.handleUserMedia = function (err, stream) {
+        var props = this.props;
+        if (err || !stream) {
+            this.setState({ hasUserMedia: false });
+            props.onUserMediaError(err);
+            return;
+        }
+        this.stream = stream;
+        try {
+            if (this.video) {
+                this.video.srcObject = stream;
+            }
+            this.setState({ hasUserMedia: true });
+        }
+        catch (error) {
+            this.setState({
+                hasUserMedia: true,
+                src: window.URL.createObjectURL(stream)
+            });
+        }
+        props.onUserMedia(stream);
+    };
+    Webcam.prototype.render = function () {
+        var _this = this;
+        var _a = this, state = _a.state, props = _a.props;
+        var audio = props.audio, forceScreenshotSourceSize = props.forceScreenshotSourceSize, onUserMedia = props.onUserMedia, onUserMediaError = props.onUserMediaError, screenshotFormat = props.screenshotFormat, screenshotQuality = props.screenshotQuality, minScreenshotWidth = props.minScreenshotWidth, minScreenshotHeight = props.minScreenshotHeight, audioConstraints = props.audioConstraints, videoConstraints = props.videoConstraints, imageSmoothing = props.imageSmoothing, mirrored = props.mirrored, _b = props.style, style = _b === void 0 ? {} : _b, rest = __rest(props, ["audio", "forceScreenshotSourceSize", "onUserMedia", "onUserMediaError", "screenshotFormat", "screenshotQuality", "minScreenshotWidth", "minScreenshotHeight", "audioConstraints", "videoConstraints", "imageSmoothing", "mirrored", "style"]);
+        var videoStyle = mirrored ? __assign(__assign({}, style), { transform: (style.transform || "") + " scaleX(-1)" }) : style;
+        return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("video", __assign({ autoPlay: true, src: state.src, muted: !audio, playsInline: true, ref: function (ref) {
+                _this.video = ref;
+            }, style: videoStyle }, rest)));
+    };
+    Webcam.defaultProps = {
+        audio: false,
+        forceScreenshotSourceSize: false,
+        imageSmoothing: true,
+        mirrored: false,
+        onUserMedia: function () { return undefined; },
+        onUserMediaError: function () { return undefined; },
+        screenshotFormat: "image/webp",
+        screenshotQuality: 0.92,
+    };
+    return Webcam;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]));
+/* harmony default export */ __webpack_exports__["default"] = (Webcam);
+
+
+/***/ }),
+
+/***/ "react":
+/*!**************************************************************************************!*\
+  !*** external {"root":"React","commonjs2":"react","commonjs":"react","amd":"react"} ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
+
+/***/ })
+
+/******/ })["default"];
+});
+//# sourceMappingURL=react-webcam.js.map
+
+/***/ }),
+
 /***/ "./node_modules/react/cjs/react.development.js":
 /*!*****************************************************!*\
   !*** ./node_modules/react/cjs/react.development.js ***!
@@ -56385,10 +56823,11 @@ var Auth = function Auth() {
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "auth-logic"
+    className: "auth"
   }, !index ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Login__WEBPACK_IMPORTED_MODULE_2__["Login"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Signup__WEBPACK_IMPORTED_MODULE_1__["Signup"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "signIn_orUp",
     onClick: toggleIndex
-  }, !index ? "New to iSign? Click here " : "Already have an acount?"));
+  }, !index ? "New to iSign? Click here" : "Already have an acount?"));
 };
 
 /***/ }),
@@ -56405,8 +56844,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Login", function() { return Login; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./context */ "./src/Authentication/context.js");
+/* harmony import */ var _authfuncs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./authfuncs */ "./src/Authentication/authfuncs.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _components_CoursePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/CoursePage */ "./src/components/CoursePage.js");
+/* harmony import */ var _Signup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Signup */ "./src/Authentication/Signup.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -56426,15 +56867,20 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
 var Login = function Login() {
+  //added loader
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
       loading = _useState2[0],
-      setLoading = _useState2[1];
+      setLoading = _useState2[1]; //currentUser info
 
-  var currentUser = Object(_context__WEBPACK_IMPORTED_MODULE_1__["useAuth"])();
+
+  var currentUser = Object(_authfuncs__WEBPACK_IMPORTED_MODULE_1__["useAuth"])(); //useRef hook to keep track on current input (does not cause re-render when value updated)
+
   var emailRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
-  var passwordRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  var passwordRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(); //api call to firebase login
 
   function handleLogin() {
     return _handleLogin.apply(this, arguments);
@@ -56449,7 +56895,7 @@ var Login = function Login() {
               setLoading(true);
               _context.prev = 1;
               _context.next = 4;
-              return Object(_context__WEBPACK_IMPORTED_MODULE_1__["login"])(emailRef.current.value, passwordRef.current.value);
+              return Object(_authfuncs__WEBPACK_IMPORTED_MODULE_1__["login"])(emailRef.current.value, passwordRef.current.value);
 
             case 4:
               _context.next = 9;
@@ -56473,7 +56919,40 @@ var Login = function Login() {
     return _handleLogin.apply(this, arguments);
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  function handleLogout() {
+    return _handleLogout.apply(this, arguments);
+  }
+
+  function _handleLogout() {
+    _handleLogout = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.prev = 0;
+              _context2.next = 3;
+              return Object(_authfuncs__WEBPACK_IMPORTED_MODULE_1__["logout"])(currentUser);
+
+            case 3:
+              _context2.next = 8;
+              break;
+
+            case 5:
+              _context2.prev = 5;
+              _context2.t0 = _context2["catch"](0);
+              alert(_context2.t0);
+
+            case 8:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[0, 5]]);
+    }));
+    return _handleLogout.apply(this, arguments);
+  }
+
+  return currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CoursePage__WEBPACK_IMPORTED_MODULE_3__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, " Login "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     placeholder: "Email",
@@ -56483,11 +56962,14 @@ var Login = function Login() {
     placeholder: "Password",
     type: "password",
     ref: passwordRef
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "/courses"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "log_button",
+    disabled: loading || currentUser,
     onClick: handleLogin
-  }, "Log In"))));
+  }, "Log In"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "log_button",
+    onClick: handleLogout
+  }, "Logout"))));
 };
 
 /***/ }),
@@ -56504,8 +56986,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Signup", function() { return Signup; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./context */ "./src/Authentication/context.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _authfuncs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./authfuncs */ "./src/Authentication/authfuncs.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -56524,14 +57005,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var Signup = function Signup() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
       loading = _useState2[0],
       setLoading = _useState2[1];
 
-  var currentUser = Object(_context__WEBPACK_IMPORTED_MODULE_1__["useAuth"])();
+  var currentUser = Object(_authfuncs__WEBPACK_IMPORTED_MODULE_1__["useAuth"])();
   var emailRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
   var passwordRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
   var nameRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
@@ -56548,7 +57028,7 @@ var Signup = function Signup() {
             case 0:
               setLoading(true);
               _context.next = 3;
-              return Object(_context__WEBPACK_IMPORTED_MODULE_1__["signup"])(emailRef.current.value, passwordRef.current.value, nameRef.current.value);
+              return Object(_authfuncs__WEBPACK_IMPORTED_MODULE_1__["signup"])(emailRef.current.value, passwordRef.current.value, nameRef.current.value);
 
             case 3:
               setLoading(false);
@@ -56577,20 +57057,18 @@ var Signup = function Signup() {
     placeholder: "Password",
     type: "password",
     ref: passwordRef
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "/courses"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: handleSignup,
     type: "submit"
-  }, "Create Account"))));
+  }, "Create Account")));
 };
 
 /***/ }),
 
-/***/ "./src/Authentication/context.js":
-/*!***************************************!*\
-  !*** ./src/Authentication/context.js ***!
-  \***************************************/
+/***/ "./src/Authentication/authfuncs.js":
+/*!*****************************************!*\
+  !*** ./src/Authentication/authfuncs.js ***!
+  \*****************************************/
 /*! exports provided: signup, login, logout, useAuth */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -56618,24 +57096,31 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+ //signup function using createUserWithEmailAndPassword methods from firebase
 
 function signup(email, password, name) {
   return Object(firebase_auth__WEBPACK_IMPORTED_MODULE_2__["createUserWithEmailAndPassword"])(_firebase__WEBPACK_IMPORTED_MODULE_0__["auth"], email, password, name);
-}
+} //login function using signInWithEmailAndPassword menthods from firebase
+
 function login(email, password) {
   return Object(firebase_auth__WEBPACK_IMPORTED_MODULE_2__["signInWithEmailAndPassword"])(_firebase__WEBPACK_IMPORTED_MODULE_0__["auth"], email, password);
-}
+} //logout function using logout menthods from firebase
+
 function logout() {
   return Object(firebase_auth__WEBPACK_IMPORTED_MODULE_2__["signOut"])(_firebase__WEBPACK_IMPORTED_MODULE_0__["auth"]);
-} // Custom Hook
+} // Custom Hook fectching user signin info 
 
 function useAuth() {
+  //Declare new state 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
       _useState2 = _slicedToArray(_useState, 2),
       currentUser = _useState2[0],
-      setCurrentUser = _useState2[1];
+      setCurrentUser = _useState2[1]; //useEffect=compentDidMount+componentDidUpdate+componentWillUnmount
+
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    //onAuthStateChanged: add listener for changes to the user's sign-in state.
+    //cleanup func to unsub from listener after unmount
     var unsubscribe = Object(firebase_auth__WEBPACK_IMPORTED_MODULE_2__["onAuthStateChanged"])(_firebase__WEBPACK_IMPORTED_MODULE_0__["auth"], function (user) {
       return setCurrentUser(user);
     });
@@ -56762,13 +57247,24 @@ var AlphabetPage = function AlphabetPage() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "alphabet-page-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "back-bttn"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/courses"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://drive.google.com/uc?export=view&id=16ORv_43yS04SQLquK8vike9O0rTlJMWW"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "alphabet-header"
   }, "The alphabet"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "alphabet-lessons-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "lesson-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/learning"
+    to: {
+      pathname: "/learning",
+      letters: {
+        letterArr: ['a', 'b', 'c', 'd', 'e']
+      }
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "lesson-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "A to E")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -56825,14 +57321,73 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _Authentication_context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Authentication/context */ "./src/Authentication/context.js");
+/* harmony import */ var _Authentication_authfuncs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Authentication/authfuncs */ "./src/Authentication/authfuncs.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
 
 var CoursePage = function CoursePage() {
-  var currentUser = Object(_Authentication_context__WEBPACK_IMPORTED_MODULE_2__["useAuth"])();
+  var currentUser = Object(_Authentication_authfuncs__WEBPACK_IMPORTED_MODULE_2__["useAuth"])();
   console.log(currentUser);
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      loading = _useState2[0],
+      setLoading = _useState2[1];
+
+  function handleLogout() {
+    return _handleLogout.apply(this, arguments);
+  }
+
+  function _handleLogout() {
+    _handleLogout = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              setLoading(true);
+              _context.prev = 1;
+              _context.next = 4;
+              return Object(_Authentication_authfuncs__WEBPACK_IMPORTED_MODULE_2__["logout"])(currentUser);
+
+            case 4:
+              _context.next = 9;
+              break;
+
+            case 6:
+              _context.prev = 6;
+              _context.t0 = _context["catch"](1);
+              alert(_context.t0);
+
+            case 9:
+              setLoading(false);
+
+            case 10:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 6]]);
+    }));
+    return _handleLogout.apply(this, arguments);
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "course-page-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -56841,7 +57396,9 @@ var CoursePage = function CoursePage() {
     className: "profile-pic"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://drive.google.com/uc?export=view&id=1-QO80c6b1RfU_NHTmV5CJH4x2BTUCXrW"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, currentUser === null || currentUser === void 0 ? void 0 : currentUser.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "email_tagline"
+  }, currentUser === null || currentUser === void 0 ? void 0 : currentUser.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "profile-nav"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "profile-nav-item-wrapper"
@@ -56853,15 +57410,14 @@ var CoursePage = function CoursePage() {
     className: "profile-nav-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://drive.google.com/uc?export=view&id=1y3A1SeM99ZG5wrNucqv3tibgIDinoSnt"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    onClick: _Authentication_context__WEBPACK_IMPORTED_MODULE_2__["logout"]
-  }, "Sign out"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "signIn_orUp",
+    onClick: handleLogout
+  }, "Sign out")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "course-list-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "course-page-main-header"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome back!", currentUser === null || currentUser === void 0 ? void 0 : currentUser.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "What would you like to learn today?")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome back!", currentUser === null || currentUser === void 0 ? void 0 : currentUser.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "What would you like to learn today?")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "course-options"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "course-wrapper"
@@ -56946,7 +57502,7 @@ var LandingPage = function LandingPage() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "A new way to learn American Sign Language"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "An interactive learning platform designed to aid you in your ASL learning journey."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "signup-bttn"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/courses",
+    to: "/auth",
     className: "get-started-bttn"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Get Started")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://drive.google.com/uc?export=view&id=1Qne_O096dVPtBE53wWv41D9ZNT-481wW"
@@ -56972,6 +57528,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mediapipe_hands__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_mediapipe_hands__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _mediapipe_camera_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mediapipe/camera_utils */ "./node_modules/@mediapipe/camera_utils/camera_utils.js");
 /* harmony import */ var _mediapipe_camera_utils__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_mediapipe_camera_utils__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_webcam__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-webcam */ "./node_modules/react-webcam/dist/react-webcam.js");
+/* harmony import */ var react_webcam__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_webcam__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -56986,47 +57557,30 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
- // import Webcam from "react-webcam";
-// import * as tf from "@tensorflow/tfjs"
 
-function LearningPage() {
-  // async function getModel(){
-  //   let model = await loadModel()
-  //   let arr = [
-  //     '0.5050752759', '0.8191810846', '-5.67E-08',
-  //     '0.5413086414', '0.7822226882', '0.005098316353',
-  //     '0.5650013685', '0.730843842',  '0.003960532602',
-  //     '0.5816333294', '0.6954370141', '-0.001839852543',
-  //     '0.5953506231', '0.6625803113', '-0.006068183575',
-  //     '0.541462481',  '0.6422476768', '0.01379237976',
-  //     '0.5761112571', '0.631667614',  '0.000315206853',
-  //     '0.5885055661', '0.6586486101', '-0.01060774084',
-  //     '0.5897630453', '0.6741392612', '-0.01666434295',
-  //     '0.5319131613', '0.6419063807', '0.004015539307',
-  //     '0.574331522',  '0.6495622993', '-0.006797755603',
-  //     '0.5766147375', '0.6875853539', '-0.01214794815',
-  //     '0.5667145252', '0.7039731145', '-0.01433666423',
-  //     '0.5242192745', '0.6476883888', '-0.0075157471',
-  //     '0.5671383739', '0.6678875089', '-0.01806558669',
-  //     '0.5633444786', '0.705190897',  '-0.01411663368',
-  //     '0.5509762168', '0.7205718756', '-0.009397579357',
-  //     '0.5173133612', '0.6618361473', '-0.01942050271',
-  //     '0.5551881194', '0.6798210144', '-0.02392531931',
-  //     '0.5534206033', '0.7124384642', '-0.01709282398',
-  //     '0.5422443748', '0.7269453406', '-0.01042824239']
-  //     let numArr = arr.map(Number)
-  //     let tensorValue = await tf.tensor2d(numArr, [1, 63])
-  //     // tensorValue.print()
-  //     // model.summary()
-  //     let prediction = await model.predict(tensorValue)
-  //     prediction.print()
-  // }
+
+ // import * as tf from "@tensorflow/tfjs"
+
+function LearningPage(props) {
+  var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  var letterKey = new Map();
+  var canvasRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  var videoRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  var model; //initialize new media pipe hands object.
+
+  var hands = new _mediapipe_hands__WEBPACK_IMPORTED_MODULE_1___default.a.Hands({
+    locateFile: function locateFile(file) {
+      return "https://cdn.jsdelivr.net/npm/@mediapipe/hands/".concat(file);
+    }
+  }); //set an initial letterIndex corresponding to which letter the user
+  //is on in the lesson
+
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
       _useState2 = _slicedToArray(_useState, 2),
       letterIdx = _useState2[0],
       setLetterIdx = _useState2[1];
 
-  var images_arr = ["https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK", "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl", "https://drive.google.com/uc?export=view&id=1DArGFqFNzgE4TH8UUJAfYyYtpmB455Je", "https://drive.google.com/uc?export=view&id=1Z-5PGdiYloH9lqTB8RjihVEEeorRr4Ee", "https://drive.google.com/uc?export=view&id=1VnRmsymQmK3hzefGh3pD-C4Ha4m5kC8W"];
+  var images_arr = ["https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK", "https://drive.google.com/uc?export=view&id=1fAbMh20lCKr2oS7F4vGOvb0LMumS1UTl", "https://drive.google.com/uc?export=view&id=1DArGFqFNzgE4TH8UUJAfYyYtpmB455Je", "https://drive.google.com/uc?export=view&id=1Z-5PGdiYloH9lqTB8RjihVEEeorRr4Ee", "https://drive.google.com/uc?export=view&id=1VnRmsymQmK3hzefGh3pD-C4Ha4m5kC8W"]; // increment the letter index until it has reached the length of the array.
 
   function nextLetter() {
     if (letterIdx < images_arr.length) {
@@ -57040,22 +57594,211 @@ function LearningPage() {
     return images_arr[letterIdx];
   }
 
+  function setLettersArr() {
+    var arr = props.location.letters.letterArr;
+    console.log(arr);
+  }
+  /* takes the handpoints captured from mediapipe and flattens the array of objects
+  [{x:0.3, y:0.5, z: -0.1}, {x:0.8, y:0.2, z: 0.7}] to [0.3,0.5,-0.1, 0.8, 0.2, 0.7]
+  then converts those values into a 2dtensor
+  */
+
+
+  function convertLandMarks(landmark) {
+    var values = landmark.reduce(function (previousValue, currentValue) {
+      previousValue.push(currentValue.x, currentValue.y, currentValue.z);
+      return previousValue;
+    }, []);
+    var tensorValues = tf.tensor2d(values, [1, 63]);
+    makePrediction(tensorValues);
+  }
+  /* Our model makes a prediction based on the handlandmark tensor values and outputs a tenseor of probabilities.
+  that tensor is converted back into an array and passed to the getLetters func
+  */
+
+
+  function makePrediction(_x) {
+    return _makePrediction.apply(this, arguments);
+  }
+  /* gets the maximum probability from array + its index then finds the corresponding letter */
+
+
+  function _makePrediction() {
+    _makePrediction = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(values) {
+      var preds, p, predictionArr;
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return model.predict(values);
+
+            case 2:
+              preds = _context2.sent;
+              p = preds.dataSync();
+              predictionArr = Array.from(p);
+              getLetters(predictionArr);
+
+            case 6:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+    return _makePrediction.apply(this, arguments);
+  }
+
+  function getLetters(arr) {
+    var max = Math.max.apply(Math, _toConsumableArray(arr));
+    var index = arr.indexOf(max);
+    var answer = letterKey.get(index);
+    console.log(answer);
+
+    if (max > 0.90) {
+      // alert(answer)
+      document.getElementById('web_cam_').style.border = 'solid #17ca35';
+      alert("correct!");
+    }
+  }
+
+  function setMapValues() {
+    for (var i = 0; i < letters.length; i++) {
+      letterKey.set(i, letters[i]);
+    }
+
+    console.log(letterKey);
+  }
+  /*
+  checks if the hand is in the screen and outputs the landmark points for a visible hand
+  */
+
+
+  function onResults(results) {
+    var videoWidth = videoRef.current.video.videoWidth;
+    var videoHeight = videoRef.current.video.videoHeight;
+
+    if (results.multiHandLandmarks.length > 0) {
+      var landMark = results.multiHandLandmarks[0];
+      convertLandMarks(landMark);
+    }
+  }
+  /* passes in the react webcam reference on mount and continuously sends the stream to mediapipe */
+
+
+  var camera = null;
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    hands.setOptions({
+      maxNumHands: 2,
+      modelComplexity: 1,
+      minDetectionConfidence: 0.7,
+      minTrackingConfidence: 0.7
+    });
+
+    if (typeof videoRef.current !== 'undefined' && videoRef.current !== null) {
+      camera = new _mediapipe_camera_utils__WEBPACK_IMPORTED_MODULE_2__["Camera"](videoRef.current.video, {
+        onFrame: function () {
+          var _onFrame = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    _context.next = 2;
+                    return hands.send({
+                      image: videoRef.current.video
+                    });
+
+                  case 2:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
+
+          function onFrame() {
+            return _onFrame.apply(this, arguments);
+          }
+
+          return onFrame;
+        }(),
+        width: 640,
+        height: 480
+      });
+      camera.start();
+    }
+  }, []);
+  /* loads our tensor flow model and assigns it to a model variable defined above */
+
+  function getModel() {
+    return _getModel.apply(this, arguments);
+  }
+
+  function _getModel() {
+    _getModel = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return loadModel();
+
+            case 2:
+              model = _context3.sent;
+              return _context3.abrupt("return", model);
+
+            case 4:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }));
+    return _getModel.apply(this, arguments);
+  }
+
+  function startLesson() {
+    //hides "start training" button
+    document.getElementById('train_button').style.visibility = 'hidden';
+    document.getElementById('web_cam_').style.border = 'solid #f4ba19';
+    setLettersArr();
+    getModel();
+    setMapValues();
+    hands.onResults(onResults);
+  }
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "learning-page-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "back-bttn"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+    to: "/alphabet-lesson"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://drive.google.com/uc?export=view&id=16ORv_43yS04SQLquK8vike9O0rTlJMWW"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "learning-page-content-wrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Let's get started"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Make sure your hand is in the frame and copy the handshape below."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Lets get started"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Make sure your right hand is in the frame and copy the handshape below."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: getImageUrl()
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "video-wrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
-    id: "web_cam_"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
-      return nextLetter();
+      return startLesson();
     },
     id: "train_button"
-  }, "Start Training")));
+  }, "Start Lesson")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "video-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_webcam__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    mirrored: true,
+    height: "inherit",
+    width: "inherit",
+    style: {
+      height: "90%",
+      width: "95%"
+    },
+    autoPlay: true,
+    id: "web_cam_",
+    ref: videoRef,
+    className: "app__videoFeed"
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (LearningPage);
