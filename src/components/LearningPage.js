@@ -33,7 +33,7 @@ function LearningPage(props) {
           console.log("NEW LESSON")
           document.querySelector(".completed-modal-wrapper").style.display = "block";
         }
-    
+
     }
     else if (letterIdx >= 25){
       alert("Congratulations! You finished this course!")
@@ -146,7 +146,8 @@ function borderColorChange() {
   }
 
  function startLesson(){
-   document.getElementById('web_cam_').style.border = 'solid #f4ba19'
+  //  console.log("props", props.location.letters)
+  document.getElementById('web_cam_').style.border = 'solid #f4ba19'
   document.querySelector(".training-modal-wrapper").style.display = "none";
    getModel()
    setMapValues()
