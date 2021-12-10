@@ -32,7 +32,8 @@ function LearningPage(props) {
     letterIdx++
 
     if (letterIdx >= 26){
-      alert("Congratulations! You finished this course!")
+      // alert("Congratulations! You finished this course!")
+      document.querySelector(".course-completed-modal-wrapper").style.display = "block";
       return
     }
    
@@ -83,7 +84,7 @@ function borderColorChange() {
   //original color is orange
   const orig = 'solid #ff8717'
   //change to green
-  webcamDiv.style.border = 'solid #17ca35'
+  webcamDiv.style.border = '10px solid #17ca35'
   window.setTimeout(function() {
     webcamDiv.style.border = orig;
   }, 1000)
@@ -165,6 +166,7 @@ function borderColorChange() {
 
  function hideModal() {
   document.querySelector(".completed-modal-wrapper").style.display = "none";
+  document.querySelector(".completed-modal-wrapper").style.display = "none";
  }
 
 
@@ -196,8 +198,26 @@ function borderColorChange() {
           </div>
           <div className="completed-modal-text">
             <h2>Congratulations!</h2>
-            <p>You've unlocked lesson 2</p>
+            <p>You've unlocked the next lesson!</p>
             <button id="completed-lesson-bttn" onClick={() => hideModal()}>Start next lesson</button>
+          </div>
+        </div>
+      </div>
+
+      <div className="course-completed-modal-wrapper">
+        <div className="completed-modal">
+          <div onClick={() => hideModal()} className="x-bttn">
+            <img src = "https://drive.google.com/uc?export=view&id=1chHZvH7I4XgrWqao0w2CxkN9TrFd6ukL" />
+          </div>
+          <div className="completed-modal-img">
+            <img className="completed-modal-img" src="https://drive.google.com/uc?export=view&id=1glNM8wzs2mDoYB8H0VqImPWfLKwfxjkp" />
+          </div>
+          <div className="completed-modal-text">
+            <h2>Congratulations!</h2>
+            <p>You've completed all the lessons in Alphabet!</p>
+            <Link to = "/courses">
+            <button id="completed-course-bttn" onClick={() => hideModal()}>Return Home</button>
+            </Link>
           </div>
         </div>
       </div>
