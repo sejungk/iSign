@@ -57418,15 +57418,12 @@ function LearningPage(props) {
   }); //set an initial letterIndex corresponding to which letter the user
   //is on in the lesson
 
-  var letterIdx = 24; // increment the letter index until it has reached the length of the array.
-
-  console.log(_data_images__WEBPACK_IMPORTED_MODULE_5__["images_arr"].length); //lastlet index is 25
+  var letterIdx = 0; // increment the letter index until it has reached the length of the array.
 
   function nextLetter() {
     letterIdx++;
 
     if (letterIdx >= 26) {
-      // alert("Congratulations! You finished this course!")
       document.querySelector(".course-completed-modal-wrapper").style.display = "block";
       return;
     }
@@ -57514,7 +57511,7 @@ function LearningPage(props) {
     console.log("max", max);
     console.log("pred & currLetter ", index, letterIdx);
 
-    if (max > 0.10 && letterIdx === index) {
+    if (max > 0.80 && letterIdx === index) {
       borderColorChange(); //move to next letter here
 
       nextLetter();
@@ -57627,7 +57624,6 @@ function LearningPage(props) {
 
   function hideModal() {
     document.querySelector(".completed-modal-wrapper").style.display = "none";
-    document.querySelector(".completed-modal-wrapper").style.display = "none";
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -57690,14 +57686,14 @@ function LearningPage(props) {
     src: "https://drive.google.com/uc?export=view&id=1glNM8wzs2mDoYB8H0VqImPWfLKwfxjkp"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "completed-modal-text"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Congratulations!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You've completed all the lessons in Alphabet!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Congratulations!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You've completed all the lessons in Alphabet!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
     to: "/courses"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     id: "completed-course-bttn",
     onClick: function onClick() {
       return hideModal();
     }
-  }, "Return Home"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Copy the handshape below"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, "Return Home")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Copy the handshape below"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     id: "letter-img",
     src: "https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

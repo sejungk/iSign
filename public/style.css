@@ -653,6 +653,15 @@ a {
   margin: 20px 0 0 0;
 }
 
+#completed-course-bttn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
 .completed-modal-wrapper {
   display: none;
   position: absolute;
@@ -721,6 +730,8 @@ a {
   margin: 4px 0 20px 0;
   font-size: 16px;
 }
+
+
 
 .completed-modal-text > button {
   margin: 3% 0 0 0;

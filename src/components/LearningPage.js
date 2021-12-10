@@ -22,28 +22,23 @@ function LearningPage(props) {
 
   //set an initial letterIndex corresponding to which letter the user
   //is on in the lesson
-  let letterIdx = 24
- // increment the letter index until it has reached the length of the array.
- console.log(images_arr.length)
+  let letterIdx = 0
 
- //lastlet index is 25
+ // increment the letter index until it has reached the length of the array.
   function nextLetter() {
     
     letterIdx++
 
     if (letterIdx >= 26){
-      // alert("Congratulations! You finished this course!")
       document.querySelector(".course-completed-modal-wrapper").style.display = "block";
       return
     }
    
-
     if (letterIdx % 5 === 0 && letterIdx > 0 && letterIdx < 25) {
       console.log("NEW LESSON")
       document.querySelector(".completed-modal-wrapper").style.display = "block";
     }
 
- 
     if (letterIdx <= images_arr.length) {
       getImageUrl()
     }
@@ -99,11 +94,10 @@ function borderColorChange() {
   console.log("pred & currLetter ",index, letterIdx)
 
 
-    if(max > 0.10 && letterIdx === index){
+    if(max > 0.80 && letterIdx === index){
       borderColorChange();
       //move to next letter here
       nextLetter();
-
     }
   }
 
@@ -166,7 +160,6 @@ function borderColorChange() {
 
  function hideModal() {
   document.querySelector(".completed-modal-wrapper").style.display = "none";
-  document.querySelector(".completed-modal-wrapper").style.display = "none";
  }
 
 
@@ -215,10 +208,10 @@ function borderColorChange() {
           <div className="completed-modal-text">
             <h2>Congratulations!</h2>
             <p>You've completed all the lessons in Alphabet!</p>
-            <Link to = "/courses">
-            <button id="completed-course-bttn" onClick={() => hideModal()}>Return Home</button>
-            </Link>
           </div>
+          <Link to = "/courses">
+          <button id="completed-course-bttn" onClick={() => hideModal()}>Return Home</button>
+          </Link>
         </div>
       </div>
 
