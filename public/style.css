@@ -864,7 +864,7 @@ video {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   padding: 22px;
 }
 
@@ -876,12 +876,8 @@ input {
   box-shadow: 0 1px 4px #ccc;
   border-radius: 6px;
   font-size: 18px;
-  width: 100%;
+  width: 50%;
 }
-
-/* .form {
-  width:50%;
-} */
 
 .form > h2 {
   text-align: center;
@@ -892,7 +888,7 @@ input {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 50%;
+  width: 40%;
 }
 
 .form > form > p {

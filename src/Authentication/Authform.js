@@ -56,18 +56,16 @@ const Auth=()=>{
       //</div>
       
     ) : (   
-    <div className="auth">
       <div className="form">
       <h2> Login or Signup </h2>
       <form>
         <input placeholder="Email" type="email" ref={emailRef} />
-        <input placeholder="Password: must be longer than 6 characters" type="password" ref={passwordRef} />
+        <input placeholder="Password: at least 6 characters" type="password" ref={passwordRef} />
       </form>
        {!index ?<button disabled={ loading || currentUser } onClick={handleLogin}>Log In</button> : <button disabled={ loading || currentUser } onClick={handleSignup}>Signup</button>}
         <p className="signIn_orUp" onClick={toggleIndex}>
         {!index? `New to iSign? Click here` : "Already have an acount?"}
         </p>
-    </div>
     </div>)
   )
 }
