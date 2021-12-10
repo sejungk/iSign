@@ -22,7 +22,7 @@ function LearningPage(props) {
 
   //set an initial letterIndex corresponding to which letter the user
   //is on in the lesson
-  let letterIdx = 0
+  let letterIdx = 0;
 
  // increment the letter index until it has reached the length of the array.
   function nextLetter() {
@@ -79,9 +79,12 @@ function borderColorChange() {
   //original color is orange
   const orig = 'solid #ff8717'
   //change to green
-  webcamDiv.style.border = '10px solid #17ca35'
+  webcamDiv.style.border = '3px solid #17ca35'
+  webcamDiv.style.borderRadius = "15px"
+  webcamDiv.style.boxShadow = "0px 0px 40px 3px #39ff14"
   window.setTimeout(function() {
     webcamDiv.style.border = orig;
+    webcamDiv.style.boxShadow = 'none';
   }, 1000)
 }
 
@@ -94,7 +97,7 @@ function borderColorChange() {
   console.log("pred & currLetter ",index, letterIdx)
 
 
-    if(max > 0.80 && letterIdx === index){
+    if(max > 0.85 && letterIdx === index){
       borderColorChange();
       //move to next letter here
       nextLetter();
