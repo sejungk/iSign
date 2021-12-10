@@ -22,22 +22,27 @@ function LearningPage(props) {
 
   //set an initial letterIndex corresponding to which letter the user
   //is on in the lesson
-  let letterIdx = 0
+  let letterIdx = 0;
+
  // increment the letter index until it has reached the length of the array.
   function nextLetter() {
+    
+    letterIdx++
 
-    if (letterIdx < images_arr.length) {
-      letterIdx++
+    if (letterIdx >= 26){
+      document.querySelector(".course-completed-modal-wrapper").style.display = "block";
+      return
+    }
+   
+    if (letterIdx % 5 === 0 && letterIdx > 0 && letterIdx < 25) {
+      console.log("NEW LESSON")
+      document.querySelector(".completed-modal-wrapper").style.display = "block";
+    }
+
+    if (letterIdx <= images_arr.length) {
       getImageUrl()
-        if (letterIdx % 5 === 0 && letterIdx > 0 && letterIdx < 25) {
-          console.log("NEW LESSON")
-          document.querySelector(".completed-modal-wrapper").style.display = "block";
-        }
-
     }
-    else if (letterIdx >= 25){
-      alert("Congratulations! You finished this course!")
-    }
+ 
   }
 
   function getImageUrl() {
@@ -74,9 +79,12 @@ function borderColorChange() {
   //original color is orange
   const orig = 'solid #ff8717'
   //change to green
-  webcamDiv.style.border = 'solid #17ca35'
+  webcamDiv.style.border = '3px solid #17ca35'
+  webcamDiv.style.borderRadius = "15px"
+  webcamDiv.style.boxShadow = "0px 0px 40px 3px #39ff14"
   window.setTimeout(function() {
     webcamDiv.style.border = orig;
+    webcamDiv.style.boxShadow = 'none';
   }, 1000)
 }
 
@@ -93,7 +101,6 @@ function borderColorChange() {
       borderColorChange();
       //move to next letter here
       nextLetter();
-
     }
   }
 
@@ -187,9 +194,27 @@ function borderColorChange() {
           </div>
           <div className="completed-modal-text">
             <h2>Congratulations!</h2>
-            <p>You've unlocked lesson 2</p>
+            <p>You've unlocked the next lesson!</p>
             <button id="completed-lesson-bttn" onClick={() => hideModal()}>Start next lesson</button>
           </div>
+        </div>
+      </div>
+
+      <div className="course-completed-modal-wrapper">
+        <div className="completed-modal">
+          <div onClick={() => hideModal()} className="x-bttn">
+            <img src = "https://drive.google.com/uc?export=view&id=1chHZvH7I4XgrWqao0w2CxkN9TrFd6ukL" />
+          </div>
+          <div className="completed-modal-img">
+            <img className="completed-modal-img" src="https://drive.google.com/uc?export=view&id=1glNM8wzs2mDoYB8H0VqImPWfLKwfxjkp" />
+          </div>
+          <div className="completed-modal-text">
+            <h2>Congratulations!</h2>
+            <p>You've completed all the lessons in Alphabet!</p>
+          </div>
+          <Link to = "/courses">
+          <button id="completed-course-bttn" onClick={() => hideModal()}>Return Home</button>
+          </Link>
         </div>
       </div>
 

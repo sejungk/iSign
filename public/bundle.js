@@ -57421,16 +57421,20 @@ function LearningPage(props) {
   var letterIdx = 0; // increment the letter index until it has reached the length of the array.
 
   function nextLetter() {
-    if (letterIdx < _data_images__WEBPACK_IMPORTED_MODULE_5__["images_arr"].length) {
-      letterIdx++;
-      getImageUrl();
+    letterIdx++;
 
-      if (letterIdx % 5 === 0 && letterIdx > 0 && letterIdx < 25) {
-        console.log("NEW LESSON");
-        document.querySelector(".completed-modal-wrapper").style.display = "block";
-      }
-    } else if (letterIdx >= 25) {
-      alert("Congratulations! You finished this course!");
+    if (letterIdx >= 26) {
+      document.querySelector(".course-completed-modal-wrapper").style.display = "block";
+      return;
+    }
+
+    if (letterIdx % 5 === 0 && letterIdx > 0 && letterIdx < 25) {
+      console.log("NEW LESSON");
+      document.querySelector(".completed-modal-wrapper").style.display = "block";
+    }
+
+    if (letterIdx <= _data_images__WEBPACK_IMPORTED_MODULE_5__["images_arr"].length) {
+      getImageUrl();
     }
   }
 
@@ -57492,9 +57496,12 @@ function LearningPage(props) {
 
     var orig = 'solid #ff8717'; //change to green
 
-    webcamDiv.style.border = 'solid #17ca35';
+    webcamDiv.style.border = '3px solid #17ca35';
+    webcamDiv.style.borderRadius = "15px";
+    webcamDiv.style.boxShadow = "0px 0px 40px 3px #39ff14";
     window.setTimeout(function () {
       webcamDiv.style.border = orig;
+      webcamDiv.style.boxShadow = 'none';
     }, 1000);
   }
   /* gets the maximum probability from array + its index then finds the corresponding letter */
@@ -57659,12 +57666,37 @@ function LearningPage(props) {
     src: "https://drive.google.com/uc?export=view&id=1glNM8wzs2mDoYB8H0VqImPWfLKwfxjkp"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "completed-modal-text"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Congratulations!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You've unlocked lesson 2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Congratulations!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You've unlocked the next lesson!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     id: "completed-lesson-bttn",
     onClick: function onClick() {
       return hideModal();
     }
-  }, "Start next lesson")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Copy the handshape below"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, "Start next lesson")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "course-completed-modal-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "completed-modal"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    onClick: function onClick() {
+      return hideModal();
+    },
+    className: "x-bttn"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://drive.google.com/uc?export=view&id=1chHZvH7I4XgrWqao0w2CxkN9TrFd6ukL"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "completed-modal-img"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "completed-modal-img",
+    src: "https://drive.google.com/uc?export=view&id=1glNM8wzs2mDoYB8H0VqImPWfLKwfxjkp"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "completed-modal-text"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Congratulations!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You've completed all the lessons in Alphabet!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+    to: "/courses"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    id: "completed-course-bttn",
+    onClick: function onClick() {
+      return hideModal();
+    }
+  }, "Return Home")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Copy the handshape below"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     id: "letter-img",
     src: "https://drive.google.com/uc?export=view&id=1NH1QACDqwUZTYg73Y5tW_a5v2Bq-EyYK"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
