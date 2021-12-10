@@ -122,10 +122,8 @@ async function makePrediction(values){
 
 
     if(max > 0.90 && letterIdx === index){
-      document.getElementById('web_cam_').style.border = 'solid #17ca35'
       //move to next letter here
       nextLetter();
-      document.getElementById('web_cam_').style.border = 'solid #ffffff'
     }
   }
 
@@ -179,8 +177,6 @@ async function makePrediction(values){
   }
 
  function startLesson(){
-   document.getElementById('web_cam_').style.border = 'solid #f4ba19'
-  setLettersArr()
   //  console.log("props", props.location.letters)
   document.querySelector(".training-modal-wrapper").style.display = "none";
    setLettersArr()
