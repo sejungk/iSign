@@ -155,7 +155,8 @@ function borderColorChange() {
   }
 
  function startLesson(){
-   document.getElementById('web_cam_').style.border = 'solid #f4ba19'
+  //  console.log("props", props.location.letters)
+  document.getElementById('web_cam_').style.border = 'solid #f4ba19'
   document.querySelector(".training-modal-wrapper").style.display = "none";
    getModel()
    setMapValues()
