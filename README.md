@@ -1,11 +1,11 @@
 # iSign - ASL Learning App
 
 iSign is a machine learning ASL (American Sign Language) learning web application built with JavaScript, React.js, Tensorflow, and Firebase.
+
 <p align="center">
-  <a href="#img1"><img src="./public/login.png" width="24%" id="img1" alt="Image 1"/></a>
-  <a href="#img2"><img src="./public/dashboard.png" width="24%" id="img2" alt="Image 2"/></a>
-  <a href="#img3"><img src="./public/lesson.png" width="24%" id="img3" alt="Image 3"/></a>
-  <a href="#img3"><img src="./public/cover.png" width="24%" id="img4" alt="Image 4"/></a>
+  <a href="#img1"><img src="./public/isign-login.png" style="width: 33%;" id="img1" alt="Image 1"/></a>
+  <a href="#img2"><img src="./public/isign-dashboard.png" style="width: 33%;" id="img2" alt="Image 2"/></a>
+  <a href="#img3"><img src="./public/isign-lesson.png" style="width: 33%;" id="img3" alt="Image 3"/></a>
 </p>
 
 ## Features
