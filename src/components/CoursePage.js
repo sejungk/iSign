@@ -31,22 +31,19 @@ const CoursePage = () => {
     <div className="course-page-container">
       <div className="profile-wrapper">
         <div className="profile-pic">
-            <img src="https://drive.google.com/uc?export=view&id=1-QO80c6b1RfU_NHTmV5CJH4x2BTUCXrW" />
-
+            <img src="/images/icons/profile-5.png" alt="Profile Pic" />
           </div>
           <h1 className="email_tagline">{name(`${currentUser?.email}`)}</h1>
           <div className="profile-nav">
             <div className="profile-nav-item-wrapper">
               <div className="profile-nav-item">
-                <img src="https://drive.google.com/uc?export=view&id=1bEB1JyRKg1w6pBsnamyfhHlkwPE2ln8M" />
+                <img src="/images/icons/course-icon.png" alt="Course Icon" />
                 <p>My courses</p>
               </div>
             </div>
             {/* <div className="profile-nav-item-wrapper"> */}
               <div className="profile-nav-item">
-
-                <img src="https://drive.google.com/uc?export=view&id=1y3A1SeM99ZG5wrNucqv3tibgIDinoSnt" />
-
+                <img src="/images/icons/sign-out-icon.png" alt="Sign Out Icon" />
                 <p className="signIn_orUp"  onClick={handleLogout}>
                   <Link to="/"> Sign out</Link>
                   </p>
@@ -66,53 +63,54 @@ const CoursePage = () => {
                   <div className="course-item alphabet-course">
                     <h1>The alphabet</h1>
                     {/* <p>6 lessons | 2 quizzes</p> */}
-                    <img src="https://drive.google.com/uc?export=view&id=1bzlRbUWKXQFP4T39u1n-OGOAz9dajhzx"/>
+                    <img src="/images/icons/alphabet-img.png" alt="Alphabet Course Icon" />
+
                   </div>
                 </Link>
               </div>
             <div className="course-wrapper">
-                <img className="lock-icon" src="https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR" />
+                <img className="lock-icon" src="/images/icons/lock-icon.png" alt="Locked Icon" />
                 <h5><span>Course </span>coming soon</h5>
                 <div className="course-item  numbers-course">
                   <h1>Numbers</h1>
                   {/* <p>5 lessons | 2 quizzes</p> */}
-                  <img src="https://drive.google.com/uc?export=view&id=1vA3K8DbU4gNeaeKwlaOc2b_j2iibFQcl"/>
+                  <img src="/images/icons/number-img.png" alt="Numbers Course Icon" />
                 </div>
             </div>
             <div className="course-wrapper">
-              <img className="lock-icon" src="https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR" />
+              <img className="lock-icon" src="/images/icons/lock-icon.png" alt="Locked Icon" />
               <h5><span>Course </span>coming soon</h5>
               <div className="course-item colors-course">
                 <h1>Colors</h1>
                 {/* <p>5 lessons | 2 quizzes</p> */}
-                <img src="https://drive.google.com/uc?export=view&id=1HhrvBIyI0fHABfdKZD_KknRD3ZxiA4Kz"/>
+                <img src="/images/icons/colors-img.png" alt="Colors Course Icon" />
               </div>
             </div>
             <div className="course-wrapper">
-                <img className="lock-icon" src="https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR" />
+              <img className="lock-icon" src="/images/icons/lock-icon.png" alt="Locked Icon" />
                 <h5><span>Course </span>coming soon</h5>
                 <div className="course-item greetings-course">
                   <h1>Greetings</h1>
                   {/* <p>5 lessons | 2 quizzes</p> */}
-                  <img src="https://drive.google.com/uc?export=view&id=1M2gbXjg5uuPe0AYgRwto9f6htuoI1uep"/>
+                  <img src="/images/icons/greetings-img.png" alt="Greetings Course Icon" />
                 </div>
             </div>
             <div className="course-wrapper">
-                <img className="lock-icon" src="https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR" />
+              <img className="lock-icon" src="/images/icons/lock-icon.png" alt="Locked Icon" />
                 <h5><span>Course </span>coming soon</h5>
                 <div className="course-item questions-course">
                   <h1>Questions</h1>
                   {/* <p>5 lessons | 2 quizzes</p> */}
-                  <img src="https://drive.google.com/uc?export=view&id=1eV5F-tloYQJDmZV8M1BslEne9OVFyQKW"/>
+                  <img src="/images/icons/questions-img.png" alt="Questions Course Icon" />
                 </div>
             </div>
             <div className="course-wrapper">
-              <img className="lock-icon" src="https://drive.google.com/uc?export=view&id=1McUUcvTct9-_NKWli101wYtYM6RjUhlR" />
+              <img className="lock-icon" src="/images/icons/lock-icon.png" alt="Locked Icon" />
               <h5><span>Course </span>coming soon</h5>
               <div className="course-item phrases-course">
                 <h1>Phrases</h1>
                 {/* <p>5 lessons | 2 quizzes</p> */}
-                <img src="https://drive.google.com/uc?export=view&id=1UGBOzgVo0bXOBf1K323b5aXXDtQJCpHk"/>
+                <img src="/images/icons/phrases-img.png" alt="Phrases Course Icon" />
               </div>
             </div>
           </div>
