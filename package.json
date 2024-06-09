@@ -7,6 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
+    "install": "npm install --force",
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "deploy": "script/deploy",
@@ -35,7 +36,7 @@
   "author": "Fullstack Academy of Code",
   "license": "MIT",
   "dependencies": {
-    "@mediapipe/camera_utils": "^0.3.1632432234",
+    "@mediapipe/camera_utils": "^0.3.1675466862",
     "@mediapipe/hands": "^0.4.1635986972",
     "axios": "^0.19.0",
     "compression": "^1.7.3",
@@ -71,7 +72,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.0",
     "axios-mock-adapter": "^1.16.0",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.5",
     "chai": "^4.2.0",
     "enzyme": "^3.9.0",
