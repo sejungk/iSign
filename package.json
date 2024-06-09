@@ -7,7 +7,6 @@
   },
   "main": "index.js",
   "scripts": {
-    "install": "npm install --force",
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "deploy": "script/deploy",
