@@ -2,9 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import Authform from '../Authentication/Authform'
 
+
 const LandingPage = () => {
-
-
   return (
     <div className="landing-page-wrapper">
         <div className="landing-page-text-wrapper">
@@ -23,7 +22,7 @@ const LandingPage = () => {
 
         </div>
         <div>
-          <img src="https://drive.google.com/uc?export=view&id=1Qne_O096dVPtBE53wWv41D9ZNT-481wW" />
+          <img src="/images/icons/ASL-main.png" alt="ASL Main" />
         </div>
     </div>
   )
