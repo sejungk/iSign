@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "An ASL App",
   "engines": {
-    "node": "18.16.0"
+    "node": "18.16.0",
+    "npm": "9.5.1"
   },
   "main": "index.js",
   "scripts": {
